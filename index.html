@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杨雪刺绣艺术工作室 | 苏绣代表传承人</title>
+    <style>
+        /* 全局样式与新中式色彩系统 */
+        :root {
+            --bg-color: #fcfaf8; /* 宣纸白 */
+            --text-main: #2c2c2c; /* 墨黑 */
+            --text-light: #666666; /* 灰 </br> */
+            --accent-red: #8a181b; /* 朱砂红/印泥红 */
+            --border-color: #e5e0d8; 
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            /* 优先使用宋体等衬线字体，凸显传统文化底蕴 */
+            font-family: "Noto Serif SC", "SimSun", "STSong", serif;
+            line-height: 1.8;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-weight: normal;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-red);
+        }
+
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(252, 250, 248, 0.95);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 20px;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        /* 首屏视觉 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* 这里可以换成你最好看的一幅大尺寸刺绣作品图片 */
+            background: linear-gradient(rgba(252, 250, 248, 0.7), rgba(252, 250, 248, 0.9)), url('替换成你的首图链接.jpg') center/cover;
+            padding-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            letter-spacing: 4px;
+            color: var(--text-light);
+        }
+
+        .hero .stamp {
+            margin-top: 30px;
+            border: 2px solid var(--accent-red);
+            color: var(--accent-red);
+            padding: 5px 10px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            border-radius: 2px;
+        }
+
+        /* 通用区块布局 */
+        section {
+            padding: 100px 10vw;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            letter-spacing: 5px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-red);
+            margin: 20px auto 0;
+        }
+
+        /* 艺术简介区块 */
+        .about-grid {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-img {
+            flex: 1;
+            aspect-ratio: 3/4;
+            background-color: #eaeaea; /* 占位色 */
+            /* 用杨雪老师的工作照替换 */
+            background-image: url('替换成杨雪老师照片.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-text {
+            flex: 1.2;
+        }
+
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .about-text .title-tag {
+            color: var(--accent-red);
+            font-size: 14px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        /* 作品大赏画廊 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .gallery-item {
+            group: overflow;
+            cursor: pointer;
+        }
+
+        .gallery-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background-color: #eaeaea;
+            margin-bottom: 15px;
+            transition: transform 0.5s ease;
+            /* 替换作品图片 */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.03);
+        }
+
+        .gallery-title {
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        /* 底部信息 */
+        footer {
+            background-color: #1a1a1a;
+            color: #d4d4d4;
+            text-align: center;
+            padding: 80px 20px;
+            font-family: sans-serif;
+        }
+
+        footer h2 {
+            font-family: "Noto Serif SC", serif;
+            color: #fff;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: var(--bg-color);
+        }
+
+        .order-rules {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 13px;
+            line-height: 2;
+            color: #999;
+            border-top: 1px solid #333;
+            padding-top: 30px;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .about-grid {
+                flex-direction: column;
+            }
+            .hero h1 { font-size: 32px; }
+            nav a { margin: 0 10px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">首页</a>
+        <a href="#about">主理人</a>
+        <a href="#works">馆藏大赏</a>
+        <a href="#custom">私人定制</a>
+        <a href="#contact">联系我们</a>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>杨雪刺绣艺术</h1>
+        <p>一针一世界 · 一丝一华年</p>
+        <div class="stamp">中国 · 苏绣</div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">艺术简介</h2>
+        <div class="about-grid">
+            <div class="about-img" style="background-image: url('这里填入杨雪老师的工作照链接.jpg');"></div>
+            <div class="about-text">
+                <h3>杨雪</h3>
+                <span class="title-tag">苏绣代表传承人 / 高级工艺美术师</span>
+                <p>从事刺绣艺术创作多年，作品深受海内外藏家喜爱。全网粉丝突破百万，让非遗苏绣走入大众视野。曾受邀参加中央电视台、江苏卫视等节目录制，并在多次国家级工艺美术大展中荣获金奖。</p>
+                <p><strong>部分荣誉：</strong><br>
+                · 2023年 作品《繁花》获“百花杯”中国工艺美术精品奖 金奖<br>
+                · 2022年 获首届轻工大国工匠创新成果展 金奖<br>
+                · 第十三届中国（浙江）工艺美术精品博览会 金奖</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2 class="section-title">馆藏大赏</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-img" style="background-image: url('填入双面绣天鹅图片.jpg');"></div>
+                <div class="gallery-title">双面三异绣 · 国礼珍品</div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img" style="background-image: url('填入动物刺绣狐狸图片.jpg');"></div>
+                <div class="gallery-title">万物生灵 · 动物系列</div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img" style="background-image: url('填入佛像刺绣图片.jpg');"></div>
+                <div class="gallery-title">宝相庄严 · 佛像系列</div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img" style="background-image: url('填入红色婚嫁刺绣图片.jpg');"></div>
+                <div class="gallery-title">十里红妆 · 婚嫁系列</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="custom" style="background-color: #f5f2eb; max-width: 100%; padding-left: 10vw; padding-right: 10vw;">
+        <h2 class="section-title">高定与跨界</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-img" style="aspect-ratio: 1; background-image: url('填入人像定制图片.jpg');"></div>
+                <div class="gallery-title">人物肖像定制</div>
+                <p style="text-align: center; font-size: 14px; color: var(--text-light);">赠送外宾、全家福、婚纱照专属定制</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img" style="aspect-ratio: 1; background-image: url('填入别墅挂画图片.jpg');"></div>
+                <div class="gallery-title">别墅/空间巨幅挂画</div>
+                <p style="text-align: center; font-size: 14px; color: var(--text-light);">融合室内软装风格的典藏级艺术品</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img" style="aspect-ratio: 1; background-image: url('填入跨界合作图片.jpg');"></div>
+                <div class="gallery-title">品牌跨界合作</div>
+                <p style="text-align: center; font-size: 14px; color: var(--text-light);">服饰、文创及大型活动联名</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>杨雪刺绣艺术工作室</h2>
+        <div class="contact-info">
+            定制咨询与合作：18358595061
+        </div>
+        
+        <div class="order-rules">
+            <strong>订购说明：</strong><br>
+            1. 定制机构需提供高清参考图（普通照片、手机图或商务文件）。<br>
+            2. 题材及色调沟通，确定最终设计方案。<br>
+            3. 绣娘根据定制图的复杂程度确定工期与报价。<br>
+            4. 支付定金后由工作室安排起稿并制作。<br>
+            5. 绣品全面完工后结清尾款并发货。
+        </div>
+        <p style="margin-top: 40px; font-size: 12px; color: #666;">© 2026 杨雪刺绣艺术工作室 版权所有</p>
+    </footer>
+
+</body>
+</html>
