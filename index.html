@@ -1,976 +1,330 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>杨雪刺绣工作室 | 一针一线，绣出东方美学</title>
-  <meta name="description" content="杨雪刺绣工作室，传承苏绣技艺，以针为笔，以线为墨。作品涵盖挂画、屏风、服饰、饰品等。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    /* ========== Reset & Base ========== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --bg-cream: #f8f5f0;
-      --bg-warm: #f5f1eb;
-      --text-main: #332a22;
-      --text-light: #6b5f54;
-      --text-muted: #9a8f84;
-      --accent-red: #b84532;
-      --accent-indigo: #2a4d69;
-      --border-light: rgba(51, 42, 34, 0.08);
-      --border-medium: rgba(51, 42, 34, 0.12);
-      --shadow-image: 0 12px 40px rgba(51, 42, 34, 0.1);
-      --shadow-card: 0 8px 30px rgba(51, 42, 34, 0.06);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-cream);
-      color: var(--text-main);
-      line-height: 1.9;
-      font-weight: 300;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--accent-red);
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* ========== Navigation ========== */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 6vw;
-      background: rgba(248, 245, 240, 0.97);
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .nav-brand {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      letter-spacing: 3px;
-      color: var(--text-main);
-    }
-
-    .nav-brand:hover {
-      color: var(--text-main);
-    }
-
-    .nav-menu {
-      display: flex;
-      gap: 52px;
-      list-style: none;
-    }
-
-    .nav-menu a {
-      font-size: 0.85rem;
-      font-weight: 400;
-      letter-spacing: 2px;
-      color: var(--text-light);
-      position: relative;
-      padding: 4px 0;
-    }
-
-    .nav-menu a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent-red);
-      transition: width 0.4s ease;
-    }
-
-    .nav-menu a:hover::after {
-      width: 100%;
-    }
-
-    .nav-toggle {
-      display: none;
-      width: 44px;
-      height: 44px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 1px;
-      background: var(--text-main);
-      margin: 7px auto;
-      transition: all 0.3s;
-    }
-
-    .nav-toggle.active span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-
-    .nav-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .nav-toggle.active span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* ========== Hero Section ========== */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 72px;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 8vw 80px 10vw;
-    }
-
-    .hero-title-zh {
-      font-family: 'Noto Serif SC', serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 500;
-      letter-spacing: 12px;
-      color: var(--text-main);
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-
-    .hero-title-en {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 0.9rem;
-      font-weight: 400;
-      letter-spacing: 4px;
-      color: var(--text-muted);
-      margin-bottom: 40px;
-    }
-
-    .hero-slogan {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--accent-red);
-      letter-spacing: 3px;
-      margin-bottom: 50px;
-      padding-left: 16px;
-      border-left: 2px solid var(--accent-red);
-    }
-
-    .hero-desc {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 2;
-      letter-spacing: 0.5px;
-      max-width: 400px;
-    }
-
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.98);
-    }
-
-    .hero-image-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(160deg, var(--bg-warm) 0%, #e8e2d9 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-image-placeholder span {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 8rem;
-      color: var(--accent-red);
-      opacity: 0.12;
-      letter-spacing: 20px;
-    }
-
-    /* ========== Section Base ========== */
-    .section {
-      padding: 120px 10vw;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-
-    .section-label {
-      font-size: 0.7rem;
-      font-weight: 400;
-      letter-spacing: 4px;
-      color: var(--accent-red);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-family: 'Noto Serif SC', serif;
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 500;
-      letter-spacing: 6px;
-      color: var(--text-main);
-    }
-
-    .section-line {
-      width: 40px;
-      height: 1px;
-      background: var(--border-medium);
-      margin: 28px auto 0;
-    }
-
-    /* ========== Works Section ========== */
-    .works {
-      background: white;
-      border-top: 1px solid var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .work-item {
-      cursor: pointer;
-    }
-
-    .work-image-wrap {
-      position: relative;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .work-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .work-image-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(160deg, var(--bg-warm) 0%, #e8e2d9 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .work-image-placeholder span {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 3.5rem;
-      color: var(--accent-red);
-      opacity: 0.15;
-    }
-
-    .work-item:hover .work-image,
-    .work-item:hover .work-image-placeholder {
-      transform: scale(1.04);
-    }
-
-    .work-title {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1.05rem;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-
-    .work-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-      line-height: 1.6;
-    }
-
-    /* ========== Craft Section ========== */
-    .craft {
-      background: var(--bg-cream);
-    }
-
-    .craft-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-    }
-
-    .craft-item {
-      text-align: center;
-      padding: 50px 30px;
-      background: white;
-      border: 1px solid var(--border-light);
-      transition: all 0.4s ease;
-    }
-
-    .craft-item:hover {
-      border-color: var(--border-medium);
-      box-shadow: var(--shadow-card);
-    }
-
-    .craft-icon {
-      width: 60px;
-      height: 60px;
-      margin: 0 auto 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1.5rem;
-      border-radius: 50%;
-    }
-
-    .craft-icon.red { background: rgba(184, 69, 50, 0.08); color: var(--accent-red); }
-    .craft-icon.indigo { background: rgba(42, 77, 105, 0.08); color: var(--accent-indigo); }
-    .craft-icon.gold { background: rgba(180, 140, 100, 0.1); color: #a07850; }
-
-    .craft-title {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1.1rem;
-      font-weight: 500;
-      letter-spacing: 3px;
-      color: var(--text-main);
-      margin-bottom: 16px;
-    }
-
-    .craft-desc {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      line-height: 1.9;
-    }
-
-    /* ========== About Section ========== */
-    .about {
-      background: white;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .about-image-wrap {
-      aspect-ratio: 3 / 4;
-      position: relative;
-      box-shadow: var(--shadow-image);
-    }
-
-    .about-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .about-image-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(160deg, var(--accent-indigo) 0%, #3d5a73 50%, var(--accent-red) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .about-image-placeholder span {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 6rem;
-      color: white;
-      opacity: 0.15;
-      letter-spacing: 15px;
-    }
-
-    .about-image-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      pointer-events: none;
-    }
-
-    .about-text h3 {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      letter-spacing: 4px;
-      color: var(--text-main);
-      margin-bottom: 30px;
-    }
-
-    .about-text p {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 2;
-      margin-bottom: 20px;
-      letter-spacing: 0.3px;
-    }
-
-    .about-quote {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 0.95rem;
-      color: var(--accent-red);
-      padding: 20px 0 20px 20px;
-      border-left: 2px solid var(--accent-red);
-      margin: 30px 0;
-      line-height: 1.9;
-      font-style: italic;
-      background: rgba(184, 69, 50, 0.02);
-    }
-
-    /* ========== Contact Section ========== */
-    .contact {
-      background: var(--text-main);
-      color: var(--bg-cream);
-    }
-
-    .contact .section-label {
-      color: var(--accent-red);
-    }
-
-    .contact .section-title {
-      color: var(--bg-cream);
-    }
-
-    .contact .section-line {
-      background: rgba(248, 245, 240, 0.15);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .contact-info-item {
-      margin-bottom: 24px;
-    }
-
-    .contact-label {
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 2px;
-      color: var(--accent-red);
-      margin-bottom: 6px;
-    }
-
-    .contact-value {
-      font-size: 0.95rem;
-      color: rgba(248, 245, 240, 0.8);
-      letter-spacing: 1px;
-    }
-
-    .contact-social {
-      display: flex;
-      gap: 16px;
-      margin-top: 40px;
-    }
-
-    .contact-social a {
-      width: 44px;
-      height: 44px;
-      border: 1px solid rgba(248, 245, 240, 0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      color: var(--bg-cream);
-      transition: all 0.3s;
-    }
-
-    .contact-social a:hover {
-      background: var(--accent-red);
-      border-color: var(--accent-red);
-      color: white;
-    }
-
-    /* ========== Footer ========== */
-    .footer {
-      background: var(--text-main);
-      padding: 40px 10vw;
-      border-top: 1px solid rgba(248, 245, 240, 0.06);
-      text-align: center;
-    }
-
-    .footer-text {
-      font-size: 0.78rem;
-      color: rgba(248, 245, 240, 0.35);
-      letter-spacing: 1px;
-    }
-
-    .footer-text a {
-      color: rgba(184, 69, 50, 0.7);
-    }
-
-    .footer-text a:hover {
-      color: var(--accent-red);
-    }
-
-    /* ========== Mobile Menu ========== */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 72px;
-      left: 0;
-      right: 0;
-      background: rgba(248, 245, 240, 0.98);
-      backdrop-filter: blur(12px);
-      padding: 30px 0;
-      border-bottom: 1px solid var(--border-light);
-      z-index: 999;
-    }
-
-    .mobile-menu.active {
-      display: block;
-    }
-
-    .mobile-menu a {
-      display: block;
-      padding: 14px 6vw;
-      font-size: 0.9rem;
-      color: var(--text-light);
-      letter-spacing: 3px;
-      text-align: center;
-    }
-
-    .mobile-menu a:hover {
-      color: var(--accent-red);
-    }
-
-    /* ========== Responsive ========== */
-    @media (max-width: 1200px) {
-      .works-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 1024px) {
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-
-      .hero-left {
-        padding: 140px 8vw 80px;
-        order: 1;
-      }
-
-      .hero-right {
-        height: 60vh;
-        order: 2;
-      }
-
-      .hero-title-zh {
-        letter-spacing: 8px;
-      }
-
-      .craft-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-grid {
-        gap: 50px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav {
-        padding: 0 5vw;
-      }
-
-      .nav-menu {
-        display: none;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-
-      .hero-left {
-        padding: 120px 6vw 60px;
-      }
-
-      .hero-title-zh {
-        font-size: 2.2rem;
-        letter-spacing: 6px;
-      }
-
-      .hero-title-en {
-        font-size: 0.8rem;
-        letter-spacing: 3px;
-      }
-
-      .hero-slogan {
-        font-size: 0.95rem;
-        letter-spacing: 2px;
-        margin-bottom: 35px;
-      }
-
-      .hero-right {
-        height: 50vh;
-      }
-
-      .section {
-        padding: 80px 6vw;
-      }
-
-      .section-header {
-        margin-bottom: 50px;
-      }
-
-      .works-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .work-image-wrap {
-        aspect-ratio: 1 / 1;
-      }
-
-      .craft-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .craft-item {
-        padding: 35px 25px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .about-image-wrap {
-        aspect-ratio: 4 / 3;
-      }
-
-      .about-image-placeholder span {
-        font-size: 4rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-        text-align: center;
-      }
-
-      .contact-social {
-        justify-content: center;
-      }
-    }
-
-    /* ========== Accessibility ========== */
-    a:focus-visible {
-      outline: 2px solid var(--accent-red);
-      outline-offset: 3px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杨雪刺绣艺术工作室 | yangxuecixiu.top</title>
+    <meta name="description" content="杨雪刺绣艺术工作室，专注传统刺绣艺术创作与传承">
+    <meta name="keywords" content="杨雪刺绣, 传统刺绣, 艺术创作, 手工刺绣">
+    <meta name="author" content="杨雪">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 字体：Noto Serif SC 衬线字体，适配艺术官网质感 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2c3e2d',    // 深绿主色，自然艺术感
+                        secondary: '#c9a87c',  // 金色辅助色
+                        accent: '#f5f2eb',     // 米白底色
+                    },
+                    fontFamily: {
+                        serif: ['Noto Serif SC', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-balance {
+                text-wrap: balance;
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+            .parallax {
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .fade-in {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.8s ease, transform 0.8s ease;
+            }
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            /* 下拉菜单动画 */
+            .dropdown-enter {
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                transform: translateY(-10px);
+            }
+            .dropdown-enter-active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
-<body>
-  <!-- Navigation -->
-  <nav class="nav" role="navigation" aria-label="主导航">
-    <a href="#home" class="nav-brand">杨雪刺绣</a>
-    <ul class="nav-menu">
-      <li><a href="#home">首页</a></li>
-      <li><a href="#works">作品</a></li>
-      <li><a href="#craft">工艺</a></li>
-      <li><a href="#about">关于</a></li>
-      <li><a href="#contact">联系</a></li>
-    </ul>
-    <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
+<body class="bg-accent text-primary font-serif scroll-smooth overflow-x-hidden">
+    <!-- 统一导航栏（多级下拉+页面跳转，1:1复刻参考站） -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 bg-accent/95 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-6">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="text-3xl font-light tracking-wider">杨雪刺绣艺术工作室</a>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#home">首页</a>
-    <a href="#works">作品</a>
-    <a href="#craft">工艺</a>
-    <a href="#about">关于</a>
-    <a href="#contact">联系</a>
-  </div>
+                <!-- 桌面端主导航（多级下拉） -->
+                <div class="hidden md:flex space-x-12 items-center">
+                    <!-- 1. 首页 -->
+                    <a href="index.html" class="text-lg tracking-wide hover:text-secondary transition-colors duration-300">首页</a>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-left">
-      <h1 class="hero-title-zh">杨雪刺绣艺术</h1>
-      <p class="hero-title-en">中国·苏绣 | 精品收藏·私人定制</p>
-      <div class="hero-slogan">苏绣代表传承人 高级工艺美术师</div>
-      <p class="hero-desc">
-        杨雪女士自幼学习苏绣，毕业于苏州工艺美术学院，师从国家级非遗传承人。2018年创立工作室，专注苏绣艺术创作与传承，多次代表江苏省参加国内外文化交流活动。2023年获评高级工艺美术师职称。
-      </p>
-    </div>
-    <div class="hero-right">
-      <div class="hero-image-placeholder">
-        <span>绣</span>
-      </div>
-    </div>
-  </section>
+                    <!-- 2. 作品展示（一级菜单 + 二级下拉） -->
+                    <div class="relative group">
+                        <a href="works.html" class="text-lg tracking-wide hover:text-secondary transition-colors duration-300 flex items-center gap-1">
+                            作品展示
+                            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        </a>
+                        <!-- 二级下拉菜单 -->
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="works-guoli.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">国礼系列</a>
+                            <a href="works-foxiang.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">佛像系列</a>
+                            <a href="works-dongwu.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">动物系列</a>
+                            <a href="works-bieshu.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">别墅装饰系列</a>
+                            <a href="works-renwu.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">人物系列</a>
+                        </div>
+                    </div>
 
-  <!-- Works Section -->
-  <section class="section works" id="works">
-    <div class="section-header">
-      <p class="section-label">Gallery</p>
-      <h2 class="section-title">作品系列</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="works-grid">
-      <article class="work-item">
-        <div class="work-image-wrap">
-          <div class="work-image-placeholder"><span>礼</span></div>
+                    <!-- 3. 定制服务（一级菜单 + 二级下拉，复刻参考站） -->
+                    <div class="relative group">
+                        <a href="custom.html" class="text-lg tracking-wide hover:text-secondary transition-colors duration-300 flex items-center gap-1">
+                            定制服务
+                            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        </a>
+                        <!-- 二级下拉菜单 -->
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="custom-process.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">定制流程</a>
+                            <a href="custom-price.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">报价说明</a>
+                            <a href="custom-case.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">定制案例</a>
+                            <a href="custom-consult.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">在线咨询</a>
+                        </div>
+                    </div>
+
+                    <!-- 4. 关于我 -->
+                    <a href="about.html" class="text-lg tracking-wide hover:text-secondary transition-colors duration-300">关于我</a>
+
+                    <!-- 5. 参观资讯（一级菜单 + 二级下拉，复刻参考站） -->
+                    <div class="relative group">
+                        <a href="visit.html" class="text-lg tracking-wide hover:text-secondary transition-colors duration-300 flex items-center gap-1">
+                            参观资讯
+                            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        </a>
+                        <!-- 二级下拉菜单 -->
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="visit-info.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">参观信息</a>
+                            <a href="visit-guide.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">交通指南</a>
+                            <a href="visit-diy.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">体验活动</a>
+                            <a href="visit-contact.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">联系我们</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 移动端菜单按钮 -->
+                <button id="menuBtn" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <h3 class="work-title">双面三异绣·国礼</h3>
-        <p class="work-meta">一面一世界，一丝一华年</p>
-      </article>
-      <article class="work-item">
-        <div class="work-image-wrap">
-          <div class="work-image-placeholder"><span>佛</span></div>
+
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-accent/95 backdrop-blur-md w-full">
+            <div class="container mx-auto px-6 py-6 flex flex-col space-y-6">
+                <a href="index.html" class="text-xl tracking-wide py-3 border-b border-primary/10">首页</a>
+                <!-- 移动端作品展示 -->
+                <div class="flex flex-col space-y-3 py-3 border-b border-primary/10">
+                    <span class="text-xl tracking-wide">作品展示</span>
+                    <a href="works-guoli.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">国礼系列</a>
+                    <a href="works-foxiang.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">佛像系列</a>
+                    <a href="works-dongwu.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">动物系列</a>
+                </div>
+                <!-- 移动端定制服务 -->
+                <div class="flex flex-col space-y-3 py-3 border-b border-primary/10">
+                    <span class="text-xl tracking-wide">定制服务</span>
+                    <a href="custom-process.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">定制流程</a>
+                    <a href="custom-price.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">报价说明</a>
+                </div>
+                <a href="about.html" class="text-xl tracking-wide py-3 border-b border-primary/10">关于我</a>
+                <!-- 移动端参观资讯 -->
+                <div class="flex flex-col space-y-3 py-3">
+                    <span class="text-xl tracking-wide">参观资讯</span>
+                    <a href="visit-info.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">参观信息</a>
+                    <a href="visit-guide.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">交通指南</a>
+                    <a href="visit-contact.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">联系我们</a>
+                </div>
+            </div>
         </div>
-        <h3 class="work-title">苏绣佛像系列</h3>
-        <p class="work-meta">以慈悲与智慧为内核，还原佛像的庄严与灵动</p>
-      </article>
-      <article class="work-item">
-        <div class="work-image-wrap">
-          <div class="work-image-placeholder"><span>宅</span></div>
+    </nav>
+
+    <!-- 首页 Banner（视差效果，艺术感拉满） -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1060/1920/1080')] bg-center bg-cover parallax">
+            <div class="absolute inset-0 bg-primary/50"></div>
         </div>
-        <h3 class="work-title">别墅挂画私人订制</h3>
-        <p class="work-meta">回归古传之美，为高端空间定制专属艺术藏品</p>
-      </article>
-      <article class="work-item">
-        <div class="work-image-wrap">
-          <div class="work-image-placeholder"><span>婚</span></div>
+        <div class="relative z-10 text-center text-white px-6">
+            <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-light tracking-[0.2em] mb-6 fade-in">杨雪刺绣艺术工作室</h1>
+            <p class="text-[clamp(1rem,3vw,1.5rem)] font-light tracking-[0.1em] mb-12 fade-in">以针为笔，以线为墨，绣尽东方雅致</p>
+            <a href="works.html" class="inline-block border border-white px-12 py-4 text-lg tracking-wider hover:bg-white hover:text-primary transition-all duration-500 fade-in">
+                探索作品
+            </a>
         </div>
-        <h3 class="work-title">苏绣婚嫁系列</h3>
-        <p class="work-meta">中式备婚礼经典传承，色泽明艳的绣品承载长久祝福</p>
-      </article>
-      <article class="work-item">
-        <div class="work-image-wrap">
-          <div class="work-image-placeholder"><span>兽</span></div>
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
         </div>
-        <h3 class="work-title">苏绣动物系列</h3>
-        <p class="work-meta">捕捉每个细微神态，将苏绣技艺发挥到极致</p>
-      </article>
-      <article class="work-item">
-        <div class="work-image-wrap">
-          <div class="work-image-placeholder"><span>人</span></div>
+    </section>
+
+    <!-- 首页简介区 -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center fade-in">
+                <h2 class="text-[clamp(2rem,5vw,3rem)] font-light tracking-wider mb-8">关于工作室</h2>
+                <div class="w-24 h-px bg-secondary mx-auto mb-12"></div>
+                <p class="text-lg leading-relaxed text-primary/80 mb-12 text-balance">
+                    杨雪刺绣工作室，专注传统苏绣、湘绣技艺传承与创新，十余年来深耕花鸟、山水、人物等各类刺绣题材，
+                    以精湛技艺、原创设计，为每一件作品注入东方美学灵魂，让古老刺绣艺术在当代焕发新生。
+                </p>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <a href="works.html" class="px-8 py-4 border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-500">
+                        查看作品
+                    </a>
+                    <a href="custom-consult.html" class="px-8 py-4 bg-secondary text-white hover:bg-secondary/90 transition-all duration-500">
+                        在线定制
+                    </a>
+                </div>
+            </div>
         </div>
-        <h3 class="work-title">人物定制系列</h3>
-        <p class="work-meta">讲究明暗光影，1:1还原照片细节，让人物栩栩如生</p>
-      </article>
-    </div>
-  </section>
+    </section>
 
-  <!-- Craft Section -->
-  <section class="section craft" id="craft">
-    <div class="section-header">
-      <p class="section-label">Craftsmanship</p>
-      <h2 class="section-title">传统工艺</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="craft-grid">
-      <div class="craft-item">
-        <div class="craft-icon red">针</div>
-        <h3 class="craft-title">针法技艺</h3>
-        <p class="craft-desc">
-          传承苏绣四十年精髓，熟练运用平针、套针、戗针、乱针等数十种针法，以针线的疏密、方向，光泽表现物象的质感与神韵。
-        </p>
-      </div>
-      <div class="craft-item">
-        <div class="craft-icon indigo">线</div>
-        <h3 class="craft-title">精选用料</h3>
-        <p class="craft-desc">
-          选用上等蚕丝线，色泽鲜艳饱满，质地柔细光滑。配合真丝缎料、绢纱等传统面料，每一根丝线都承载着匠人的用心。
-        </p>
-      </div>
-      <div class="craft-item">
-        <div class="craft-icon gold">心</div>
-        <h3 class="craft-title">创作理念</h3>
-        <p class="craft-desc">
-          以东方美学为根基，将传统刺绣技艺与现代设计理念相结合，绣出具有当代审美又不失古典韵味的艺术作品。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="section about" id="about">
-    <div class="section-header">
-      <p class="section-label">About Us</p>
-      <h2 class="section-title">关于工作室</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="about-grid">
-      <div class="about-image-wrap">
-        <div class="about-image-placeholder">
-          <span>绣</span>
+    <!-- 首页快捷入口 -->
+    <section class="py-24 bg-accent">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 入口1：作品展示 -->
+                <a href="works.html" class="group relative overflow-hidden cursor-pointer fade-in">
+                    <img src="https://picsum.photos/id/1060/800/600" alt="作品展示" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-all duration-500 flex items-center justify-center">
+                        <h3 class="text-2xl font-light tracking-wider text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">作品展示</h3>
+                    </div>
+                </a>
+                <!-- 入口2：定制服务 -->
+                <a href="custom.html" class="group relative overflow-hidden cursor-pointer fade-in">
+                    <img src="https://picsum.photos/id/1062/800/600" alt="定制服务" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-all duration-500 flex items-center justify-center">
+                        <h3 class="text-2xl font-light tracking-wider text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">定制服务</h3>
+                    </div>
+                </a>
+                <!-- 入口3：关于我 -->
+                <a href="about.html" class="group relative overflow-hidden cursor-pointer fade-in">
+                    <img src="https://picsum.photos/id/1005/800/600" alt="关于我" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-all duration-500 flex items-center justify-center">
+                        <h3 class="text-2xl font-light tracking-wider text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">关于我</h3>
+                    </div>
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="about-text">
-        <h3>以绣为生，以绣为乐</h3>
+    </section>
 
-        <p><strong style="color: var(--accent-red);">个人历程</strong></p>
-        <p>2020年 与云冈石窟等大型项目合作，制作「金翅鸟」等造像作品</p>
-        <p>2021年 为卡塔尔亲王创作《飞毯送福》，开展国外文化交流</p>
-        <p>2022年 为迪拜华人设计《一带一路》主题苏绣，作为国礼赠送</p>
-        <p>2023年 参加第四届中国匠人大会，担任守护大使</p>
-        <p>2024年 作品《鸿运当头》被收藏，开展多领域跨界合作</p>
-
-        <blockquote class="about-quote">
-          "刺绣是一门需要静下心来的艺术，每一针都要用心，急不得，躁不得。"
-        </blockquote>
-
-        <p><strong style="color: var(--accent-red);">获奖荣誉</strong></p>
-        <p>2017年 苏绣精品长三角技术名人操作大赛 一等奖（作品《花鸟》）</p>
-        <p>2018年 江苏省工艺美术精品博览会「艺博杯」金奖（作品《仕女》）</p>
-        <p>2019年 第十一届「艺博杯」工艺美术精品大奖赛 金奖（作品《动物》）</p>
-        <p>2020年 江苏省工艺美术精品博览会 金奖（作品《山水》）</p>
-        <p>2021年 第十一届「艺博杯」金奖、特等奖、突出贡献奖（作品《佛像》）</p>
-        <p>2023年 江苏省工艺美术博览会 特等金奖（作品《山水》）</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="section contact" id="contact">
-    <div class="section-header">
-      <p class="section-label">Contact</p>
-      <h2 class="section-title">联系我们</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-info-item">
-          <p class="contact-label">地址</p>
-          <p class="contact-value">江苏省苏州市虎丘区 绣品街155号 与卿渡</p>
-          <p class="contact-value" style="margin-top: 8px;">浙江省杭州市拱墅区 祥园路33号 众创大厦A区1楼 东奇人匠心</p>
+    <!-- 统一页脚 -->
+    <footer class="py-12 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-2xl font-light tracking-wider">杨雪刺绣艺术工作室</a>
+                    <p class="text-sm opacity-80 mt-4">© 2026 yangxuecixiu.top. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="index.html" class="text-sm opacity-80 hover:text-secondary transition-colors duration-300">首页</a>
+                    <a href="works.html" class="text-sm opacity-80 hover:text-secondary transition-colors duration-300">作品</a>
+                    <a href="custom.html" class="text-sm opacity-80 hover:text-secondary transition-colors duration-300">服务</a>
+                    <a href="about.html" class="text-sm opacity-80 hover:text-secondary transition-colors duration-300">关于</a>
+                    <a href="visit-contact.html" class="text-sm opacity-80 hover:text-secondary transition-colors duration-300">联系</a>
+                </div>
+            </div>
         </div>
-        <div class="contact-info-item">
-          <p class="contact-label">电话 / 微信</p>
-          <p class="contact-value">17376565154</p>
-        </div>
-      </div>
-      <div class="contact-info">
-        <div class="contact-info-item">
-          <p class="contact-label">订购说明</p>
-          <p class="contact-value" style="line-height: 2;">1. 提供物品清晰草图（普通照片、书法或者老物件）</p>
-          <p class="contact-value" style="line-height: 2;">2. 沟通所绣品类、价格等事宜</p>
-          <p class="contact-value" style="line-height: 2;">3. 支付定金后开始制作，工期根据品类而定</p>
-          <p class="contact-value" style="line-height: 2;">4. 乙方完成后发送成品照片给甲方确认</p>
-          <p class="contact-value" style="line-height: 2;">5. 甲方支付尾款后，安排发货</p>
-          <p class="contact-value" style="line-height: 2;">6. 在刺绣时做了制作流程，制作完成后，按照约定交付作品，并结清余款</p>
-        </div>
-        <div class="contact-social">
-          <a href="#" aria-label="微信">微</a>
-          <a href="#" aria-label="微博">博</a>
-          <a href="#" aria-label="小红书">书</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p class="footer-text">
-      © 2024 杨雪刺绣工作室 版权所有 &nbsp;|&nbsp;
-      <a href="https://github.com/maketubu0504-blip/yangxue-art">GitHub</a>
-      &nbsp;|&nbsp;
-      <a href="https://yangxuecixiu.top">yangxuecixiu.top</a>
-    </p>
-  </footer>
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('bg-accent/95');
+                navbar.classList.add('bg-white/95');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('bg-accent/95');
+                navbar.classList.remove('bg-white/95');
+            }
+        });
 
-  <script>
-    // Mobile menu toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+        // 移动端菜单
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.innerHTML = mobileMenu.classList.contains('hidden') 
+                ? '<i class="fas fa-bars"></i>' 
+                : '<i class="fas fa-times"></i>';
+        });
 
-    navToggle.addEventListener('click', () => {
-      const isActive = mobileMenu.classList.toggle('active');
-      navToggle.classList.toggle('active');
-      navToggle.setAttribute('aria-expanded', isActive);
-    });
+        // 滚动动画
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
 
-    // Close mobile menu on link click
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
+        fadeElements.forEach(el => observer.observe(el));
 
-    // Close mobile menu on ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-        mobileMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.focus();
-      }
-    });
-  </script>
+        // 图片懒加载
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = document.querySelectorAll("img");
+            if ("IntersectionObserver" in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.dataset.src || image.src;
+                            observer.unobserve(image);
+                        }
+                    });
+                });
+                lazyImages.forEach(image => imageObserver.observe(image));
+            }
+        });
+
+        // 平滑滚动（仅首页锚点生效，页面跳转用href）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // 关闭移动端菜单
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

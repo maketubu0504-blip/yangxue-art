@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>价格参考 | 杨雪刺绣工作室</title>
+    <meta name="description" content="杨雪刺绣定制价格参考，根据作品类型、尺寸、复杂度提供透明报价">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#2c3e2d', secondary: '#5a6b5c', accent: '#c9a87c', cream: '#f5f2eb', earth: '#8b7355' },
+                    fontFamily: { serif: ['Noto Serif SC', 'serif'], sans: ['Noto Sans SC', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-item { position: relative; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 200px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-top: 3px solid #c9a87c; box-shadow: 0 10px 40px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 100; }
+        .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-item { display: block; padding: 14px 24px; color: #2c3e2d; font-size: 14px; letter-spacing: 1px; border-bottom: 1px solid rgba(0,0,0,0.05); transition: all 0.2s ease; }
+        .dropdown-item:hover { background: #f5f2eb; color: #c9a87c; padding-left: 28px; }
+        .dropdown-item:last-child { border-bottom: none; }
+        .nav-link { position: relative; padding: 8px 0; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #c9a87c; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .mobile-menu.active { max-height: 600px; }
+        .mobile-dropdown { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .mobile-dropdown.active { max-height: 300px; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .price-card { transition: all 0.3s ease; }
+        .price-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-cream text-primary font-sans">
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="text-2xl font-serif font-medium tracking-wider text-primary">杨雪刺绣</a>
+                <div class="hidden lg:flex items-center space-x-10">
+                    <a href="index.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">首页</a>
+                    <div class="nav-item">
+                        <a href="works.html" class="nav-link text-primary text-sm tracking-widest font-light flex items-center gap-2">作品展示<i class="fas fa-chevron-down text-xs"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="works-guoli.html" class="dropdown-item">双面三异绣·国礼</a>
+                            <a href="works-foxiang.html" class="dropdown-item">苏绣佛像系列</a>
+                            <a href="works-bieshu.html" class="dropdown-item">别墅挂画私人订制</a>
+                            <a href="works-hunjia.html" class="dropdown-item">苏绣婚嫁系列</a>
+                            <a href="works-dongwu.html" class="dropdown-item">苏绣动物系列</a>
+                            <a href="works-renwu.html" class="dropdown-item">人物定制系列</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="custom.html" class="nav-link text-accent text-sm tracking-widest font-light flex items-center gap-2">定制服务<i class="fas fa-chevron-down text-xs"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="custom-process.html" class="dropdown-item">定制流程</a>
+                            <a href="custom-price.html" class="dropdown-item text-accent">价格参考</a>
+                            <a href="custom-case.html" class="dropdown-item">案例展示</a>
+                            <a href="custom-consult.html" class="dropdown-item">在线咨询</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">关于我</a>
+                    <div class="nav-item">
+                        <a href="visit.html" class="nav-link text-primary text-sm tracking-widest font-light flex items-center gap-2">参观资讯<i class="fas fa-chevron-down text-xs"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="visit-info.html" class="dropdown-item">预约参观</a>
+                            <a href="visit-guide.html" class="dropdown-item">导览服务</a>
+                            <a href="visit-diy.html" class="dropdown-item">刺绣体验</a>
+                            <a href="visit-contact.html" class="dropdown-item">交通指南</a>
+                        </div>
+                    </div>
+                </div>
+                <button id="menuBtn" class="lg:hidden text-2xl text-primary"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="mobile-menu lg:hidden bg-white/98 backdrop-blur-md">
+            <div class="container mx-auto px-6 py-6">
+                <a href="index.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">首页</a>
+                <div class="border-b border-gray-100">
+                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-works">作品展示<i class="fas fa-chevron-down text-sm transition-transform duration-300"></i></button>
+                    <div id="mobile-works" class="mobile-dropdown pl-4">
+                        <a href="works-guoli.html" class="block py-3 text-sm text-secondary">双面三异绣·国礼</a>
+                        <a href="works-foxiang.html" class="block py-3 text-sm text-secondary">苏绣佛像系列</a>
+                        <a href="works-bieshu.html" class="block py-3 text-sm text-secondary">别墅挂画私人订制</a>
+                        <a href="works-hunjia.html" class="block py-3 text-sm text-secondary">苏绣婚嫁系列</a>
+                        <a href="works-dongwu.html" class="block py-3 text-sm text-secondary">苏绣动物系列</a>
+                        <a href="works-renwu.html" class="block py-3 text-sm text-secondary">人物定制系列</a>
+                    </div>
+                </div>
+                <div class="border-b border-gray-100">
+                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center text-accent" data-target="mobile-custom">定制服务<i class="fas fa-chevron-down text-sm transition-transform duration-300 rotate-180"></i></button>
+                    <div id="mobile-custom" class="mobile-dropdown active pl-4">
+                        <a href="custom-process.html" class="block py-3 text-sm text-secondary">定制流程</a>
+                        <a href="custom-price.html" class="block py-3 text-sm text-accent">价格参考</a>
+                        <a href="custom-case.html" class="block py-3 text-sm text-secondary">案例展示</a>
+                        <a href="custom-consult.html" class="block py-3 text-sm text-secondary">在线咨询</a>
+                    </div>
+                </div>
+                <a href="about.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">关于我</a>
+                <div class="border-b border-gray-100">
+                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-visit">参观资讯<i class="fas fa-chevron-down text-sm transition-transform duration-300"></i></button>
+                    <div id="mobile-visit" class="mobile-dropdown pl-4">
+                        <a href="visit-info.html" class="block py-3 text-sm text-secondary">预约参观</a>
+                        <a href="visit-guide.html" class="block py-3 text-sm text-secondary">导览服务</a>
+                        <a href="visit-diy.html" class="block py-3 text-sm text-secondary">刺绣体验</a>
+                        <a href="visit-contact.html" class="block py-3 text-sm text-secondary">交通指南</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="pt-32 pb-12 bg-white">
+        <div class="container mx-auto px-6 lg:px-12 text-center">
+            <span class="text-accent text-sm tracking-widest fade-in">定制服务</span>
+            <h1 class="text-4xl md:text-5xl font-serif font-light tracking-wider mt-4 mb-6 fade-in">价格参考</h1>
+            <div class="w-24 h-px bg-accent mx-auto mb-8 fade-in"></div>
+            <p class="text-secondary max-w-2xl mx-auto leading-relaxed fade-in">根据作品类型、尺寸、复杂度提供透明报价</p>
+        </div>
+    </section>
+    <section class="py-16 bg-cream">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-serif font-light tracking-wider mb-4">定制类型价格</h2>
+                <div class="w-16 h-px bg-accent mx-auto"></div>
+                <p class="text-secondary mt-4">以下价格为参考范围，具体报价根据作品复杂度而定</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="price-card bg-white p-8 fade-in">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-serif tracking-wider text-center mb-4">人物肖像</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-serif text-accent">¥8,000</span>
+                        <span class="text-secondary">起</span>
+                    </div>
+                    <ul class="text-sm text-secondary space-y-3 mb-8">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>30×40cm 起步尺寸</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>1:1 还原照片细节</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>制作周期 2-3个月</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>含专业装裱</li>
+                    </ul>
+                    <a href="custom-consult.html" class="block text-center py-3 border border-accent text-accent text-sm tracking-widest hover:bg-accent hover:text-primary transition-all duration-300">咨询详情</a>
+                </div>
+                <div class="price-card bg-white p-8 fade-in" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-paw text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-serif tracking-wider text-center mb-4">宠物定制</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-serif text-accent">¥5,000</span>
+                        <span class="text-secondary">起</span>
+                    </div>
+                    <ul class="text-sm text-secondary space-y-3 mb-8">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>25×35cm 起步尺寸</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>捕捉神态细节</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>制作周期 1-2个月</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>含专业装裱</li>
+                    </ul>
+                    <a href="custom-consult.html" class="block text-center py-3 border border-accent text-accent text-sm tracking-widest hover:bg-accent hover:text-primary transition-all duration-300">咨询详情</a>
+                </div>
+                <div class="price-card bg-white p-8 fade-in" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-home text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-serif tracking-wider text-center mb-4">空间装饰</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-serif text-accent">¥15,000</span>
+                        <span class="text-secondary">起</span>
+                    </div>
+                    <ul class="text-sm text-secondary space-y-3 mb-8">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>60×80cm 起步尺寸</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>山水/花鸟/抽象</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>制作周期 3-6个月</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>含高端装裱</li>
+                    </ul>
+                    <a href="custom-consult.html" class="block text-center py-3 border border-accent text-accent text-sm tracking-widest hover:bg-accent hover:text-primary transition-all duration-300">咨询详情</a>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="price-card bg-white p-8 fade-in">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-heart text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-serif tracking-wider text-center mb-4">婚庆礼品</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-serif text-accent">¥3,000</span>
+                        <span class="text-secondary">起</span>
+                    </div>
+                    <ul class="text-sm text-secondary space-y-3 mb-8">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>20×30cm 起步尺寸</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>龙凤/鸳鸯/牡丹</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>制作周期 1-2个月</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>含喜庆包装</li>
+                    </ul>
+                    <a href="custom-consult.html" class="block text-center py-3 border border-accent text-accent text-sm tracking-widest hover:bg-accent hover:text-primary transition-all duration-300">咨询详情</a>
+                </div>
+                <div class="price-card bg-white p-8 fade-in" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-gem text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-serif tracking-wider text-center mb-4">双面三异绣</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-serif text-accent">¥50,000</span>
+                        <span class="text-secondary">起</span>
+                    </div>
+                    <ul class="text-sm text-secondary space-y-3 mb-8">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>40×50cm 起步尺寸</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>双面异色异针异绣</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>制作周期 6-12个月</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i>收藏级装裱</li>
+                    </ul>
+                    <a href="custom-consult.html" class="block text-center py-3 border border-accent text-accent text-sm tracking-widest hover:bg-accent hover:text-primary transition-all duration-300">咨询详情</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl font-serif tracking-wider text-center mb-12 fade-in">价格说明</h2>
+                <div class="space-y-6 fade-in">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-accent text-sm font-bold">1</span>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">尺寸影响</h4>
+                            <p class="text-secondary text-sm">作品尺寸越大，所需工时越长，价格相应增加。以上报价为起步尺寸，具体价格根据实际尺寸计算。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-accent text-sm font-bold">2</span>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">复杂度影响</h4>
+                            <p class="text-secondary text-sm">作品复杂度（色彩数量、细节程度、针法难度）会影响最终报价。简单图案与复杂场景价格差异较大。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-accent text-sm font-bold">3</span>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">付款方式</h4>
+                            <p class="text-secondary text-sm">签订合同后支付50%定金，成品验收后支付尾款。支持银行转账、支付宝、微信支付。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-accent text-sm font-bold">4</span>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">售后服务</h4>
+                            <p class="text-secondary text-sm">所有作品提供终身保养指导。如有质量问题，一年内免费修复。运输损坏由我们承担责任。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6 lg:px-12 text-center">
+            <h2 class="text-3xl font-serif font-light tracking-wider mb-6 fade-in">获取专属报价</h2>
+            <p class="text-white/70 mb-8 max-w-xl mx-auto fade-in">告诉我们您的需求，我们将为您提供详细报价</p>
+            <a href="custom-consult.html" class="inline-block px-10 py-4 border border-accent bg-accent text-primary text-sm tracking-widest hover:bg-transparent hover:text-white transition-all duration-500 fade-in">免费咨询</a>
+        </div>
+    </section>
+    <footer class="py-16 bg-cream border-t border-gray-200">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="text-2xl font-serif tracking-wider text-primary mb-6 block">杨雪刺绣</a>
+                    <p class="text-secondary text-sm leading-relaxed max-w-md">以东方美学为根基，将传统刺绣技艺与现代设计理念相结合，绣出具有当代审美又不失古典韵味的艺术作品。</p>
+                </div>
+                <div>
+                    <h4 class="text-primary font-medium tracking-wider mb-6 text-sm">快速链接</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="works.html" class="text-secondary hover:text-accent transition-colors">作品展示</a></li>
+                        <li><a href="custom.html" class="text-secondary hover:text-accent transition-colors">定制服务</a></li>
+                        <li><a href="about.html" class="text-secondary hover:text-accent transition-colors">关于我</a></li>
+                        <li><a href="visit.html" class="text-secondary hover:text-accent transition-colors">参观资讯</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-primary font-medium tracking-wider mb-6 text-sm">联系方式</h4>
+                    <ul class="space-y-3 text-sm text-secondary">
+                        <li class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-accent"></i>浙江省台州市</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-accent"></i>contact@yangxuecixiu.top</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-xs text-secondary">© 2026 杨雪刺绣工作室. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-secondary hover:text-accent transition-colors"><i class="fab fa-weixin text-lg"></i></a>
+                    <a href="#" class="text-secondary hover:text-accent transition-colors"><i class="fab fa-weibo text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            menuBtn.innerHTML = mobileMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        document.querySelectorAll('.mobile-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const target = document.getElementById(toggle.dataset.target);
+                const icon = toggle.querySelector('i');
+                target.classList.toggle('active');
+                icon.style.transform = target.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+        });
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

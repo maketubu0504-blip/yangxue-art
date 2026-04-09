@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苏绣佛像系列 | 杨雪刺绣工作室</title>
+    <meta name="description" content="杨雪刺绣佛像系列作品，以慈悲与智慧为内核，还原佛像的庄严与灵动">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#2c3e2d', secondary: '#5a6b5c', accent: '#c9a87c', cream: '#f5f2eb', earth: '#8b7355' },
+                    fontFamily: { serif: ['Noto Serif SC', 'serif'], sans: ['Noto Sans SC', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-item { position: relative; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 200px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-top: 3px solid #c9a87c; box-shadow: 0 10px 40px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 100; }
+        .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-item { display: block; padding: 14px 24px; color: #2c3e2d; font-size: 14px; letter-spacing: 1px; border-bottom: 1px solid rgba(0,0,0,0.05); transition: all 0.2s ease; }
+        .dropdown-item:hover { background: #f5f2eb; color: #c9a87c; padding-left: 28px; }
+        .dropdown-item:last-child { border-bottom: none; }
+        .nav-link { position: relative; padding: 8px 0; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #c9a87c; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .mobile-menu.active { max-height: 600px; }
+        .mobile-dropdown { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .mobile-dropdown.active { max-height: 300px; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-cream text-primary font-sans">
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="text-2xl font-serif font-medium tracking-wider text-primary">杨雪刺绣</a>
+                <div class="hidden lg:flex items-center space-x-10">
+                    <a href="index.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">首页</a>
+                    <div class="nav-item">
+                        <a href="works.html" class="nav-link text-accent text-sm tracking-widest font-light flex items-center gap-2">作品展示<i class="fas fa-chevron-down text-xs"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="works-guoli.html" class="dropdown-item">双面三异绣·国礼</a>
+                            <a href="works-foxiang.html" class="dropdown-item text-accent">苏绣佛像系列</a>
+                            <a href="works-bieshu.html" class="dropdown-item">别墅挂画私人订制</a>
+                            <a href="works-hunjia.html" class="dropdown-item">苏绣婚嫁系列</a>
+                            <a href="works-dongwu.html" class="dropdown-item">苏绣动物系列</a>
+                            <a href="works-renwu.html" class="dropdown-item">人物定制系列</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="custom.html" class="nav-link text-primary text-sm tracking-widest font-light flex items-center gap-2">定制服务<i class="fas fa-chevron-down text-xs"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="custom-process.html" class="dropdown-item">定制流程</a>
+                            <a href="custom-price.html" class="dropdown-item">价格参考</a>
+                            <a href="custom-case.html" class="dropdown-item">案例展示</a>
+                            <a href="custom-consult.html" class="dropdown-item">在线咨询</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">关于我</a>
+                    <div class="nav-item">
+                        <a href="visit.html" class="nav-link text-primary text-sm tracking-widest font-light flex items-center gap-2">参观资讯<i class="fas fa-chevron-down text-xs"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="visit-info.html" class="dropdown-item">预约参观</a>
+                            <a href="visit-guide.html" class="dropdown-item">导览服务</a>
+                            <a href="visit-diy.html" class="dropdown-item">刺绣体验</a>
+                            <a href="visit-contact.html" class="dropdown-item">交通指南</a>
+                        </div>
+                    </div>
+                </div>
+                <button id="menuBtn" class="lg:hidden text-2xl text-primary"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="mobile-menu lg:hidden bg-white/98 backdrop-blur-md">
+            <div class="container mx-auto px-6 py-6">
+                <a href="index.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">首页</a>
+                <div class="border-b border-gray-100">
+                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center text-accent" data-target="mobile-works">作品展示<i class="fas fa-chevron-down text-sm transition-transform duration-300 rotate-180"></i></button>
+                    <div id="mobile-works" class="mobile-dropdown active pl-4">
+                        <a href="works-guoli.html" class="block py-3 text-sm text-secondary">双面三异绣·国礼</a>
+                        <a href="works-foxiang.html" class="block py-3 text-sm text-accent">苏绣佛像系列</a>
+                        <a href="works-bieshu.html" class="block py-3 text-sm text-secondary">别墅挂画私人订制</a>
+                        <a href="works-hunjia.html" class="block py-3 text-sm text-secondary">苏绣婚嫁系列</a>
+                        <a href="works-dongwu.html" class="block py-3 text-sm text-secondary">苏绣动物系列</a>
+                        <a href="works-renwu.html" class="block py-3 text-sm text-secondary">人物定制系列</a>
+                    </div>
+                </div>
+                <div class="border-b border-gray-100">
+                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-custom">定制服务<i class="fas fa-chevron-down text-sm transition-transform duration-300"></i></button>
+                    <div id="mobile-custom" class="mobile-dropdown pl-4">
+                        <a href="custom-process.html" class="block py-3 text-sm text-secondary">定制流程</a>
+                        <a href="custom-price.html" class="block py-3 text-sm text-secondary">价格参考</a>
+                        <a href="custom-case.html" class="block py-3 text-sm text-secondary">案例展示</a>
+                        <a href="custom-consult.html" class="block py-3 text-sm text-secondary">在线咨询</a>
+                    </div>
+                </div>
+                <a href="about.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">关于我</a>
+                <div class="border-b border-gray-100">
+                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-visit">参观资讯<i class="fas fa-chevron-down text-sm transition-transform duration-300"></i></button>
+                    <div id="mobile-visit" class="mobile-dropdown pl-4">
+                        <a href="visit-info.html" class="block py-3 text-sm text-secondary">预约参观</a>
+                        <a href="visit-guide.html" class="block py-3 text-sm text-secondary">导览服务</a>
+                        <a href="visit-diy.html" class="block py-3 text-sm text-secondary">刺绣体验</a>
+                        <a href="visit-contact.html" class="block py-3 text-sm text-secondary">交通指南</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="pt-32 pb-12 bg-white">
+        <div class="container mx-auto px-6 lg:px-12 text-center">
+            <span class="text-accent text-sm tracking-widest fade-in">作品展示</span>
+            <h1 class="text-4xl md:text-5xl font-serif font-light tracking-wider mt-4 mb-6 fade-in">苏绣佛像系列</h1>
+            <div class="w-24 h-px bg-accent mx-auto mb-8 fade-in"></div>
+            <p class="text-secondary max-w-2xl mx-auto leading-relaxed fade-in">以慈悲与智慧为内核，还原佛像的庄严与灵动</p>
+        </div>
+    </section>
+    <section class="py-16 bg-cream">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1601823984263-b87b5972c2c1?w=800&q=80" alt="苏绣佛像" class="w-full h-[500px] object-cover shadow-2xl">
+                </div>
+                <div class="fade-in">
+                    <h2 class="text-2xl font-serif tracking-wider mb-6">苏绣佛像</h2>
+                    <div class="w-16 h-px bg-accent mb-6"></div>
+                    <p class="text-secondary leading-relaxed mb-6">佛像刺绣以慈悲与智慧为内核，通过针线的疏密变化、光泽表现，还原佛像的庄严与灵动。每一尊佛像都是经过精心设计，由经验丰富的绣师耗时数月甚至数年完成。</p>
+                    <p class="text-secondary leading-relaxed mb-6">杨雪老师的佛像作品多次获得国家级金奖，被众多寺院和收藏家珍藏。2021年作品《佛像》荣获第十一届「艺博杯」金奖、特等奖、突出贡献奖。</p>
+                    <div class="flex gap-4">
+                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">慈悲庄严</span>
+                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">金奖作品</span>
+                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">私人定制</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden cursor-pointer fade-in">
+                    <img src="https://images.unsplash.com/photo-1590894849124-5a0b8d5c2c5c?w=600&q=80" alt="佛像作品1" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-end">
+                        <div class="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 text-white">
+                            <h3 class="text-lg font-serif tracking-wider">观世音菩萨</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden cursor-pointer fade-in" style="transition-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=600&q=80" alt="佛像作品2" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-end">
+                        <div class="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 text-white">
+                            <h3 class="text-lg font-serif tracking-wider">弥勒佛</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden cursor-pointer fade-in" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1560508180-03f285bc6758?w=600&q=80" alt="佛像作品3" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-end">
+                        <div class="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 text-white">
+                            <h3 class="text-lg font-serif tracking-wider">释迦牟尼</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6 lg:px-12 text-center">
+            <h2 class="text-3xl font-serif font-light tracking-wider mb-6 fade-in">定制专属佛像作品</h2>
+            <p class="text-white/70 mb-8 max-w-xl mx-auto fade-in">为您定制庄严慈悲的佛像刺绣艺术品</p>
+            <a href="custom-consult.html" class="inline-block px-10 py-4 border border-accent bg-accent text-primary text-sm tracking-widest hover:bg-transparent hover:text-white transition-all duration-500 fade-in">立即咨询</a>
+        </div>
+    </section>
+    <footer class="py-16 bg-cream border-t border-gray-200">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="text-2xl font-serif tracking-wider text-primary mb-6 block">杨雪刺绣</a>
+                    <p class="text-secondary text-sm leading-relaxed max-w-md">以东方美学为根基，将传统刺绣技艺与现代设计理念相结合，绣出具有当代审美又不失古典韵味的艺术作品。</p>
+                </div>
+                <div>
+                    <h4 class="text-primary font-medium tracking-wider mb-6 text-sm">快速链接</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="works.html" class="text-secondary hover:text-accent transition-colors">作品展示</a></li>
+                        <li><a href="custom.html" class="text-secondary hover:text-accent transition-colors">定制服务</a></li>
+                        <li><a href="about.html" class="text-secondary hover:text-accent transition-colors">关于我</a></li>
+                        <li><a href="visit.html" class="text-secondary hover:text-accent transition-colors">参观资讯</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-primary font-medium tracking-wider mb-6 text-sm">联系方式</h4>
+                    <ul class="space-y-3 text-sm text-secondary">
+                        <li class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-accent"></i>浙江省台州市</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-accent"></i>contact@yangxuecixiu.top</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-xs text-secondary">© 2026 杨雪刺绣工作室. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-secondary hover:text-accent transition-colors"><i class="fab fa-weixin text-lg"></i></a>
+                    <a href="#" class="text-secondary hover:text-accent transition-colors"><i class="fab fa-weibo text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            menuBtn.innerHTML = mobileMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        document.querySelectorAll('.mobile-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const target = document.getElementById(toggle.dataset.target);
+                const icon = toggle.querySelector('i');
+                target.classList.toggle('active');
+                icon.style.transform = target.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+        });
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
