@@ -3,347 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>杨雪刺绣艺术工作室 | yangxuecixiu.top</title>
-    <meta name="description" content="杨雪刺绣艺术工作室，专注传统刺绣艺术创作与传承">
-    <meta name="keywords" content="杨雪刺绣, 传统刺绣, 艺术创作, 手工刺绣">
+    <title>杨雪刺绣艺术工作室 | 苏绣艺术与高端定制</title>
+    <meta name="description" content="杨雪刺绣艺术工作室，专注苏绣、缂丝与高端空间定制，提供艺术收藏、婚嫁礼品、私人肖像和体验课程。">
+    <meta name="keywords" content="杨雪刺绣, 苏绣, 缂丝, 非遗刺绣, 高端定制, 别墅挂画, 婚嫁刺绣">
     <meta name="author" content="杨雪">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 字体：Noto Serif SC 衬线字体，适配艺术官网质感 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- 图标 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2c3e2d',    // 深绿主色，自然艺术感
-                        secondary: '#c9a87c',  // 金色辅助色
-                        accent: '#f5f2eb',     // 米白底色
-                    },
-                    fontFamily: {
-                        serif: ['Noto Serif SC', 'serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .text-balance {
-                text-wrap: balance;
-            }
-            .scroll-smooth {
-                scroll-behavior: smooth;
-            }
-            .parallax {
-                background-attachment: fixed;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-            .fade-in {
-                opacity: 0;
-                transform: translateY(30px);
-                transition: opacity 0.8s ease, transform 0.8s ease;
-            }
-            .fade-in.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            /* 下拉菜单动画 */
-            .dropdown-enter {
-                transition: opacity 0.3s ease, transform 0.3s ease;
-                transform: translateY(-10px);
-            }
-            .dropdown-enter-active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/site.js" defer></script>
 </head>
-<body class="bg-accent text-primary font-serif scroll-smooth overflow-x-hidden">
-    <!-- 统一导航栏（多级下拉+页面跳转，1:1复刻参考站） -->
-    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 bg-accent/95 backdrop-blur-md">
-        <div class="container mx-auto px-6 py-6">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <a href="index.html" class="text-4xl font-light tracking-wider">杨雪刺绣艺术工作室</a>
+<body>
+    <nav class="yx-nav" aria-label="主导航">
+        <div class="yx-container">
+            <div class="yx-nav__inner">
+                <a href="index.html" class="yx-brand" aria-label="杨雪刺绣艺术工作室首页">
+                    <strong>杨雪刺绣</strong>
+                    <span>Embroidery Atelier</span>
+                </a>
 
-                <!-- 桌面端主导航（多级下拉） -->
-                <div class="hidden md:flex space-x-12 items-center">
-                    <!-- 1. 首页 -->
-                    <a href="index.html" class="text-xl tracking-wide hover:text-secondary transition-colors duration-300">首页</a>
-
-                    <!-- 2. 作品展示（一级菜单 + 二级下拉） -->
-                    <div class="relative group">
-                        <a href="works.html" class="text-xl tracking-wide hover:text-secondary transition-colors duration-300 flex items-center gap-1">
-                            作品展示
-                            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                        </a>
-                        <!-- 二级下拉菜单 -->
-                        <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                            <a href="works-guoli.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">国礼系列</a>
-                            <a href="works-foxiang.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">佛像系列</a>
-                            <a href="works-dongwu.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">动物系列</a>
-                            <a href="works-bieshu.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">别墅装饰系列</a>
-                            <a href="works-renwu.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">人物系列</a>
+                <div class="yx-nav__links">
+                    <a href="index.html" class="yx-nav__link">首页</a>
+                    <div class="yx-nav__item">
+                        <a href="works.html" class="yx-nav__link">作品展示</a>
+                        <div class="yx-dropdown">
+                            <a href="works-guoli.html">双面三异绣·国礼</a>
+                            <a href="works-foxiang.html">苏绣佛像系列</a>
+                            <a href="works-bieshu.html">别墅挂画私人订制</a>
+                            <a href="works-hunjia.html">苏绣婚嫁系列</a>
+                            <a href="works-dongwu.html">苏绣动物系列</a>
+                            <a href="works-renwu.html">人物定制系列</a>
                         </div>
                     </div>
-
-                    <!-- 3. 定制服务（一级菜单 + 二级下拉，复刻参考站） -->
-                    <div class="relative group">
-                        <a href="custom.html" class="text-xl tracking-wide hover:text-secondary transition-colors duration-300 flex items-center gap-1">
-                            定制服务
-                            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                        </a>
-                        <!-- 二级下拉菜单 -->
-                        <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                            <a href="custom-process.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">定制流程</a>
-                            <a href="custom-price.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">报价说明</a>
-                            <a href="custom-case.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">定制案例</a>
-                            <a href="custom-consult.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">在线咨询</a>
+                    <div class="yx-nav__item">
+                        <a href="custom.html" class="yx-nav__link">定制服务</a>
+                        <div class="yx-dropdown">
+                            <a href="custom-process.html">定制流程</a>
+                            <a href="custom-price.html">价格参考</a>
+                            <a href="custom-case.html">案例展示</a>
+                            <a href="custom-consult.html">在线咨询</a>
                         </div>
                     </div>
-
-                    <!-- 4. 关于我 -->
-                    <a href="about.html" class="text-xl tracking-wide hover:text-secondary transition-colors duration-300">关于我</a>
-
-                    <!-- 5. 最新消息（一级菜单 + 二级下拉） -->
-                    <div class="relative group">
-                        <a href="news.html" class="text-xl tracking-wide hover:text-secondary transition-colors duration-300 flex items-center gap-1">
-                            最新消息
-                            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                        </a>
-                        <!-- 二级下拉菜单 -->
-                        <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                            <a href="news.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">新闻报道</a>
-                            <a href="#" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">活动讯息</a>
-                            <a href="#" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">展览讯息</a>
-                        </div>
-                    </div>
-
-                    <!-- 6. 参观资讯（一级菜单 + 二级下拉，复刻参考站） -->
-                    <div class="relative group">
-                        <a href="visit.html" class="text-xl tracking-wide hover:text-secondary transition-colors duration-300 flex items-center gap-1">
-                            参观资讯
-                            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                        </a>
-                        <!-- 二级下拉菜单 -->
-                        <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                            <a href="visit-info.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">参观信息</a>
-                            <a href="visit-guide.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">交通指南</a>
-                            <a href="visit-diy.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">体验活动</a>
-                            <a href="visit-contact.html" class="block px-6 py-4 text-base hover:bg-secondary hover:text-white transition-colors duration-300">联系我们</a>
-                        </div>
-                    </div>
+                    <a href="about.html" class="yx-nav__link">关于杨雪</a>
+                    <a href="news.html" class="yx-nav__link">最新消息</a>
+                    <a href="visit-contact.html" class="yx-nav__link">联系预约</a>
                 </div>
 
-                <!-- 移动端菜单按钮 -->
-                <button id="menuBtn" class="md:hidden text-2xl">
-                    <i class="fas fa-bars"></i>
+                <button class="yx-menu-button" type="button" aria-label="打开菜单" aria-expanded="false" data-menu-button>
+                    <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
-        </div>
 
-        <!-- 移动端菜单 -->
-        <div id="mobileMenu" class="md:hidden hidden bg-accent/95 backdrop-blur-md w-full">
-            <div class="container mx-auto px-6 py-6 flex flex-col space-y-6">
-                <a href="index.html" class="text-xl tracking-wide py-3 border-b border-primary/10">首页</a>
-                <!-- 移动端作品展示 -->
-                <div class="flex flex-col space-y-3 py-3 border-b border-primary/10">
-                    <span class="text-xl tracking-wide">作品展示</span>
-                    <a href="works-guoli.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">国礼系列</a>
-                    <a href="works-foxiang.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">佛像系列</a>
-                    <a href="works-dongwu.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">动物系列</a>
-                </div>
-                <!-- 移动端定制服务 -->
-                <div class="flex flex-col space-y-3 py-3 border-b border-primary/10">
-                    <span class="text-xl tracking-wide">定制服务</span>
-                    <a href="custom-process.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">定制流程</a>
-                    <a href="custom-price.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">报价说明</a>
-                </div>
-                <a href="about.html" class="text-xl tracking-wide py-3 border-b border-primary/10">关于我</a>
-                <!-- 移动端最新消息 -->
-                <div class="flex flex-col space-y-3 py-3 border-b border-primary/10">
-                    <span class="text-xl tracking-wide">最新消息</span>
-                    <a href="news.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">新闻报道</a>
-                </div>
-                <!-- 移动端参观资讯 -->
-                <div class="flex flex-col space-y-3 py-3">
-                    <span class="text-xl tracking-wide">参观资讯</span>
-                    <a href="visit-info.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">参观信息</a>
-                    <a href="visit-guide.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">交通指南</a>
-                    <a href="visit-contact.html" class="text-lg pl-4 hover:text-secondary transition-colors duration-300">联系我们</a>
-                </div>
+            <div class="yx-mobile-menu" data-mobile-menu>
+                <a href="works.html">作品展示</a>
+                <a href="custom.html">定制服务</a>
+                <a href="about.html">关于杨雪</a>
+                <a href="news.html">最新消息</a>
+                <a href="visit-contact.html">联系预约</a>
             </div>
         </div>
     </nav>
 
-    <!-- 首页 Banner（视差效果，艺术感拉满） -->
-    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1060/1920/1080')] bg-center bg-cover parallax">
-            <div class="absolute inset-0 bg-primary/50"></div>
-        </div>
-        <div class="relative z-10 text-center text-white px-6">
-            <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-light tracking-[0.2em] mb-6 fade-in">杨雪刺绣艺术工作室</h1>
-            <p class="text-[clamp(1rem,3vw,1.5rem)] font-light tracking-[0.1em] mb-12 fade-in">以针为笔，以线为墨，绣尽东方雅致</p>
-            <a href="works.html" class="inline-block border border-white px-12 py-4 text-lg tracking-wider hover:bg-white hover:text-primary transition-all duration-500 fade-in">
-                探索作品
-            </a>
-        </div>
-        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-            <i class="fas fa-chevron-down text-2xl"></i>
-        </div>
-    </section>
+    <main>
+        <section class="yx-home-hero">
+            <div class="yx-home-hero__media" aria-hidden="true">
+                <img src="images/别墅挂画主图-1.png" alt="">
+            </div>
+            <div class="yx-container">
+                <div class="yx-home-hero__content fade-in">
+                    <span class="yx-eyebrow">Suzhou Embroidery</span>
+                    <h1>让一针一线，<br>成为可传世的<br>东方艺术。</h1>
+                    <p>杨雪以苏绣与缂丝为语言，将传统非遗技艺带入当代空间、礼仪与收藏场景，为私人宅邸、婚嫁礼品、人物肖像和艺术收藏创作独一无二的作品。</p>
+                    <div class="yx-hero-actions">
+                        <a href="works.html" class="yx-btn yx-btn--gold">浏览作品 <i class="fa-solid fa-arrow-right-long"></i></a>
+                        <a href="custom-consult.html" class="yx-btn yx-btn--light">预约定制</a>
+                    </div>
+                </div>
+                <div class="yx-hero-meta fade-in">
+                    <div>
+                        <strong>12+</strong>
+                        <span>年刺绣深耕</span>
+                    </div>
+                    <div>
+                        <strong>400万+</strong>
+                        <span>全网关注</span>
+                    </div>
+                    <div>
+                        <strong>2城</strong>
+                        <span>苏州 / 杭州服务</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- 首页简介区 -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center fade-in">
-                <h2 class="text-[clamp(2rem,5vw,3rem)] font-light tracking-wider mb-8">关于工作室</h2>
-                <div class="w-24 h-px bg-secondary mx-auto mb-12"></div>
-                <p class="text-lg leading-relaxed text-primary/80 mb-12 text-balance">
-                    杨雪刺绣工作室，专注传统苏绣、湘绣技艺传承与创新，十余年来深耕花鸟、山水、人物等各类刺绣题材，
-                    以精湛技艺、原创设计，为每一件作品注入东方美学灵魂，让古老刺绣艺术在当代焕发新生。
-                </p>
-                <div class="flex flex-wrap justify-center gap-8">
-                    <a href="works.html" class="px-8 py-4 border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-500">
-                        查看作品
+        <section class="yx-section yx-section--silk">
+            <div class="yx-container yx-intro">
+                <div class="yx-portrait fade-in">
+                    <img src="images/杨雪介绍.png" alt="杨雪正在进行刺绣创作">
+                </div>
+                <div class="yx-copy fade-in">
+                    <span class="yx-eyebrow">Artist Profile</span>
+                    <h2 class="yx-title">杨雪，以绣为生，以绣为乐。</h2>
+                    <p>杨雪是高级工艺美术师、青年刺绣手艺人、刺绣非遗传承人。她从苏州镇湖的细密针脚出发，持续探索传统技艺在当代审美中的表达方式。</p>
+                    <p>从国际文化交流、品牌合作到高端空间定制，她的创作既保留苏绣的精微，也强调作品进入真实生活后的气质、比例与情绪。</p>
+                    <div class="yx-tags">
+                        <span>高级工艺美术师</span>
+                        <span>刺绣非遗传承人</span>
+                        <span>苏绣 / 缂丝创作</span>
+                        <span>私人艺术定制</span>
+                    </div>
+                    <a href="about.html" class="yx-btn">认识杨雪</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-section">
+            <div class="yx-container">
+                <div class="yx-brochure-split">
+                    <div class="yx-brochure-media fade-in">
+                        <img src="images/brochure/brand-cover.jpg" alt="杨雪刺绣艺术工作室介绍册封面">
+                    </div>
+                    <div class="yx-copy fade-in">
+                        <span class="yx-eyebrow">Atelier Brochure</span>
+                        <h2 class="yx-title">精品收藏级苏绣，私人定制。</h2>
+                        <p>工作室介绍册将杨雪刺绣艺术定位为“中国·苏绣”的当代表达：专精于纯手工苏绣工艺，致力于传承非遗文化，让传统单品再次发光发热，也让丝织技艺走进当代生活。</p>
+                        <p>资料册里的业务体系包括双面三异绣国礼、苏绣佛像、别墅挂画私人订制、苏绣婚嫁、苏绣动物和人像定制。网站将这些内容重新组织成更适合线上浏览和咨询转化的结构。</p>
+                        <div class="yx-brochure-note">
+                            <div>
+                                <strong>400万+</strong>
+                                <span>互联网手工艺达人全网关注</span>
+                            </div>
+                            <div>
+                                <strong>1万+</strong>
+                                <span>婚书与人像等定制服务沉淀</span>
+                            </div>
+                        </div>
+                        <a href="custom.html" class="yx-btn">查看定制体系</a>
+                    </div>
+                </div>
+
+                <div class="yx-proof-strip">
+                    <article class="yx-proof-card fade-in">
+                        <img src="images/brochure/cross-collaboration.jpg" alt="杨雪刺绣跨界合作资料">
+                        <div>
+                            <h3>跨界合作</h3>
+                            <p>与品牌、媒体、文化项目和动画 IP 合作，让苏绣从传统工艺走向更开放的公共文化现场。</p>
+                        </div>
+                    </article>
+                    <article class="yx-proof-card fade-in">
+                        <img src="images/brochure/profile-timeline.jpg" alt="杨雪个人介绍、历程与获奖资料">
+                        <div>
+                            <h3>履历与荣誉</h3>
+                            <p>介绍册完整记录了杨雪的师承、非遗交流经历、品牌合作和多项工艺美术奖项。</p>
+                        </div>
+                    </article>
+                    <article class="yx-proof-card fade-in">
+                        <img src="images/brochure/lotus-artwork.jpg" alt="苏绣荷花作品细节">
+                        <div>
+                            <h3>东方花意</h3>
+                            <p>以荷花、花鸟、山水等东方意象为核心，让针脚、色彩与留白共同构成作品气韵。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-section">
+            <div class="yx-container">
+                <div class="yx-section-head fade-in">
+                    <div>
+                        <span class="yx-eyebrow">Selected Works</span>
+                        <h2 class="yx-title">作品不是装饰，是空间里被看见的时间。</h2>
+                    </div>
+                    <p>参考美术馆式首页的作品陈列逻辑，这里更进一步突出真实作品、真实场景和可定制方向，让访问者第一眼就知道杨雪的艺术可以如何进入自己的生活。</p>
+                </div>
+
+                <div class="yx-work-grid">
+                    <a href="works-bieshu.html" class="yx-work-card fade-in">
+                        <img src="images/别墅挂画-4.jpg" alt="别墅空间刺绣挂画">
+                        <div class="yx-work-card__body">
+                            <span>Space Commission</span>
+                            <h3>别墅挂画</h3>
+                            <p>按空间尺度、墙面比例和色调定制的艺术绣品。</p>
+                        </div>
                     </a>
-                    <a href="custom-consult.html" class="px-8 py-4 bg-secondary text-white hover:bg-secondary/90 transition-all duration-500">
-                        在线定制
+                    <a href="works-hunjia.html" class="yx-work-card fade-in">
+                        <img src="images/婚庆主图.png" alt="苏绣婚嫁作品">
+                        <div class="yx-work-card__body">
+                            <span>Wedding Ritual</span>
+                            <h3>婚嫁系列</h3>
+                            <p>让中式礼仪中的祝福，以丝线留下可收藏的光泽。</p>
+                        </div>
+                    </a>
+                    <a href="works-guoli.html" class="yx-work-card fade-in">
+                        <img src="images/别墅挂画主图-1.png" alt="苏绣艺术作品场景">
+                        <div class="yx-work-card__body">
+                            <span>Fine Embroidery</span>
+                            <h3>国礼系列</h3>
+                            <p>以更高规格的针法、构图和装裱回应礼赠场景。</p>
+                        </div>
+                    </a>
+                    <a href="works-renwu.html" class="yx-work-card fade-in">
+                        <img src="images/杨雪介绍.png" alt="人物刺绣创作">
+                        <div class="yx-work-card__body">
+                            <span>Portrait</span>
+                            <h3>人物定制</h3>
+                            <p>从照片到绣面，保留神态、光影与亲密记忆。</p>
+                        </div>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 首页快捷入口 -->
-    <section class="py-24 bg-accent">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 入口1：作品展示 -->
-                <a href="works.html" class="group relative overflow-hidden cursor-pointer fade-in">
-                    <img src="https://picsum.photos/id/1060/800/600" alt="作品展示" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-all duration-500 flex items-center justify-center">
-                        <h3 class="text-2xl font-light tracking-wider text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">作品展示</h3>
+        <section class="yx-section yx-section--jade">
+            <div class="yx-container">
+                <div class="yx-section-head fade-in">
+                    <div>
+                        <span class="yx-eyebrow">Custom Service</span>
+                        <h2 class="yx-title">从一面墙、一场婚礼，到一份家族礼物。</h2>
                     </div>
-                </a>
-                <!-- 入口2：定制服务 -->
-                <a href="custom.html" class="group relative overflow-hidden cursor-pointer fade-in">
-                    <img src="https://picsum.photos/id/1062/800/600" alt="定制服务" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-all duration-500 flex items-center justify-center">
-                        <h3 class="text-2xl font-light tracking-wider text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">定制服务</h3>
-                    </div>
-                </a>
-                <!-- 入口3：关于我 -->
-                <a href="about.html" class="group relative overflow-hidden cursor-pointer fade-in">
-                    <img src="https://picsum.photos/id/1005/800/600" alt="关于我" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-all duration-500 flex items-center justify-center">
-                        <h3 class="text-2xl font-light tracking-wider text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">关于我</h3>
-                    </div>
-                </a>
+                    <p>比参考站更清晰地呈现服务转化：用户可以直接理解定制类型、沟通路径和预约入口，而不是只停留在展示。</p>
+                </div>
+
+                <div class="yx-service-grid">
+                    <a href="custom-process.html" class="yx-service-item fade-in">
+                        <span>01</span>
+                        <h3>空间艺术定制</h3>
+                        <p>面向别墅、会所、酒店与新中式空间，提供题材、尺寸、装裱与陈设建议。</p>
+                    </a>
+                    <a href="works-hunjia.html" class="yx-service-item fade-in">
+                        <span>02</span>
+                        <h3>婚嫁礼品定制</h3>
+                        <p>围绕婚书、团扇、嫁衣与伴手礼，打造更有仪式感的中式婚礼记忆。</p>
+                    </a>
+                    <a href="visit-diy.html" class="yx-service-item fade-in">
+                        <span>03</span>
+                        <h3>非遗体验课程</h3>
+                        <p>适合亲子、企业文化活动、研学体验和城市文化内容合作。</p>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 统一页脚 -->
-    <footer class="py-12 bg-primary text-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <a href="index.html" class="text-2xl font-light tracking-wider">杨雪刺绣艺术工作室</a>
-                    <p class="text-sm opacity-80 mt-4">© 2026 yangxuecixiu.top. All rights reserved.</p>
+        <section class="yx-section yx-section--silk">
+            <div class="yx-container">
+                <div class="yx-section-head fade-in">
+                    <div>
+                        <span class="yx-eyebrow">Process</span>
+                        <h2 class="yx-title">定制流程清楚，艺术判断更从容。</h2>
+                    </div>
+                    <p>高端艺术网站不仅要好看，也要让客户知道下一步怎么走。流程越清楚，咨询越轻松。</p>
                 </div>
-                <div class="flex space-x-8">
-                    <a href="index.html" class="text-sm opacity-80 hover:text-secondary transition-colors duration-300">首页</a>
-                    <a href="works.html" class="text-sm opacity-80 hover:text-secondary transition-colors duration-300">作品</a>
-                    <a href="custom.html" class="text-sm opacity-80 hover:text-secondary transition-colors duration-300">服务</a>
-                    <a href="about.html" class="text-sm opacity-80 hover:text-secondary transition-colors duration-300">关于</a>
-                    <a href="visit-contact.html" class="text-sm opacity-80 hover:text-secondary transition-colors duration-300">联系</a>
+
+                <div class="yx-process">
+                    <div class="yx-step fade-in">
+                        <span>01</span>
+                        <h3>需求沟通</h3>
+                        <p>确认题材、用途、预算、空间照片或人物素材。</p>
+                    </div>
+                    <div class="yx-step fade-in">
+                        <span>02</span>
+                        <h3>方案设计</h3>
+                        <p>输出尺寸、构图、色彩、装裱和交付周期建议。</p>
+                    </div>
+                    <div class="yx-step fade-in">
+                        <span>03</span>
+                        <h3>手工创作</h3>
+                        <p>按确认方案进行刺绣创作，关键节点同步进度。</p>
+                    </div>
+                    <div class="yx-step fade-in">
+                        <span>04</span>
+                        <h3>装裱交付</h3>
+                        <p>完成装裱、包装与交付，必要时提供陈设建议。</p>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="yx-section">
+            <div class="yx-container">
+                <div class="yx-section-head fade-in">
+                    <div>
+                        <span class="yx-eyebrow">News & Studio</span>
+                        <h2 class="yx-title">让作品、经历与工作室现场一起说话。</h2>
+                    </div>
+                    <p>参考站有“美术馆花絮”，这里改为更适合个人艺术家的动态区，把作品、合作、体验活动放在同一条品牌叙事里。</p>
+                </div>
+
+                <div class="yx-news-grid">
+                    <a href="news.html" class="yx-news-card fade-in">
+                        <img src="images/杨雪介绍.png" alt="杨雪刺绣创作现场">
+                        <div class="yx-news-card__body">
+                            <time datetime="2026-05-02">Studio</time>
+                            <h3>从一方绣绷开始，走向更大的艺术现场</h3>
+                            <p>以创作过程、品牌合作和文化交流，建立更可信的艺术家形象。</p>
+                        </div>
+                    </a>
+                    <a href="custom-case.html" class="yx-news-card fade-in">
+                        <img src="images/别墅挂画-2.png" alt="私人空间刺绣定制案例">
+                        <div class="yx-news-card__body">
+                            <span>Case</span>
+                            <h3>私人空间定制案例</h3>
+                            <p>从题材到装裱，为空间保留一处安静而有分量的东方气韵。</p>
+                        </div>
+                    </a>
+                    <a href="visit-diy.html" class="yx-news-card fade-in">
+                        <img src="images/婚庆主图.png" alt="苏绣体验活动">
+                        <div class="yx-news-card__body">
+                            <span>Experience</span>
+                            <h3>刺绣体验与研学活动</h3>
+                            <p>让非遗不只被观看，也能被亲手感知。</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-section--jade">
+            <div class="yx-container yx-contact-band">
+                <div>
+                    <h2>想为一个空间或重要时刻，定制一件刺绣作品？</h2>
+                    <p>可提供苏州、杭州两地咨询与预约服务，也可先通过电话或邮件说明需求。</p>
+                </div>
+                <a href="custom-consult.html" class="yx-btn yx-btn--light">开始咨询</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="yx-footer">
+        <div class="yx-container">
+            <div class="yx-footer__grid">
+                <div>
+                    <h3>杨雪刺绣艺术工作室</h3>
+                    <p>以东方美学为根基，将传统刺绣技艺与当代空间、礼仪、收藏需求相结合，创作具有时间感与生命力的手工艺术作品。</p>
+                </div>
+                <div>
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="works.html">作品展示</a></li>
+                        <li><a href="custom.html">定制服务</a></li>
+                        <li><a href="about.html">关于杨雪</a></li>
+                        <li><a href="visit.html">参观资讯</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：17376565154</li>
+                        <li>邮箱：xiaoyu@byteinfinite.com</li>
+                        <li>苏州总部：江苏省苏州市高新区绣品街155号与卿渡</li>
+                        <li>杭州分公司：浙江省杭州市拱墅区祥园路33号众创大厦1楼奇人匠心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="yx-footer__bottom">
+                <span>© 2026 杨雪刺绣艺术工作室. All rights reserved.</span>
+                <span>Designed for embroidery art, collection and private commission.</span>
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // 导航栏滚动效果
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('shadow-md');
-                navbar.classList.remove('bg-accent/95');
-                navbar.classList.add('bg-white/95');
-            } else {
-                navbar.classList.remove('shadow-md');
-                navbar.classList.add('bg-accent/95');
-                navbar.classList.remove('bg-white/95');
-            }
-        });
-
-        // 移动端菜单
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuBtn.innerHTML = mobileMenu.classList.contains('hidden') 
-                ? '<i class="fas fa-bars"></i>' 
-                : '<i class="fas fa-times"></i>';
-        });
-
-        // 滚动动画
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        fadeElements.forEach(el => observer.observe(el));
-
-        // 图片懒加载
-        document.addEventListener("DOMContentLoaded", function() {
-            const lazyImages = document.querySelectorAll("img");
-            if ("IntersectionObserver" in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const image = entry.target;
-                            image.src = image.dataset.src || image.src;
-                            observer.unobserve(image);
-                        }
-                    });
-                });
-                lazyImages.forEach(image => imageObserver.observe(image));
-            }
-        });
-
-        // 平滑滚动（仅首页锚点生效，页面跳转用href）
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // 关闭移动端菜单
-                    mobileMenu.classList.add('hidden');
-                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
