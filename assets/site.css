@@ -627,6 +627,15 @@ nav#navbar .dropdown-item:hover,
     height: 420px;
 }
 
+.yx-news-card--portrait img {
+    object-fit: contain;
+    background: rgba(247, 243, 234, 0.76);
+}
+
+.yx-news-card--portrait:not(:first-child) img {
+    height: 300px;
+}
+
 .yx-news-card__body {
     padding: 26px;
 }
