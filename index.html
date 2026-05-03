@@ -144,17 +144,31 @@
                 </div>
 
                 <div class="yx-photo-grid">
-                    <figure class="yx-photo-tile yx-photo-tile--tall fade-in">
+                    <div class="yx-proof-intro fade-in">
+                        <span class="yx-eyebrow">Public Presence</span>
+                        <h3>履历为证，作品为主。</h3>
+                        <p>履历资料不再做密集拼图，也不把低像素照片硬撑成主视觉。页面以作品和真实现场为核心，活动与师承作为背景信息辅助说明。</p>
+                    </div>
+                    <figure class="yx-photo-tile yx-photo-tile--portrait fade-in">
                         <img src="images/studio/cultural-exchange.jpg" alt="杨雪参与海外文化交流活动">
-                        <figcaption>海外文化交流</figcaption>
+                        <figcaption>
+                            <strong>海外文化交流</strong>
+                            <span>参与江苏工艺美术文化交流，让苏绣走向更开放的公共文化现场。</span>
+                        </figcaption>
                     </figure>
-                    <figure class="yx-photo-tile fade-in">
-                        <img src="images/studio/studio-creation.jpg" alt="杨雪在工作室进行刺绣创作">
-                        <figcaption>工作室创作现场</figcaption>
-                    </figure>
-                    <figure class="yx-photo-tile fade-in">
+                    <figure class="yx-photo-tile yx-photo-tile--wide yx-photo-tile--mentor fade-in">
                         <img src="images/studio/mentor-photo.jpg" alt="杨雪与师承老师合影">
-                        <figcaption>师承与传承</figcaption>
+                        <figcaption>
+                            <strong>师承与传承</strong>
+                            <span>保留完整人物关系，避开资料册左侧文字，让合影只承担履历说明。</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="yx-photo-tile yx-photo-tile--wide fade-in">
+                        <img src="images/studio/overseas-award.jpg" alt="杨雪刺绣作品参与海外展示">
+                        <figcaption>
+                            <strong>作品海外展示</strong>
+                            <span>以苏绣作品参与跨文化展示和合作，延展传统工艺的当代语境。</span>
+                        </figcaption>
                     </figure>
                 </div>
             </div>
@@ -354,5 +368,21 @@
             </div>
         </div>
     </footer>
+    <script>
+        const fadeElements = document.querySelectorAll('.fade-in');
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            fadeElements.forEach((element) => observer.observe(element));
+        } else {
+            fadeElements.forEach((element) => element.classList.add('visible'));
+        }
+    </script>
 </body>
 </html>
