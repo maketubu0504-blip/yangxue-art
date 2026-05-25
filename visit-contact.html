@@ -36,6 +36,19 @@
         .mobile-dropdown.active { max-height: 300px; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .navigation-map {
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 124, 0.22);
+            background: #fffaf1;
+            box-shadow: 0 18px 48px rgba(44, 62, 45, 0.08);
+        }
+        .navigation-map img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
     </style>
     <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -146,14 +159,14 @@
                                 <i class="fas fa-map-marker-alt text-accent"></i>
                                 地址
                             </h4>
-                            <p class="text-secondary">苏州总部地址：江苏省苏州市高新区绣品街155号与卿渡XXX路XXX号<br>杨雪刺绣工作室</p>
+                            <p class="text-secondary">苏州总部地址：江苏省苏州市虎丘区绣品街155号<br>与卿渡刺绣 · 杨雪刺绣工作室</p>
                         </div>
                         <div class="bg-white p-6">
                             <h4 class="font-medium mb-3 flex items-center gap-2">
                                 <i class="fas fa-phone text-accent"></i>
                                 联系电话
                             </h4>
-                            <p class="text-secondary">400-XXX-XXXX</p>
+                            <p class="text-secondary">17376565154</p>
                         </div>
                         <div class="bg-white p-6">
                             <h4 class="font-medium mb-3 flex items-center gap-2">
@@ -167,9 +180,9 @@
                 <div class="fade-in">
                     <div class="bg-white p-8 shadow-sm h-full">
                         <h3 class="text-xl font-serif tracking-wider mb-6">地图导航</h3>
-                        <div class="w-full h-80 bg-gray-200 flex items-center justify-center">
-                            <p class="text-secondary">地图加载中...</p>
-                        </div>
+                        <figure class="navigation-map">
+                            <img src="images/contact/navigation-map.png" alt="与卿渡刺绣导航示意图">
+                        </figure>
                     </div>
                 </div>
             </div>
