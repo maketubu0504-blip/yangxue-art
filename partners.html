@@ -15,8 +15,8 @@
     <script src="assets/site.js" defer></script>
     <style>
         .partners-hero {
-            min-height: 72svh;
-            padding: 150px 0 72px;
+            min-height: 58svh;
+            padding: 122px 0 70px;
             background:
                 linear-gradient(180deg, rgba(255, 250, 241, 0.92), rgba(245, 242, 235, 0.98)),
                 radial-gradient(circle at 18% 10%, rgba(201, 168, 124, 0.24), transparent 34%),
@@ -25,34 +25,35 @@
 
         .partners-hero__grid {
             display: grid;
-            grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1.22fr);
-            gap: 56px;
+            grid-template-columns: minmax(280px, 0.54fr) minmax(520px, 1.46fr);
+            gap: 46px;
             align-items: center;
         }
 
         .partners-hero h1 {
-            margin: 18px 0 24px;
+            max-width: 520px;
+            margin: 18px 0 20px;
             font-family: var(--serif);
-            font-size: clamp(46px, 6vw, 84px);
+            font-size: clamp(34px, 3.1vw, 52px);
             font-weight: 500;
-            line-height: 1.08;
+            line-height: 1.22;
             letter-spacing: 0;
         }
 
         .partners-hero p {
-            max-width: 560px;
+            max-width: 500px;
             margin: 0;
             color: rgba(21, 22, 19, 0.68);
-            font-size: 17px;
-            line-height: 1.95;
+            font-size: 16px;
+            line-height: 1.82;
         }
 
         .partners-visual {
             position: relative;
-            padding: 12px;
+            padding: 10px;
             border: 1px solid rgba(201, 168, 124, 0.42);
             background: rgba(255, 250, 241, 0.68);
-            box-shadow: 0 30px 80px rgba(44, 62, 45, 0.14);
+            box-shadow: 0 26px 70px rgba(44, 62, 45, 0.13);
         }
 
         .partners-visual img {
@@ -65,12 +66,13 @@
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1px;
-            margin-top: 42px;
+            max-width: 500px;
+            margin-top: 30px;
             background: rgba(44, 62, 45, 0.14);
         }
 
         .partners-proof div {
-            padding: 22px;
+            padding: 18px 16px;
             background: rgba(255, 250, 241, 0.74);
         }
 
@@ -78,13 +80,13 @@
             display: block;
             color: var(--jade);
             font-family: var(--serif);
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 500;
         }
 
         .partners-proof span {
             color: rgba(21, 22, 19, 0.6);
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .partners-section {
@@ -99,7 +101,7 @@
 
         .partners-section-head {
             display: grid;
-            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+            grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.08fr);
             gap: 48px;
             align-items: end;
             margin-bottom: 42px;
@@ -108,14 +110,15 @@
         .partners-section-head h2 {
             margin: 14px 0 0;
             font-family: var(--serif);
-            font-size: clamp(34px, 4vw, 58px);
+            font-size: clamp(28px, 2.7vw, 42px);
             font-weight: 500;
-            line-height: 1.16;
+            line-height: 1.24;
         }
 
         .partners-section-head p {
             margin: 0;
             color: rgba(21, 22, 19, 0.62);
+            font-size: 16px;
             line-height: 1.9;
         }
 
@@ -201,6 +204,39 @@
             line-height: 1.8;
         }
 
+        .partners-cta-section {
+            padding: 72px 0;
+            background: var(--jade-deep);
+        }
+
+        .partners-cta {
+            padding: 0;
+            border-top: 0;
+        }
+
+        .partners-cta h2 {
+            color: var(--silk);
+            font-size: clamp(30px, 3.4vw, 48px);
+            line-height: 1.22;
+        }
+
+        .partners-cta p {
+            max-width: 780px;
+            color: rgba(255, 250, 241, 0.78);
+            font-size: 16px;
+        }
+
+        .partners-cta .yx-btn {
+            border-color: rgba(255, 250, 241, 0.64);
+            color: var(--silk);
+            background: transparent;
+        }
+
+        .partners-cta .yx-btn:hover {
+            border-color: var(--gold);
+            background: var(--gold);
+        }
+
         @media (max-width: 1024px) {
             .partners-hero__grid,
             .partners-section-head {
@@ -219,11 +255,11 @@
 
         @media (max-width: 720px) {
             .partners-hero {
-                padding: 110px 0 54px;
+                padding: 104px 0 54px;
             }
 
             .partners-hero h1 {
-                font-size: 38px;
+                font-size: 34px;
             }
 
             .partners-hero p {
@@ -243,6 +279,10 @@
 
             .partners-visual {
                 padding: 8px;
+            }
+
+            .partners-cta-section {
+                padding: 56px 0;
             }
         }
     </style>
@@ -305,7 +345,7 @@
             <div class="yx-container partners-hero__grid">
                 <div class="fade-in">
                     <span class="partners-eyebrow">Brand Partners</span>
-                    <h1>以东方刺绣语言，连接品牌与文化表达。</h1>
+                    <h1>合作伙伴与文化共创</h1>
                     <p>杨雪刺绣艺术工作室与平台、媒体、国潮品牌、产业伙伴及文化机构持续合作，将苏绣从传统工艺现场带入当代内容、产品、礼赠与公共文化传播。</p>
                     <div class="partners-proof">
                         <div>
@@ -333,7 +373,7 @@
                 <div class="partners-section-head fade-in">
                     <div>
                         <span class="partners-eyebrow">Collaboration Map</span>
-                        <h2>合作单位，不只是名单，而是苏绣进入当代生活的路径。</h2>
+                        <h2>让苏绣进入更开阔的当代场景。</h2>
                     </div>
                     <p>从内容平台到媒体传播，从国货品牌到科技企业，每一次合作都围绕“手工艺如何被当代人看见、理解和使用”展开。</p>
                 </div>
@@ -419,8 +459,8 @@
             </div>
         </section>
 
-        <section class="yx-section">
-            <div class="yx-container yx-contact-band fade-in">
+        <section class="partners-cta-section">
+            <div class="yx-container yx-contact-band partners-cta fade-in">
                 <div>
                     <h2>希望与杨雪刺绣艺术工作室开展合作？</h2>
                     <p>可围绕品牌联名、文化项目、媒体内容、企业礼赠与空间艺术陈设说明需求。</p>
