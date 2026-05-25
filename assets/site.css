@@ -686,15 +686,15 @@ nav#navbar .dropdown-item:hover,
 
 .yx-brochure-split {
     display: grid;
-    grid-template-columns: minmax(300px, 0.86fr) minmax(0, 1fr);
-    gap: 46px;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.58fr);
+    gap: 56px;
     align-items: center;
 }
 
 .yx-brochure-media {
     position: relative;
     overflow: hidden;
-    background: var(--jade);
+    background: rgba(255, 250, 241, 0.74);
     box-shadow: var(--shadow);
 }
 
@@ -739,7 +739,9 @@ nav#navbar .dropdown-item:hover,
 }
 
 .yx-editorial-image {
-    min-height: 560px;
+    width: min(100%, 400px);
+    aspect-ratio: 3 / 4;
+    justify-self: end;
 }
 
 .yx-editorial-image img {
@@ -1186,6 +1188,14 @@ footer:not(.yx-footer) span {
         grid-template-columns: 1fr;
     }
 
+    .yx-brochure-split {
+        gap: 38px;
+    }
+
+    .yx-editorial-image {
+        justify-self: start;
+    }
+
     .yx-work-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1288,7 +1298,12 @@ footer:not(.yx-footer) span {
 
     .yx-editorial-image,
     .yx-story-panel__image {
-        min-height: 320px;
+        min-height: 0;
+    }
+
+    .yx-editorial-image {
+        width: min(100%, 360px);
+        justify-self: start;
     }
 
     .yx-photo-tile {

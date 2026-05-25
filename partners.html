@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合作单位 | 杨雪刺绣艺术工作室</title>
+    <meta name="description" content="杨雪刺绣艺术工作室品牌合作伙伴，连接品牌、平台、媒体与文化机构，以东方刺绣语言完成跨界文化表达。">
+    <meta name="keywords" content="杨雪刺绣, 合作单位, 品牌合作, 苏绣跨界, 非遗合作">
+    <meta name="author" content="杨雪">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/site.css?v=20260525-positioning-3">
+    <script src="assets/site.js" defer></script>
+    <style>
+        .partners-hero {
+            min-height: 72svh;
+            padding: 150px 0 72px;
+            background:
+                linear-gradient(180deg, rgba(255, 250, 241, 0.92), rgba(245, 242, 235, 0.98)),
+                radial-gradient(circle at 18% 10%, rgba(201, 168, 124, 0.24), transparent 34%),
+                #f5f2eb;
+        }
+
+        .partners-hero__grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1.22fr);
+            gap: 56px;
+            align-items: center;
+        }
+
+        .partners-hero h1 {
+            margin: 18px 0 24px;
+            font-family: var(--serif);
+            font-size: clamp(46px, 6vw, 84px);
+            font-weight: 500;
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        .partners-hero p {
+            max-width: 560px;
+            margin: 0;
+            color: rgba(21, 22, 19, 0.68);
+            font-size: 17px;
+            line-height: 1.95;
+        }
+
+        .partners-visual {
+            position: relative;
+            padding: 12px;
+            border: 1px solid rgba(201, 168, 124, 0.42);
+            background: rgba(255, 250, 241, 0.68);
+            box-shadow: 0 30px 80px rgba(44, 62, 45, 0.14);
+        }
+
+        .partners-visual img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .partners-proof {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1px;
+            margin-top: 42px;
+            background: rgba(44, 62, 45, 0.14);
+        }
+
+        .partners-proof div {
+            padding: 22px;
+            background: rgba(255, 250, 241, 0.74);
+        }
+
+        .partners-proof strong {
+            display: block;
+            color: var(--jade);
+            font-family: var(--serif);
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        .partners-proof span {
+            color: rgba(21, 22, 19, 0.6);
+            font-size: 13px;
+        }
+
+        .partners-section {
+            padding: 96px 0;
+            background: var(--silk);
+        }
+
+        .partners-section--jade {
+            background: var(--jade);
+            color: var(--silk);
+        }
+
+        .partners-section-head {
+            display: grid;
+            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+            gap: 48px;
+            align-items: end;
+            margin-bottom: 42px;
+        }
+
+        .partners-section-head h2 {
+            margin: 14px 0 0;
+            font-family: var(--serif);
+            font-size: clamp(34px, 4vw, 58px);
+            font-weight: 500;
+            line-height: 1.16;
+        }
+
+        .partners-section-head p {
+            margin: 0;
+            color: rgba(21, 22, 19, 0.62);
+            line-height: 1.9;
+        }
+
+        .partners-section--jade .partners-section-head p,
+        .partners-section--jade .partners-eyebrow {
+            color: rgba(255, 250, 241, 0.68);
+        }
+
+        .partners-eyebrow {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .partner-category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .partner-category {
+            min-height: 280px;
+            padding: 24px;
+            border: 1px solid rgba(44, 62, 45, 0.1);
+            background: rgba(255, 250, 241, 0.76);
+        }
+
+        .partner-category h3 {
+            margin: 0 0 18px;
+            font-family: var(--serif);
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .partner-category ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .partner-category li {
+            padding: 7px 11px;
+            border: 1px solid rgba(44, 62, 45, 0.12);
+            background: rgba(255, 255, 255, 0.52);
+            color: rgba(21, 22, 19, 0.68);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .partners-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .partners-feature {
+            padding: 28px;
+            border: 1px solid rgba(255, 250, 241, 0.14);
+            background: rgba(255, 250, 241, 0.06);
+        }
+
+        .partners-feature span {
+            color: var(--gold);
+            font-family: var(--serif);
+            font-size: 30px;
+        }
+
+        .partners-feature h3 {
+            margin: 18px 0 12px;
+            font-family: var(--serif);
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .partners-feature p {
+            margin: 0;
+            color: rgba(255, 250, 241, 0.66);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 1024px) {
+            .partners-hero__grid,
+            .partners-section-head {
+                grid-template-columns: 1fr;
+            }
+
+            .partners-visual {
+                order: -1;
+            }
+
+            .partner-category-grid,
+            .partners-feature-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            .partners-hero {
+                padding: 110px 0 54px;
+            }
+
+            .partners-hero h1 {
+                font-size: 38px;
+            }
+
+            .partners-hero p {
+                font-size: 15px;
+                line-height: 1.85;
+            }
+
+            .partners-proof {
+                margin-top: 28px;
+            }
+
+            .partners-proof,
+            .partner-category-grid,
+            .partners-feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partners-visual {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="yx-nav" aria-label="主导航">
+        <div class="yx-container">
+            <div class="yx-nav__inner">
+                <a href="index.html" class="yx-brand" aria-label="杨雪刺绣艺术工作室首页">
+                    <strong>杨雪刺绣</strong>
+                    <span>Embroidery Atelier</span>
+                </a>
+
+                <div class="yx-nav__links">
+                    <a href="index.html" class="yx-nav__link">首页</a>
+                    <div class="yx-nav__item">
+                        <a href="works.html" class="yx-nav__link">作品展示</a>
+                        <div class="yx-dropdown">
+                            <a href="works-guoli.html">双面三异绣·国礼</a>
+                            <a href="works-foxiang.html">苏绣佛像系列</a>
+                            <a href="works-bieshu.html">别墅挂画私人订制</a>
+                            <a href="works-hunjia.html">苏绣婚嫁系列</a>
+                            <a href="works-dongwu.html">苏绣动物系列</a>
+                            <a href="works-renwu.html">人物定制系列</a>
+                        </div>
+                    </div>
+                    <div class="yx-nav__item">
+                        <a href="custom.html" class="yx-nav__link">定制服务</a>
+                        <div class="yx-dropdown">
+                            <a href="custom-process.html">定制流程</a>
+                            <a href="custom-price.html">价格参考</a>
+                            <a href="custom-case.html">案例展示</a>
+                            <a href="custom-consult.html">在线咨询</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="yx-nav__link">关于杨雪</a>
+                    <a href="partners.html" class="yx-nav__link">合作单位</a>
+                    <a href="news.html" class="yx-nav__link">最新消息</a>
+                    <a href="visit-contact.html" class="yx-nav__link">联系预约</a>
+                </div>
+
+                <button class="yx-menu-button" type="button" aria-label="打开菜单" aria-expanded="false" data-menu-button>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="yx-mobile-menu" data-mobile-menu>
+                <a href="works.html">作品展示</a>
+                <a href="custom.html">定制服务</a>
+                <a href="about.html">关于杨雪</a>
+                <a href="partners.html">合作单位</a>
+                <a href="news.html">最新消息</a>
+                <a href="visit-contact.html">联系预约</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="partners-hero">
+            <div class="yx-container partners-hero__grid">
+                <div class="fade-in">
+                    <span class="partners-eyebrow">Brand Partners</span>
+                    <h1>以东方刺绣语言，连接品牌与文化表达。</h1>
+                    <p>杨雪刺绣艺术工作室与平台、媒体、国潮品牌、产业伙伴及文化机构持续合作，将苏绣从传统工艺现场带入当代内容、产品、礼赠与公共文化传播。</p>
+                    <div class="partners-proof">
+                        <div>
+                            <strong>28+</strong>
+                            <span>合作品牌与平台</span>
+                        </div>
+                        <div>
+                            <strong>4类</strong>
+                            <span>媒体、文旅、品牌与产业</span>
+                        </div>
+                        <div>
+                            <strong>1线</strong>
+                            <span>东方手工艺表达</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="partners-visual fade-in">
+                    <img src="images/partners/brand-partners.png" alt="杨雪刺绣艺术工作室品牌合作伙伴">
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-section">
+            <div class="yx-container">
+                <div class="partners-section-head fade-in">
+                    <div>
+                        <span class="partners-eyebrow">Collaboration Map</span>
+                        <h2>合作单位，不只是名单，而是苏绣进入当代生活的路径。</h2>
+                    </div>
+                    <p>从内容平台到媒体传播，从国货品牌到科技企业，每一次合作都围绕“手工艺如何被当代人看见、理解和使用”展开。</p>
+                </div>
+
+                <div class="partner-category-grid">
+                    <article class="partner-category fade-in">
+                        <h3>内容平台</h3>
+                        <ul>
+                            <li>网易游戏</li>
+                            <li>快手</li>
+                            <li>腾讯</li>
+                            <li>王者荣耀</li>
+                            <li>小红书</li>
+                            <li>微博</li>
+                            <li>抖音</li>
+                            <li>B站</li>
+                            <li>巨量星图</li>
+                            <li>看点</li>
+                        </ul>
+                    </article>
+                    <article class="partner-category fade-in" style="transition-delay: 0.08s;">
+                        <h3>媒体传播</h3>
+                        <ul>
+                            <li>央视</li>
+                            <li>人民日报</li>
+                            <li>新华社</li>
+                            <li>浙江卫视</li>
+                            <li>江苏卫视</li>
+                            <li>中国匠人大会</li>
+                        </ul>
+                    </article>
+                    <article class="partner-category fade-in" style="transition-delay: 0.16s;">
+                        <h3>品牌共创</h3>
+                        <ul>
+                            <li>鸿星尔克</li>
+                            <li>海澜之家</li>
+                            <li>华为</li>
+                            <li>阿维塔</li>
+                            <li>吉利汽车</li>
+                            <li>友谊时光</li>
+                        </ul>
+                    </article>
+                    <article class="partner-category fade-in" style="transition-delay: 0.24s;">
+                        <h3>产业伙伴</h3>
+                        <ul>
+                            <li>中国南方航空</li>
+                            <li>饿了么</li>
+                            <li>支付宝</li>
+                            <li>宁德时代</li>
+                            <li>拼多多</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-section partners-section--jade">
+            <div class="yx-container">
+                <div class="partners-section-head fade-in">
+                    <div>
+                        <span class="partners-eyebrow">How We Work</span>
+                        <h2>让合作保留品牌识别，也保留手工艺的温度。</h2>
+                    </div>
+                    <p>工作室可围绕品牌故事、节日礼赠、内容传播、空间陈列和联名产品，提供刺绣视觉、样品创作、作品定制与文化表达方案。</p>
+                </div>
+                <div class="partners-feature-grid">
+                    <article class="partners-feature fade-in">
+                        <span>01</span>
+                        <h3>品牌联名</h3>
+                        <p>将品牌视觉、传统纹样与苏绣针法结合，形成具有辨识度的联名作品或传播素材。</p>
+                    </article>
+                    <article class="partners-feature fade-in" style="transition-delay: 0.1s;">
+                        <span>02</span>
+                        <h3>内容传播</h3>
+                        <p>配合纪录片、节目、平台活动与媒体报道，让非遗技艺以更清晰的故事被看见。</p>
+                    </article>
+                    <article class="partners-feature fade-in" style="transition-delay: 0.2s;">
+                        <span>03</span>
+                        <h3>高端礼赠</h3>
+                        <p>面向企业礼品、空间陈设与重要活动，定制可收藏、可陈列、可讲述的刺绣作品。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-section">
+            <div class="yx-container yx-contact-band fade-in">
+                <div>
+                    <h2>希望与杨雪刺绣艺术工作室开展合作？</h2>
+                    <p>可围绕品牌联名、文化项目、媒体内容、企业礼赠与空间艺术陈设说明需求。</p>
+                </div>
+                <a href="custom-consult.html" class="yx-btn yx-btn--light">联系合作</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="yx-footer">
+        <div class="yx-container">
+            <div class="yx-footer__grid">
+                <div>
+                    <h3>杨雪刺绣艺术工作室</h3>
+                    <p>以东方美学为根基，将传统刺绣技艺与当代空间、礼仪、收藏需求相结合，创作具有时间感与生命力的手工艺术作品。</p>
+                </div>
+                <div>
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="works.html">作品展示</a></li>
+                        <li><a href="custom.html">定制服务</a></li>
+                        <li><a href="about.html">关于杨雪</a></li>
+                        <li><a href="partners.html">合作单位</a></li>
+                        <li><a href="visit.html">参观资讯</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：17376565154</li>
+                        <li>邮箱：xiaoyu@byteinfinite.com</li>
+                        <li>苏州总部：江苏省苏州市高新区绣品街155号与卿渡</li>
+                        <li>杭州分公司：浙江省杭州市拱墅区祥园路33号众创大厦1楼奇人匠心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="yx-footer__bottom">
+                <span>© 2026 杨雪刺绣艺术工作室. All rights reserved.</span>
+                <span>Designed for embroidery art, collection and private commission.</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

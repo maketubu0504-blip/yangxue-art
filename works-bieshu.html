@@ -36,6 +36,76 @@
         .mobile-dropdown.active { max-height: 300px; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .villa-gallery {
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+            gap: 28px;
+            align-items: start;
+        }
+        .villa-gallery-card {
+            margin: 0;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.64);
+            border: 1px solid rgba(44, 62, 45, 0.1);
+            overflow: hidden;
+        }
+        .villa-gallery-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #fff;
+        }
+        .villa-gallery-card--feature {
+            grid-row: span 2;
+        }
+        .villa-gallery-card--feature img {
+            max-height: 680px;
+            object-fit: contain;
+        }
+        .villa-gallery-card--detail img {
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+        .villa-gallery-card--wide img {
+            aspect-ratio: 16 / 5.2;
+            object-fit: contain;
+        }
+        .villa-gallery-card figcaption {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 2px 2px;
+            color: #2c3e2d;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .villa-gallery-card figcaption strong {
+            min-width: max-content;
+            font-family: "Noto Serif SC", serif;
+            font-size: 17px;
+            font-weight: 500;
+        }
+        .villa-gallery-card figcaption span {
+            color: rgba(44, 62, 45, 0.66);
+            text-align: right;
+        }
+        @media (max-width: 768px) {
+            .villa-gallery {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+            .villa-gallery-card--feature {
+                grid-row: auto;
+            }
+            .villa-gallery-card figcaption {
+                display: block;
+            }
+            .villa-gallery-card figcaption span {
+                display: block;
+                margin-top: 4px;
+                text-align: left;
+            }
+        }
     </style>
     <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -67,6 +137,7 @@
                         </div>
                     </div>
                     <a href="about.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">关于我</a>
+                    <a href="partners.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">合作单位</a>
                     <a href="news.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">最新消息</a>
                     <div class="nav-item">
                         <a href="visit.html" class="nav-link text-primary text-sm tracking-widest font-light flex items-center gap-2">参观资讯<i class="fas fa-chevron-down text-xs"></i></a>
@@ -105,6 +176,7 @@
                     </div>
                 </div>
                 <a href="about.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">关于我</a>
+                <a href="partners.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">合作单位</a>
                 <div class="border-b border-gray-100">
                     <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-visit">参观资讯<i class="fas fa-chevron-down text-sm transition-transform duration-300"></i></button>
                     <div id="mobile-visit" class="mobile-dropdown pl-4">
@@ -129,7 +201,7 @@
         <div class="container mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
                 <div class="fade-in">
-                    <img src="images/studio/villa-main.jpg" alt="别墅挂画" class="w-full h-[500px] object-cover shadow-2xl">
+                    <img src="images/studio/atelier-positioning.jpg" alt="别墅挂画完整空间效果" class="w-auto max-w-full max-h-[620px] mx-auto object-contain shadow-2xl bg-white">
                 </div>
                 <div class="fade-in">
                     <h2 class="text-2xl font-serif tracking-wider mb-6">高端空间艺术定制</h2>
@@ -143,31 +215,28 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="group relative overflow-hidden cursor-pointer fade-in">
-                    <img src="images/studio/villa-bird-detail.jpg" alt="客厅挂画" class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-end">
-                        <div class="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 text-white">
-                            <h3 class="text-lg font-serif tracking-wider">客厅玄关</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden cursor-pointer fade-in" style="transition-delay: 0.1s;">
-                    <img src="images/studio/villa-flower-detail.jpg" alt="书房挂画" class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-end">
-                        <div class="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 text-white">
-                            <h3 class="text-lg font-serif tracking-wider">书房花鸟</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden cursor-pointer fade-in" style="transition-delay: 0.2s;">
-                    <img src="images/studio/villa-landscape.jpg" alt="卧室挂画" class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-end">
-                        <div class="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 text-white">
-                            <h3 class="text-lg font-serif tracking-wider">卧室意境</h3>
-                        </div>
-                    </div>
-                </div>
+            <div class="villa-gallery" id="villa-gallery">
+                <figure class="villa-gallery-card villa-gallery-card--feature fade-in">
+                    <img src="images/别墅挂画-2.png" alt="牡丹别墅挂画完整空间效果">
+                    <figcaption>
+                        <strong>整幅挂画</strong>
+                        <span>保留装裱、墙面与陈设关系，看清作品在空间中的完整比例。</span>
+                    </figcaption>
+                </figure>
+                <figure class="villa-gallery-card villa-gallery-card--detail fade-in" style="transition-delay: 0.1s;">
+                    <img src="images/studio/villa-bird-blossom-clean.jpg" alt="花鸟刺绣局部细节">
+                    <figcaption>
+                        <strong>花鸟细节</strong>
+                        <span>以局部观察针脚、色阶和羽毛层次。</span>
+                    </figcaption>
+                </figure>
+                <figure class="villa-gallery-card villa-gallery-card--wide fade-in" style="transition-delay: 0.2s;">
+                    <img src="images/studio/villa-landscape-clean.jpg" alt="山水刺绣长卷完整作品">
+                    <figcaption>
+                        <strong>山水长卷</strong>
+                        <span>横向作品按原比例展示，不再被强行裁成竖图。</span>
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -191,6 +260,7 @@
                         <li><a href="works.html" class="text-secondary hover:text-accent transition-colors">作品展示</a></li>
                         <li><a href="custom.html" class="text-secondary hover:text-accent transition-colors">定制服务</a></li>
                         <li><a href="about.html" class="text-secondary hover:text-accent transition-colors">关于我</a></li>
+                        <li><a href="partners.html" class="text-secondary hover:text-accent transition-colors">合作单位</a></li>
                         <li><a href="visit.html" class="text-secondary hover:text-accent transition-colors">参观资讯</a></li>
                     </ul>
                 </div>
