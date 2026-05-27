@@ -38,6 +38,73 @@
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         .news-card { transition: all 0.3s ease; }
         .news-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .news-media {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 124, 0.34);
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.72), rgba(239,233,220,0.88)),
+                repeating-linear-gradient(90deg, rgba(44,62,45,0.06) 0 1px, transparent 1px 42px);
+        }
+        .news-media::before {
+            content: attr(data-material-slot);
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 2;
+            min-width: 44px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(201, 168, 124, 0.62);
+            color: #8b7355;
+            background: rgba(255, 250, 241, 0.9);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+        }
+        .news-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .news-placeholder {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #8b7355;
+            text-align: center;
+            letter-spacing: 0.08em;
+        }
+        .news-placeholder strong {
+            color: #2c3e2d;
+            font-family: "Noto Serif SC", serif;
+            font-size: clamp(26px, 4vw, 44px);
+            font-weight: 400;
+            letter-spacing: 0.12em;
+        }
+        .news-placeholder small {
+            color: rgba(90, 107, 92, 0.76);
+            font-size: 13px;
+            letter-spacing: 0.14em;
+        }
+        .news-category {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 2;
+            padding: 5px 10px;
+            color: #fff;
+            font-size: 12px;
+        }
+        .news-category--accent { background: #c9a87c; }
+        .news-category--primary { background: #2c3e2d; }
     </style>
     <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -162,9 +229,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 新闻卡片1 -->
                 <div class="news-card bg-white overflow-hidden fade-in">
-                    <div class="relative">
-                        <img src="images/杨雪介绍.png" alt="媒体报道" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-accent text-white text-xs">媒体报道</span>
+                    <div class="news-media" data-material-slot="004">
+                        <!-- 素材位 004：后续替换为新闻封面图片。原临时图 images/杨雪介绍.png 已隐藏。 -->
+                        <div class="news-placeholder"><strong>图片位 004</strong><small>建议 4:3 横版封面</small></div>
+                        <span class="news-category news-category--accent">媒体报道</span>
                     </div>
                     <div class="p-6">
                         <span class="text-accent text-sm">2025-03-08</span>
@@ -176,9 +244,10 @@
 
                 <!-- 新闻卡片2 -->
                 <div class="news-card bg-white overflow-hidden fade-in" style="transition-delay: 0.1s;">
-                    <div class="relative">
-                        <img src="images/别墅挂画主图-1.png" alt="央视报道" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-accent text-white text-xs">媒体报道</span>
+                    <div class="news-media" data-material-slot="005">
+                        <!-- 素材位 005：后续替换为新闻封面图片。原临时图 images/别墅挂画主图-1.png 已隐藏。 -->
+                        <div class="news-placeholder"><strong>图片位 005</strong><small>建议 4:3 横版封面</small></div>
+                        <span class="news-category news-category--accent">媒体报道</span>
                     </div>
                     <div class="p-6">
                         <span class="text-accent text-sm">2023-01-08</span>
@@ -190,9 +259,10 @@
 
                 <!-- 新闻卡片3 -->
                 <div class="news-card bg-white overflow-hidden fade-in" style="transition-delay: 0.2s;">
-                    <div class="relative">
-                        <img src="images/studio/hanfu-collaboration.jpg" alt="跨界合作" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-primary text-white text-xs">活动讯息</span>
+                    <div class="news-media" data-material-slot="006">
+                        <!-- 素材位 006：后续替换为新闻封面图片。原临时图 images/studio/hanfu-collaboration.jpg 已隐藏。 -->
+                        <div class="news-placeholder"><strong>图片位 006</strong><small>建议 4:3 横版封面</small></div>
+                        <span class="news-category news-category--primary">活动讯息</span>
                     </div>
                     <div class="p-6">
                         <span class="text-accent text-sm">2023-05-21</span>
@@ -204,9 +274,10 @@
 
                 <!-- 新闻卡片4 -->
                 <div class="news-card bg-white overflow-hidden fade-in">
-                    <div class="relative">
-                        <img src="images/别墅挂画-2.png" alt="品牌合作" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-primary text-white text-xs">活动讯息</span>
+                    <div class="news-media" data-material-slot="007">
+                        <!-- 素材位 007：后续替换为新闻封面图片。原临时图 images/别墅挂画-2.png 已隐藏。 -->
+                        <div class="news-placeholder"><strong>图片位 007</strong><small>建议 4:3 横版封面</small></div>
+                        <span class="news-category news-category--primary">活动讯息</span>
                     </div>
                     <div class="p-6">
                         <span class="text-accent text-sm">2022-03</span>
@@ -218,9 +289,10 @@
 
                 <!-- 新闻卡片5 -->
                 <div class="news-card bg-white overflow-hidden fade-in" style="transition-delay: 0.1s;">
-                    <div class="relative">
-                        <img src="images/studio/cultural-exchange.jpg" alt="中国匠人大会" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-accent text-white text-xs">活动讯息</span>
+                    <div class="news-media" data-material-slot="008">
+                        <!-- 素材位 008：后续替换为新闻封面图片。原临时图 images/studio/cultural-exchange.jpg 已隐藏。 -->
+                        <div class="news-placeholder"><strong>图片位 008</strong><small>建议 4:3 横版封面</small></div>
+                        <span class="news-category news-category--accent">活动讯息</span>
                     </div>
                     <div class="p-6">
                         <span class="text-accent text-sm">2022-08</span>
@@ -232,9 +304,10 @@
 
                 <!-- 新闻卡片6 -->
                 <div class="news-card bg-white overflow-hidden fade-in" style="transition-delay: 0.2s;">
-                    <div class="relative">
-                        <img src="images/别墅挂画-3.png" alt="腾讯合作" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-accent text-white text-xs">媒体报道</span>
+                    <div class="news-media" data-material-slot="009">
+                        <!-- 素材位 009：后续替换为新闻封面图片。原临时图 images/别墅挂画-3.png 已隐藏。 -->
+                        <div class="news-placeholder"><strong>图片位 009</strong><small>建议 4:3 横版封面</small></div>
+                        <span class="news-category news-category--accent">媒体报道</span>
                     </div>
                     <div class="p-6">
                         <span class="text-accent text-sm">2021-06</span>
@@ -246,9 +319,10 @@
 
                 <!-- 新闻卡片7 -->
                 <div class="news-card bg-white overflow-hidden fade-in">
-                    <div class="relative">
-                        <img src="images/杨雪介绍.png" alt="鸿星尔克合作" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-primary text-white text-xs">活动讯息</span>
+                    <div class="news-media" data-material-slot="010">
+                        <!-- 素材位 010：后续替换为新闻封面图片。原临时图 images/杨雪介绍.png 已隐藏。 -->
+                        <div class="news-placeholder"><strong>图片位 010</strong><small>建议 4:3 横版封面</small></div>
+                        <span class="news-category news-category--primary">活动讯息</span>
                     </div>
                     <div class="p-6">
                         <span class="text-accent text-sm">2021-01</span>
@@ -260,9 +334,10 @@
 
                 <!-- 新闻卡片8 -->
                 <div class="news-card bg-white overflow-hidden fade-in" style="transition-delay: 0.1s;">
-                    <div class="relative">
-                        <img src="images/别墅挂画-4.jpg" alt="国际交流" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-accent text-white text-xs">媒体报道</span>
+                    <div class="news-media" data-material-slot="011">
+                        <!-- 素材位 011：后续替换为新闻封面图片。原临时图 images/别墅挂画-4.jpg 已隐藏。 -->
+                        <div class="news-placeholder"><strong>图片位 011</strong><small>建议 4:3 横版封面</small></div>
+                        <span class="news-category news-category--accent">媒体报道</span>
                     </div>
                     <div class="p-6">
                         <span class="text-accent text-sm">2017-2019</span>
@@ -274,9 +349,10 @@
 
                 <!-- 新闻卡片9 -->
                 <div class="news-card bg-white overflow-hidden fade-in" style="transition-delay: 0.2s;">
-                    <div class="relative">
-                        <img src="images/studio/lotus-detail.jpg" alt="获奖新闻" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-primary text-white text-xs">展览讯息</span>
+                    <div class="news-media" data-material-slot="012">
+                        <!-- 素材位 012：后续替换为新闻封面图片。原临时图 images/studio/lotus-detail.jpg 已隐藏。 -->
+                        <div class="news-placeholder"><strong>图片位 012</strong><small>建议 4:3 横版封面</small></div>
+                        <span class="news-category news-category--primary">展览讯息</span>
                     </div>
                     <div class="p-6">
                         <span class="text-accent text-sm">2025</span>
