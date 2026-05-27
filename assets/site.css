@@ -601,42 +601,56 @@ nav#navbar .dropdown-item:hover,
 
 .yx-news-grid {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr 0.9fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
+    align-items: stretch;
 }
 
 .yx-news-card {
-    display: grid;
-    min-height: 360px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
     border: 1px solid var(--line);
     background: var(--silk);
     overflow: hidden;
 }
 
-.yx-news-card:first-child {
-    grid-row: span 2;
-}
-
 .yx-news-card img {
     width: 100%;
-    height: 210px;
+    height: auto;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
+    background: rgba(247, 243, 234, 0.78);
 }
 
-.yx-news-card:first-child img {
-    height: 420px;
+.yx-news-card::before {
+    content: attr(data-material-slot);
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 28px;
+    padding: 0 10px;
+    border: 1px solid rgba(185, 145, 85, 0.42);
+    color: var(--gold);
+    background: rgba(255, 250, 241, 0.88);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
 }
 
 .yx-news-card--portrait img {
     object-fit: contain;
-    background: rgba(247, 243, 234, 0.76);
-}
-
-.yx-news-card--portrait:not(:first-child) img {
-    height: 300px;
 }
 
 .yx-news-card__body {
+    flex: 1;
     padding: 26px;
 }
 
@@ -1213,14 +1227,6 @@ footer:not(.yx-footer) span {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .yx-news-card:first-child {
-        grid-row: auto;
-        grid-column: span 2;
-    }
-
-    .yx-news-card:first-child img {
-        height: 320px;
-    }
 }
 
 @media (max-width: 720px) {
@@ -1274,10 +1280,6 @@ footer:not(.yx-footer) span {
 
     .yx-hero-meta {
         display: none;
-    }
-
-    .yx-news-card:first-child {
-        grid-column: auto;
     }
 
     .yx-work-card {
