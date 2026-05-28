@@ -36,6 +36,64 @@
         .mobile-dropdown.active { max-height: 300px; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .guoli-media {
+            position: relative;
+            display: flex;
+            min-height: 280px;
+            aspect-ratio: 4 / 3;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 124, 0.36);
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.76), rgba(239,233,220,0.9)),
+                repeating-linear-gradient(90deg, rgba(44,62,45,0.06) 0 1px, transparent 1px 42px);
+        }
+        .guoli-media--hero {
+            min-height: 420px;
+            box-shadow: 0 24px 60px rgba(44, 62, 45, 0.14);
+        }
+        .guoli-media::before {
+            content: attr(data-material-slot);
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 2;
+            min-width: 44px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(201, 168, 124, 0.62);
+            color: #8b7355;
+            background: rgba(255, 250, 241, 0.92);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+        }
+        .guoli-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 40px;
+            color: #8b7355;
+            text-align: center;
+            letter-spacing: 0.08em;
+        }
+        .guoli-placeholder strong {
+            color: #2c3e2d;
+            font-family: "Noto Serif SC", serif;
+            font-size: clamp(26px, 4vw, 46px);
+            font-weight: 400;
+            letter-spacing: 0.12em;
+        }
+        .guoli-placeholder small {
+            color: rgba(90, 107, 92, 0.76);
+            font-size: 13px;
+            letter-spacing: 0.14em;
+        }
     </style>
     <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -144,7 +202,10 @@
         <div class="container mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
                 <div class="fade-in">
-                    <img src="images/studio/guoli-flamingo-swan.jpg" alt="双面三异绣" class="w-full h-[500px] object-cover shadow-2xl">
+                    <div class="guoli-media guoli-media--hero" data-material-slot="013">
+                        <!-- 素材位 013：后续替换为三异绣页面主视觉。原临时图 images/studio/guoli-flamingo-swan.jpg 已隐藏。 -->
+                        <div class="guoli-placeholder"><strong>图片位 013</strong><small>建议 4:3 横版主图</small></div>
+                    </div>
                 </div>
                 <div class="fade-in">
                     <h2 class="text-2xl font-serif tracking-wider mb-6">双面三异绣</h2>
@@ -160,27 +221,21 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="group relative overflow-hidden cursor-pointer fade-in">
-                    <img src="images/studio/guoli-flamingo-swan.jpg" alt="作品1" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-end">
-                        <div class="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 text-white">
-                            <h3 class="text-lg font-serif tracking-wider">精品一</h3>
-                        </div>
+                    <div class="guoli-media" data-material-slot="014">
+                        <!-- 素材位 014：后续替换为三异绣作品封面一。原临时图 images/studio/guoli-flamingo-swan.jpg 已隐藏。 -->
+                        <div class="guoli-placeholder"><strong>图片位 014</strong><small>建议 4:3 作品封面</small></div>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden cursor-pointer fade-in" style="transition-delay: 0.1s;">
-                    <img src="images/别墅挂画-3.png" alt="作品2" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-end">
-                        <div class="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 text-white">
-                            <h3 class="text-lg font-serif tracking-wider">精品二</h3>
-                        </div>
+                    <div class="guoli-media" data-material-slot="015">
+                        <!-- 素材位 015：后续替换为三异绣作品封面二。原临时图 images/别墅挂画-3.png 已隐藏。 -->
+                        <div class="guoli-placeholder"><strong>图片位 015</strong><small>建议 4:3 作品封面</small></div>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden cursor-pointer fade-in" style="transition-delay: 0.2s;">
-                    <img src="images/studio/lotus-detail.jpg" alt="作品3" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-end">
-                        <div class="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 text-white">
-                            <h3 class="text-lg font-serif tracking-wider">精品三</h3>
-                        </div>
+                    <div class="guoli-media" data-material-slot="016">
+                        <!-- 素材位 016：后续替换为三异绣作品封面三。原临时图 images/studio/lotus-detail.jpg 已隐藏。 -->
+                        <div class="guoli-placeholder"><strong>图片位 016</strong><small>建议 4:3 作品封面</small></div>
                     </div>
                 </div>
             </div>
