@@ -25,7 +25,7 @@
         .dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 200px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-top: 3px solid #c9a87c; box-shadow: 0 10px 40px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 100; }
         .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
         .dropdown-item { display: block; padding: 14px 24px; color: #2c3e2d; font-size: 14px; letter-spacing: 1px; border-bottom: 1px solid rgba(0,0,0,0.05); transition: all 0.2s ease; }
-        .dropdown-item:hover { background: #f5f2eb; color: '#c9a87c'; padding-left: 28px; }
+        .dropdown-item:hover { background: #f5f2eb; color: #c9a87c; padding-left: 28px; }
         .dropdown-item:last-child { border-bottom: none; }
         .nav-link { position: relative; padding: 8px 0; }
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #c9a87c; transition: width 0.3s ease; }
@@ -36,63 +36,230 @@
         .mobile-dropdown.active { max-height: 300px; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
-        .guoli-media {
-            position: relative;
-            display: flex;
-            min-height: 280px;
-            aspect-ratio: 4 / 3;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 1px solid rgba(201, 168, 124, 0.36);
-            background:
-                linear-gradient(135deg, rgba(255,255,255,0.76), rgba(239,233,220,0.9)),
-                repeating-linear-gradient(90deg, rgba(44,62,45,0.06) 0 1px, transparent 1px 42px);
+        .guoli-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(180deg, #fbfaf6 0%, #f1ece2 100%);
+            border-bottom: 1px solid rgba(44, 62, 45, 0.08);
         }
-        .guoli-media--hero {
-            min-height: 420px;
-            box-shadow: 0 24px 60px rgba(44, 62, 45, 0.14);
-        }
-        .guoli-media::before {
-            content: attr(data-material-slot);
-            position: absolute;
-            top: 14px;
-            left: 14px;
-            z-index: 2;
-            min-width: 44px;
-            height: 28px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(201, 168, 124, 0.62);
-            color: #8b7355;
-            background: rgba(255, 250, 241, 0.92);
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-        }
-        .guoli-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 40px;
-            color: #8b7355;
-            text-align: center;
-            letter-spacing: 0.08em;
-        }
-        .guoli-placeholder strong {
-            color: #2c3e2d;
-            font-family: "Noto Serif SC", serif;
-            font-size: clamp(26px, 4vw, 46px);
-            font-weight: 400;
-            letter-spacing: 0.12em;
-        }
-        .guoli-placeholder small {
-            color: rgba(90, 107, 92, 0.76);
+        .guoli-kicker {
+            color: #b99155;
             font-size: 13px;
-            letter-spacing: 0.14em;
+            font-weight: 500;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+        .guoli-title {
+            margin: 18px 0 22px;
+            font-family: "Noto Serif SC", serif;
+            font-size: clamp(44px, 7vw, 96px);
+            font-weight: 300;
+            line-height: 1.12;
+            letter-spacing: 0;
+        }
+        .guoli-lead {
+            max-width: 760px;
+            color: rgba(44, 62, 45, 0.72);
+            font-size: 18px;
+            line-height: 2;
+        }
+        .guoli-hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 56px;
+            align-items: center;
+        }
+        .guoli-photo,
+        .guoli-piece {
+            margin: 0;
+            border: 1px solid rgba(185, 145, 85, 0.26);
+            background: rgba(255, 255, 255, 0.66);
+            overflow: hidden;
+        }
+        .guoli-photo img,
+        .guoli-piece img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #f8f5ec;
+        }
+        .guoli-photo--hero {
+            aspect-ratio: 3 / 2;
+            padding: 14px;
+            box-shadow: 0 26px 72px rgba(44, 62, 45, 0.14);
+        }
+        .guoli-photo figcaption,
+        .guoli-piece figcaption {
+            padding: 14px 18px;
+            color: rgba(44, 62, 45, 0.62);
+            font-size: 13px;
+            line-height: 1.8;
+            border-top: 1px solid rgba(44, 62, 45, 0.08);
+        }
+        .guoli-section {
+            padding: 86px 0;
+            background: #f5f2eb;
+        }
+        .guoli-section--light {
+            background: #fbfaf6;
+        }
+        .guoli-section-head {
+            display: grid;
+            grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+            gap: 48px;
+            align-items: end;
+            margin-bottom: 44px;
+        }
+        .guoli-section-head h2 {
+            margin: 10px 0 0;
+            font-family: "Noto Serif SC", serif;
+            font-size: clamp(32px, 4vw, 56px);
+            font-weight: 300;
+            line-height: 1.22;
+            letter-spacing: 0;
+        }
+        .guoli-section-head p,
+        .guoli-copy p {
+            color: rgba(44, 62, 45, 0.7);
+            font-size: 16px;
+            line-height: 2;
+        }
+        .guoli-definition {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+        .guoli-definition article,
+        .guoli-value article {
+            border-top: 1px solid rgba(185, 145, 85, 0.45);
+            padding-top: 22px;
+        }
+        .guoli-definition h3,
+        .guoli-value h3 {
+            margin: 0 0 12px;
+            font-family: "Noto Serif SC", serif;
+            font-size: 24px;
+            font-weight: 400;
+        }
+        .guoli-definition p,
+        .guoli-value p {
+            margin: 0;
+            color: rgba(44, 62, 45, 0.66);
+            line-height: 1.9;
+        }
+        .guoli-feature {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+            gap: 42px;
+            align-items: start;
+        }
+        .guoli-feature--difficulty {
+            display: block;
+        }
+        .guoli-piece-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+        .guoli-feature--difficulty .guoli-piece-grid {
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: 42px;
+            align-items: stretch;
+            margin-bottom: 52px;
+        }
+        .guoli-piece {
+            display: flex;
+            min-height: 100%;
+            flex-direction: column;
+        }
+        .guoli-piece img {
+            aspect-ratio: 4 / 3;
+            flex: 1;
+        }
+        .guoli-feature--difficulty .guoli-piece img {
+            height: min(46vw, 560px);
+            aspect-ratio: auto;
+            flex: none;
+        }
+        .guoli-feature--difficulty .guoli-piece figcaption {
+            min-height: 84px;
+            font-size: 15px;
+        }
+        .guoli-method {
+            display: grid;
+            gap: 22px;
+            margin-top: 28px;
+        }
+        .guoli-feature--difficulty .guoli-method {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 34px;
+            margin-top: 0;
+        }
+        .guoli-method article {
+            padding: 24px 0;
+            border-top: 1px solid rgba(44, 62, 45, 0.12);
+        }
+        .guoli-feature--difficulty .guoli-method article {
+            padding: 28px 0 0;
+        }
+        .guoli-method h3 {
+            margin: 0 0 10px;
+            font-family: "Noto Serif SC", serif;
+            font-size: 22px;
+            font-weight: 400;
+        }
+        .guoli-method p {
+            margin: 0;
+            color: rgba(44, 62, 45, 0.68);
+            line-height: 1.9;
+        }
+        .guoli-value {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+        .guoli-quote {
+            padding: 72px 0;
+            background: #243b32;
+            color: #fff;
+            text-align: center;
+        }
+        .guoli-quote p {
+            margin: 0 auto;
+            max-width: 820px;
+            font-family: "Noto Serif SC", serif;
+            font-size: clamp(30px, 4vw, 54px);
+            font-weight: 300;
+            line-height: 1.45;
+        }
+        .guoli-quote span {
+            display: block;
+            margin-top: 22px;
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 14px;
+            letter-spacing: 0.18em;
+        }
+        @media (max-width: 900px) {
+            .guoli-hero-grid,
+            .guoli-section-head,
+            .guoli-feature,
+            .guoli-definition,
+            .guoli-value {
+                grid-template-columns: 1fr;
+            }
+            .guoli-hero {
+                padding-top: 124px;
+            }
+            .guoli-piece-grid {
+                grid-template-columns: 1fr;
+            }
+            .guoli-feature--difficulty .guoli-piece-grid,
+            .guoli-feature--difficulty .guoli-method {
+                grid-template-columns: 1fr;
+            }
+            .guoli-feature--difficulty .guoli-piece img {
+                height: auto;
+            }
         }
     </style>
     <link rel="stylesheet" href="assets/site.css">
@@ -190,64 +357,159 @@
             </div>
         </div>
     </nav>
-    <section class="pt-32 pb-12 bg-white">
-        <div class="container mx-auto px-6 lg:px-12 text-center">
-            <span class="text-accent text-sm tracking-widest fade-in">作品展示</span>
-            <h1 class="text-4xl md:text-5xl font-serif font-light tracking-wider mt-4 mb-6 fade-in">双面三异绣·国礼</h1>
-            <div class="w-24 h-px bg-accent mx-auto mb-8 fade-in"></div>
-            <p class="text-secondary max-w-2xl mx-auto leading-relaxed fade-in">一面一世界，一丝一华年</p>
-        </div>
-    </section>
-    <section class="py-16 bg-cream">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                <div class="fade-in">
-                    <div class="guoli-media guoli-media--hero" data-material-slot="013">
-                        <!-- 素材位 013：后续替换为三异绣页面主视觉。原临时图 images/studio/guoli-flamingo-swan.jpg 已隐藏。 -->
-                        <div class="guoli-placeholder"><strong>图片位 013</strong><small>建议 4:3 横版主图</small></div>
+    <main>
+        <section class="guoli-hero">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="guoli-hero-grid">
+                    <div class="fade-in">
+                        <span class="guoli-kicker">Double-Sided Triple-Difference Embroidery</span>
+                        <h1 class="guoli-title">一针分两面，一绣藏三绝。</h1>
+                        <p class="guoli-lead">杨雪刺绣艺术工作室深耕苏绣高阶技艺，以匠心解构双面三异绣技法内核，复刻传统非遗巧思，赋予古老绣品全新当代审美表达。</p>
                     </div>
+                    <figure class="guoli-photo guoli-photo--hero fade-in" data-material-slot="013">
+                        <img src="images/三异绣/013.JPEG" alt="杨雪刺绣双面三异绣圆形摆件双面作品">
+                        <figcaption>同一件双面绣作品的两面图景，完整展示器型、画面与展陈比例。</figcaption>
+                    </figure>
                 </div>
-                <div class="fade-in">
-                    <h2 class="text-2xl font-serif tracking-wider mb-6">双面三异绣</h2>
-                    <div class="w-16 h-px bg-accent mb-6"></div>
-                    <p class="text-secondary leading-relaxed mb-6">双面三异绣是苏绣中的最高技艺，代表着刺绣艺术的巅峰境界。一件作品两面异色、异针、异绣，正反两面呈现出完全不同的画面，却同样精美绝伦。</p>
-                    <p class="text-secondary leading-relaxed mb-6">杨雪老师作品《飞毯送福》于2021年作为国礼赠送卡塔尔亲王，《一带一路》主题苏绣于2022年作为国礼赠送迪拜华人，展现了中华传统文化的魅力。</p>
-                    <div class="flex gap-4">
-                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">双面异色</span>
-                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">国礼级</span>
-                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">收藏级</span>
+            </div>
+        </section>
+
+        <section class="guoli-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="guoli-section-head fade-in">
+                    <div>
+                        <span class="guoli-kicker">Atelier Introduction</span>
+                        <h2>双面绣之外，更难的是三异。</h2>
+                    </div>
+                    <p>双面绣本已是苏绣里极具观赏价值的经典品类，而双面三异绣，是双面刺绣体系中难度天花板级别的存在。</p>
+                </div>
+                <div class="guoli-feature">
+                    <div class="guoli-copy fade-in">
+                        <p>杨雪老师携工作室一众资深绣娘，多年深耕特种双面绣研发与实操创作，跳出常规双面“同形异色”的基础绣法局限，完整掌握双面异形、异色、异针法的全套制作工艺。</p>
+                        <p>我们以手工丝线为媒介，在同一块底料之上，正反面呈现完全不一样的画面纹样、色彩体系与刺绣肌理，让一方绣品承载两份独立艺术图景，把苏绣“细、密、匀、活、亮”的极致特质发挥到极致。</p>
+                    </div>
+                    <figure class="guoli-photo fade-in" data-material-slot="015">
+                        <img src="images/三异绣/015.JPEG" alt="火烈鸟与天鹅双面三异绣摆件">
+                        <figcaption>正反两面图案、色彩气质与动物形态各不相同。</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="guoli-section guoli-section--light">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="guoli-section-head fade-in">
+                    <div>
+                        <span class="guoli-kicker">Definition</span>
+                        <h2>什么是双面三异绣？</h2>
+                    </div>
+                    <p>双面三异绣，顾名思义三大核心差异：异形、异色、异针法。三者同时满足，才是标准的双面三异绣作品。</p>
+                </div>
+                <div class="guoli-definition">
+                    <article class="fade-in">
+                        <h3>异形</h3>
+                        <p>普通双面绣两面图案一致，而三异绣要求正反面呈现不同图案，观者转身观看时得到的是另一幅完整作品。</p>
+                    </article>
+                    <article class="fade-in" style="transition-delay: 0.1s;">
+                        <h3>异色</h3>
+                        <p>同一底料之上，正反面拥有不同的配色体系，浅色不透底、深色不晕染，色彩层次需要提前推演。</p>
+                    </article>
+                    <article class="fade-in" style="transition-delay: 0.2s;">
+                        <h3>异针法</h3>
+                        <p>正反两面可能对应完全不同的针法逻辑，绣娘需要同时控制两套走线秩序，让两面肌理互不干扰。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="guoli-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="guoli-section-head fade-in">
+                    <div>
+                        <span class="guoli-kicker">Craft Difficulty</span>
+                        <h2>三大难点，考验的是长期手上功夫。</h2>
+                    </div>
+                    <p>一根丝线穿透底料，正面走线塑造 A 图案，背面走线同步排布 B 图案，不能打结、不能跳线、不能出现线头堆积。</p>
+                </div>
+                <div class="guoli-feature guoli-feature--difficulty">
+                    <div class="guoli-piece-grid">
+                        <figure class="guoli-piece fade-in" data-material-slot="014">
+                            <img src="images/三异绣/014.JPEG" alt="老虎与狮子双面三异绣摆件">
+                            <figcaption>动物毛发、眼神与背景肌理的双面控制。</figcaption>
+                        </figure>
+                        <figure class="guoli-piece fade-in" style="transition-delay: 0.1s;" data-material-slot="016">
+                            <img src="images/三异绣/016.JPEG" alt="双犬圆形双面三异绣摆件">
+                            <figcaption>圆形器型中的两面动物肖像表达。</figcaption>
+                        </figure>
+                    </div>
+                    <div class="guoli-method">
+                        <article class="fade-in">
+                            <h3>走线管控难度极高</h3>
+                            <p>分毫偏差就会让两面纹样同时受损，对绣工的稳定度、节奏和经验要求严苛。</p>
+                        </article>
+                        <article class="fade-in" style="transition-delay: 0.1s;">
+                            <h3>针法两套体系互不干扰</h3>
+                            <p>正面可能使用平针、打籽针、虚实针，背面则需要缠针、盘金、施针等不同针法，左右手都要记住各自的针法逻辑。</p>
+                        </article>
+                        <article class="fade-in" style="transition-delay: 0.2s;">
+                            <h3>配色分层必须提前推演</h3>
+                            <p>正反面丝线叠加排布，多层丝线堆叠还要保证底料平整不起皱，色彩、厚度和透底风险都要在落针前预判。</p>
+                        </article>
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="group relative overflow-hidden cursor-pointer fade-in">
-                    <div class="guoli-media" data-material-slot="014">
-                        <!-- 素材位 014：后续替换为三异绣作品封面一。原临时图 images/studio/guoli-flamingo-swan.jpg 已隐藏。 -->
-                        <div class="guoli-placeholder"><strong>图片位 014</strong><small>建议 4:3 作品封面</small></div>
+        </section>
+
+        <section class="guoli-section guoli-section--light">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="guoli-section-head fade-in">
+                    <div>
+                        <span class="guoli-kicker">Yang Xue Atelier</span>
+                        <h2>守绣法古法，融当代审美。</h2>
                     </div>
+                    <p>杨雪刺绣团队的三异绣实践，不只停留在传统技法展示，也让小众高阶工艺进入当代生活场景。</p>
                 </div>
-                <div class="group relative overflow-hidden cursor-pointer fade-in" style="transition-delay: 0.1s;">
-                    <div class="guoli-media" data-material-slot="015">
-                        <!-- 素材位 015：后续替换为三异绣作品封面二。原临时图 images/别墅挂画-3.png 已隐藏。 -->
-                        <div class="guoli-placeholder"><strong>图片位 015</strong><small>建议 4:3 作品封面</small></div>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden cursor-pointer fade-in" style="transition-delay: 0.2s;">
-                    <div class="guoli-media" data-material-slot="016">
-                        <!-- 素材位 016：后续替换为三异绣作品封面三。原临时图 images/studio/lotus-detail.jpg 已隐藏。 -->
-                        <div class="guoli-placeholder"><strong>图片位 016</strong><small>建议 4:3 作品封面</small></div>
-                    </div>
+                <div class="guoli-copy fade-in">
+                    <p>作为专注苏绣创新创作的手工艺团队，杨雪老师依托多年一线刺绣实操经验，带领工作室绣师拆解、梳理、标准化了双面三异绣的整套制作流程。</p>
+                    <p>过往传统三异绣多留存于馆藏文物、大型参展摆件，形制厚重、受众门槛高；杨雪团队在严守古法工艺标准的前提下，将双面三异绣融入挂画、屏风、旗袍配饰、艺术摆件等生活化载体。</p>
+                    <p>从原稿设计、分面绘图、丝线配色筛选，到上绷刺绣、后期装裱养护，工作室实行全流程自研自制，让双面三异绣被更多刺绣爱好者看见、收藏、喜爱。</p>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-6 lg:px-12 text-center">
-            <h2 class="text-3xl font-serif font-light tracking-wider mb-6 fade-in">定制专属国礼级作品</h2>
-            <p class="text-white/70 mb-8 max-w-xl mx-auto fade-in">为您打造独一无二的双面三异绣艺术品</p>
-            <a href="custom-consult.html" class="inline-block px-10 py-4 border border-accent bg-accent text-primary text-sm tracking-widest hover:bg-transparent hover:text-white transition-all duration-500 fade-in">立即咨询</a>
-        </div>
-    </section>
+        </section>
+
+        <section class="guoli-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="guoli-section-head fade-in">
+                    <div>
+                        <span class="guoli-kicker">Collection Value</span>
+                        <h2>一方绣品，承载两份独立艺术图景。</h2>
+                    </div>
+                    <p>一块底料，两幅画卷，一针一线皆是经年匠心。双面三异绣适合艺术收藏、空间陈设与高端国风礼品等场景。</p>
+                </div>
+                <div class="guoli-value">
+                    <article class="fade-in">
+                        <h3>艺术价值</h3>
+                        <p>稀缺的特种苏绣工艺，每一件双面三异绣均为纯手工创作，具备观赏价值与非遗收藏价值。</p>
+                    </article>
+                    <article class="fade-in" style="transition-delay: 0.1s;">
+                        <h3>工艺价值</h3>
+                        <p>完整的异形、异色、异针技法，是苏绣高阶技艺的直观载体，具备技艺研究和非遗展示属性。</p>
+                    </article>
+                    <article class="fade-in" style="transition-delay: 0.2s;">
+                        <h3>实用价值</h3>
+                        <p>工作室定制款三异绣作品可用于居家装饰挂画、茶室屏风、艺术摆件和高端商务国风伴手礼。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="guoli-quote">
+            <div class="container mx-auto px-6 lg:px-12">
+                <p class="fade-in">一针双面双景致，十指三异三匠心。</p>
+                <span class="fade-in">杨雪刺绣 | 双面三异绣定制 · 苏绣作品创作 · 刺绣技艺交流</span>
+            </div>
+        </section>
+    </main>
     <footer class="py-16 bg-cream border-t border-gray-200">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">

@@ -599,6 +599,103 @@ nav#navbar .dropdown-item:hover,
     line-height: 1.8;
 }
 
+.yx-material-frame {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 280px;
+    aspect-ratio: 4 / 3;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid rgba(185, 145, 85, 0.34);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(239, 233, 220, 0.9)),
+        repeating-linear-gradient(90deg, rgba(44, 62, 45, 0.06) 0 1px, transparent 1px 42px);
+}
+
+.yx-material-frame::before {
+    content: attr(data-material-slot);
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    display: inline-flex;
+    min-width: 44px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(185, 145, 85, 0.5);
+    color: var(--gold);
+    background: rgba(255, 250, 241, 0.92);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+}
+
+.yx-material-frame--portrait {
+    max-width: 520px;
+    min-height: 420px;
+    aspect-ratio: 3 / 4;
+    margin-inline: auto;
+}
+
+.yx-material-frame--hero {
+    min-height: 520px;
+    box-shadow: 0 24px 60px rgba(44, 62, 45, 0.14);
+}
+
+.yx-material-frame--cover {
+    min-height: 320px;
+}
+
+.yx-material-frame--work-card {
+    height: 100%;
+    min-height: 0;
+    max-width: none;
+    aspect-ratio: auto;
+    margin: 0;
+    border: 0;
+}
+
+.yx-material-frame--series {
+    max-width: none;
+    min-height: 360px;
+    aspect-ratio: 3 / 4;
+    margin: 0;
+    border: 0;
+}
+
+.yx-material-frame--wide {
+    aspect-ratio: 16 / 9;
+}
+
+.yx-material-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 36px;
+    color: var(--gold);
+    text-align: center;
+    letter-spacing: 0.08em;
+}
+
+.yx-material-placeholder strong {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(26px, 4vw, 46px);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+}
+
+.yx-material-placeholder small {
+    color: rgba(44, 62, 45, 0.66);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+}
+
 .yx-news-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
