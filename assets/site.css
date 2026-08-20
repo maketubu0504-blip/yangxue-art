@@ -1118,6 +1118,384 @@ nav#navbar .dropdown-item:hover,
     font-size: 22px;
 }
 
+/* Portrait commission page */
+.yx-renwu-page {
+    --renwu-paper: #f3f0e8;
+    --renwu-ink: #20231f;
+    --renwu-green: #263f37;
+    --renwu-gold: #b58d55;
+    color: var(--renwu-ink);
+    background: var(--renwu-paper);
+}
+
+.yx-renwu-page main {
+    overflow: hidden;
+}
+
+.yx-renwu-container {
+    width: min(100% - 96px, 1360px);
+    margin-inline: auto;
+}
+
+.yx-renwu-kicker {
+    display: block;
+    margin-bottom: 24px;
+    color: var(--renwu-gold);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.yx-renwu-hero {
+    padding: 136px 0 76px;
+    background: #eceee8;
+}
+
+.yx-renwu-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(360px, 0.78fr) minmax(520px, 1.22fr);
+    gap: 88px;
+    align-items: center;
+}
+
+.yx-renwu-hero__copy h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: 0;
+}
+
+.yx-renwu-hero__copy p {
+    max-width: 520px;
+    margin: 34px 0 30px;
+    color: rgba(32, 35, 31, 0.68);
+    font-size: 16px;
+    line-height: 2;
+}
+
+.yx-renwu-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--renwu-gold);
+    color: var(--renwu-ink);
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 0;
+}
+
+.yx-renwu-link i {
+    font-size: 12px;
+    transition: transform 180ms ease;
+}
+
+.yx-renwu-link:hover i {
+    transform: translateX(4px);
+}
+
+.yx-renwu-hero__media,
+.yx-renwu-feature-image,
+.yx-renwu-card,
+.yx-renwu-spectrum__image {
+    position: relative;
+    margin: 0;
+}
+
+.yx-renwu-hero__media {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 210px;
+    align-items: end;
+    background: #ddd8cd;
+}
+
+.yx-renwu-hero__media img {
+    display: block;
+    width: 100%;
+    height: 660px;
+    object-fit: contain;
+    object-position: center;
+    background: #ddd8cd;
+}
+
+.yx-renwu-hero__media figcaption {
+    padding: 32px 28px;
+    color: var(--renwu-ink);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.45;
+}
+
+.yx-renwu-hero__media figcaption span {
+    display: block;
+    margin-top: 14px;
+    color: rgba(32, 35, 31, 0.6);
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.yx-renwu-hero__media::before,
+.yx-renwu-feature-image::before,
+.yx-renwu-card::before,
+.yx-renwu-spectrum__image::before {
+    content: attr(data-material-slot);
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    display: grid;
+    min-width: 46px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid rgba(181, 141, 85, 0.48);
+    color: var(--renwu-gold);
+    background: rgba(247, 244, 236, 0.92);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.yx-renwu-section {
+    padding: 112px 0;
+}
+
+.yx-renwu-intro {
+    background: #f7f4ec;
+}
+
+.yx-renwu-intro__grid {
+    display: grid;
+    grid-template-columns: minmax(420px, 0.92fr) minmax(400px, 1.08fr);
+    gap: 112px;
+    align-items: center;
+}
+
+.yx-renwu-feature-image {
+    padding: 24px;
+    background: #e2ded5;
+}
+
+.yx-renwu-feature-image img {
+    display: block;
+    width: 100%;
+    height: 720px;
+    object-fit: contain;
+}
+
+.yx-renwu-intro__copy h2,
+.yx-renwu-section-head h2,
+.yx-renwu-spectrum__copy h2,
+.yx-renwu-cta h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.yx-renwu-intro__copy h2,
+.yx-renwu-spectrum__copy h2 {
+    font-size: 48px;
+    line-height: 1.3;
+}
+
+.yx-renwu-intro__copy > p,
+.yx-renwu-spectrum__copy > p {
+    margin: 28px 0 0;
+    color: rgba(32, 35, 31, 0.65);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.yx-renwu-facts {
+    margin: 38px 0 0;
+}
+
+.yx-renwu-facts div {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 18px;
+    align-items: baseline;
+    padding: 18px 0;
+    border-top: 1px solid rgba(32, 35, 31, 0.14);
+}
+
+.yx-renwu-facts dt {
+    color: var(--renwu-gold);
+    font-family: var(--serif);
+    font-size: 20px;
+}
+
+.yx-renwu-facts dd {
+    margin: 0;
+    color: rgba(32, 35, 31, 0.72);
+    font-size: 14px;
+}
+
+.yx-renwu-works {
+    background: var(--renwu-paper);
+}
+
+.yx-renwu-section-head {
+    display: grid;
+    grid-template-columns: 1fr minmax(340px, 0.72fr);
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 72px;
+}
+
+.yx-renwu-section-head h2 {
+    font-size: 52px;
+    line-height: 1.25;
+}
+
+.yx-renwu-section-head p {
+    margin: 0;
+    color: rgba(32, 35, 31, 0.62);
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.yx-renwu-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 72px 54px;
+}
+
+.yx-renwu-card {
+    min-width: 0;
+}
+
+.yx-renwu-card__image {
+    display: grid;
+    height: 700px;
+    place-items: center;
+    padding: 26px;
+    background: #e5e1d8;
+    overflow: hidden;
+}
+
+.yx-renwu-card__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 300ms ease;
+}
+
+.yx-renwu-card:hover .yx-renwu-card__image img {
+    transform: scale(1.015);
+}
+
+.yx-renwu-card figcaption {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 30px;
+    padding: 24px 2px 0;
+    border-top: 1px solid rgba(32, 35, 31, 0.12);
+}
+
+.yx-renwu-card figcaption strong {
+    font-family: var(--serif);
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.yx-renwu-card figcaption span {
+    color: rgba(32, 35, 31, 0.6);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.yx-renwu-spectrum {
+    background: #e7ebe3;
+}
+
+.yx-renwu-spectrum__grid {
+    display: grid;
+    grid-template-columns: minmax(500px, 1.08fr) minmax(380px, 0.92fr);
+    gap: 92px;
+    align-items: center;
+}
+
+.yx-renwu-spectrum__image {
+    padding: 22px;
+    background: #d7dbd3;
+}
+
+.yx-renwu-spectrum__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.yx-renwu-spectrum__copy ul {
+    margin: 34px 0 28px;
+    padding: 0;
+    list-style: none;
+}
+
+.yx-renwu-spectrum__copy li {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 24px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(32, 35, 31, 0.14);
+    color: rgba(32, 35, 31, 0.64);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.yx-renwu-spectrum__copy li span {
+    color: var(--renwu-ink);
+    font-family: var(--serif);
+    font-size: 16px;
+}
+
+.yx-renwu-cta {
+    padding: 78px 0;
+    color: #f7f4ec;
+    background: var(--renwu-green);
+}
+
+.yx-renwu-cta__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.yx-renwu-cta span {
+    display: block;
+    margin-bottom: 12px;
+    color: rgba(247, 244, 236, 0.62);
+    font-size: 11px;
+    letter-spacing: 0;
+}
+
+.yx-renwu-cta h2 {
+    color: #f7f4ec;
+    font-size: 36px;
+    line-height: 1.35;
+}
+
+.yx-renwu-cta a {
+    flex: 0 0 auto;
+    padding: 15px 30px;
+    border: 1px solid rgba(247, 244, 236, 0.7);
+    color: #f7f4ec;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 180ms ease, background 180ms ease;
+}
+
+.yx-renwu-cta a:hover {
+    color: var(--renwu-green);
+    background: #f7f4ec;
+}
+
 .yx-footer {
     padding: 58px 0 28px;
     color: rgba(255, 250, 241, 0.75);
@@ -1272,6 +1650,48 @@ footer:not(.yx-footer) span {
 }
 
 @media (max-width: 1024px) {
+    .yx-renwu-container {
+        width: min(100% - 48px, 920px);
+    }
+
+    .yx-renwu-hero {
+        padding-top: 120px;
+    }
+
+    .yx-renwu-hero__inner,
+    .yx-renwu-intro__grid,
+    .yx-renwu-spectrum__grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+
+    .yx-renwu-hero__copy {
+        max-width: 660px;
+    }
+
+    .yx-renwu-hero__copy h1 {
+        font-size: 54px;
+    }
+
+    .yx-renwu-hero__media,
+    .yx-renwu-feature-image,
+    .yx-renwu-spectrum__image {
+        width: min(100%, 760px);
+    }
+
+    .yx-renwu-feature-image img {
+        height: 680px;
+    }
+
+    .yx-renwu-section-head {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .yx-renwu-card__image {
+        height: 600px;
+    }
+
     .yx-section {
         padding: 88px 0;
     }
@@ -1327,6 +1747,124 @@ footer:not(.yx-footer) span {
 }
 
 @media (max-width: 720px) {
+    .yx-renwu-container {
+        width: min(100% - 28px, 640px);
+    }
+
+    .yx-renwu-hero {
+        padding: 104px 0 58px;
+    }
+
+    .yx-renwu-hero__inner,
+    .yx-renwu-intro__grid,
+    .yx-renwu-spectrum__grid {
+        gap: 38px;
+    }
+
+    .yx-renwu-kicker {
+        margin-bottom: 16px;
+    }
+
+    .yx-renwu-hero__copy h1 {
+        font-size: 42px;
+        line-height: 1.22;
+    }
+
+    .yx-renwu-hero__copy p {
+        margin: 24px 0 20px;
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .yx-renwu-hero__media {
+        grid-template-columns: 1fr;
+    }
+
+    .yx-renwu-hero__media img {
+        height: auto;
+        max-height: none;
+    }
+
+    .yx-renwu-hero__media figcaption {
+        padding: 22px 20px 24px;
+        font-size: 19px;
+    }
+
+    .yx-renwu-section {
+        padding: 76px 0;
+    }
+
+    .yx-renwu-feature-image,
+    .yx-renwu-spectrum__image {
+        padding: 12px;
+    }
+
+    .yx-renwu-feature-image img {
+        height: auto;
+    }
+
+    .yx-renwu-intro__copy h2,
+    .yx-renwu-spectrum__copy h2 {
+        font-size: 34px;
+        line-height: 1.35;
+    }
+
+    .yx-renwu-intro__copy > p,
+    .yx-renwu-spectrum__copy > p {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .yx-renwu-section-head {
+        margin-bottom: 42px;
+    }
+
+    .yx-renwu-section-head h2 {
+        font-size: 36px;
+    }
+
+    .yx-renwu-gallery {
+        grid-template-columns: 1fr;
+        gap: 52px;
+    }
+
+    .yx-renwu-card__image {
+        height: auto;
+        min-height: 0;
+        padding: 14px;
+    }
+
+    .yx-renwu-card__image img {
+        height: auto;
+        max-height: none;
+    }
+
+    .yx-renwu-card figcaption {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-top: 18px;
+    }
+
+    .yx-renwu-spectrum__copy li {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .yx-renwu-cta {
+        padding: 58px 0;
+    }
+
+    .yx-renwu-cta__inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .yx-renwu-cta h2 {
+        font-size: 29px;
+    }
+
     .container,
     .yx-container,
     nav#navbar .container {
