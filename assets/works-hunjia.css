@@ -1,0 +1,892 @@
+.yx-wedding-page {
+    --wedding-ink: #211c18;
+    --wedding-muted: #706760;
+    --wedding-paper: #f6f1e8;
+    --wedding-paper-deep: #eee6da;
+    --wedding-white: #fffdf8;
+    --wedding-red: #962f27;
+    --wedding-red-dark: #66231f;
+    --wedding-gold: #76552a;
+    --wedding-jade: #315849;
+    --wedding-line: rgba(33, 28, 24, 0.16);
+    color: var(--wedding-ink);
+    background: var(--wedding-paper);
+}
+
+.yx-wedding-page main {
+    overflow-x: clip;
+}
+
+.yx-wedding-page img {
+    display: block;
+    width: 100%;
+}
+
+.yx-wedding-shell {
+    width: min(100% - 64px, 1440px);
+    margin: 0 auto;
+}
+
+.yx-wedding-eyebrow {
+    margin: 0;
+    color: var(--wedding-gold);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.yx-wedding-slot {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 3;
+    display: inline-grid;
+    min-width: 44px;
+    min-height: 30px;
+    place-items: center;
+    padding: 4px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    background: rgba(74, 24, 20, 0.82);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.yx-wedding-button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 28px;
+    border: 1px solid var(--wedding-ink);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.yx-wedding-button--solid {
+    border-color: var(--wedding-red);
+    background: var(--wedding-red);
+    color: #fff;
+}
+
+.yx-wedding-button--solid:hover {
+    border-color: var(--wedding-red-dark);
+    background: var(--wedding-red-dark);
+}
+
+.yx-wedding-button--line {
+    color: var(--wedding-ink);
+}
+
+.yx-wedding-button--line:hover {
+    background: var(--wedding-ink);
+    color: #fff;
+}
+
+.yx-wedding-hero {
+    position: relative;
+    min-height: calc(100svh - 24px);
+    padding: 80px 0 0;
+    border-bottom: 1px solid var(--wedding-line);
+    background: #3b1c18;
+}
+
+.yx-wedding-hero__inner {
+    position: relative;
+    display: flex;
+    height: calc(100svh - 104px);
+    min-height: 620px;
+    max-height: 880px;
+    align-items: center;
+}
+
+.yx-wedding-hero__copy {
+    position: relative;
+    z-index: 2;
+    width: min(590px, 58%);
+    color: #fffaf2;
+}
+
+.yx-wedding-hero__copy h1 {
+    margin: 24px 0 0;
+    font-family: "Noto Serif SC", serif;
+    font-size: 78px;
+    font-weight: 400;
+    line-height: 1.22;
+    letter-spacing: 0;
+}
+
+.yx-wedding-hero__lead {
+    max-width: 570px;
+    margin: 32px 0 0;
+    color: rgba(255, 250, 242, 0.82);
+    font-size: 16px;
+    line-height: 2;
+}
+
+.yx-wedding-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 36px;
+}
+
+.yx-wedding-hero__notes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin: 58px 0 0;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 250, 242, 0.34);
+}
+
+.yx-wedding-hero__notes div {
+    min-width: 0;
+}
+
+.yx-wedding-hero__notes dt {
+    color: #e2c58e;
+    font-family: "Noto Serif SC", serif;
+    font-size: 22px;
+}
+
+.yx-wedding-hero__notes dd {
+    margin: 8px 0 0;
+    color: rgba(255, 250, 242, 0.72);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.yx-wedding-hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    margin: 0;
+    overflow: hidden;
+    background: #3b1c18;
+}
+
+.yx-wedding-hero__media::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: rgba(33, 18, 15, 0.48);
+}
+
+.yx-wedding-hero__media img {
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+    object-position: right center;
+}
+
+.yx-wedding-hero__media figcaption {
+    position: absolute;
+    right: 28px;
+    bottom: 24px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 0;
+    color: #fffaf2;
+    font-family: "Noto Serif SC", serif;
+    font-size: 17px;
+}
+
+.yx-wedding-hero__media figcaption span {
+    color: #f0d7aa;
+    font-family: "Noto Sans SC", sans-serif;
+    font-size: 11px;
+}
+
+.yx-wedding-hero .yx-wedding-button--solid {
+    border-color: #fffaf2;
+    background: #fffaf2;
+    color: var(--wedding-red-dark);
+}
+
+.yx-wedding-hero .yx-wedding-button--solid:hover {
+    border-color: #e2c58e;
+    background: #e2c58e;
+}
+
+.yx-wedding-hero .yx-wedding-button--line {
+    border-color: rgba(255, 250, 242, 0.82);
+    color: #fffaf2;
+}
+
+.yx-wedding-hero .yx-wedding-button--line:hover {
+    background: #fffaf2;
+    color: var(--wedding-red-dark);
+}
+
+.yx-wedding-vow {
+    padding: 122px 0;
+    background: var(--wedding-red-dark);
+    color: #fffaf1;
+}
+
+.yx-wedding-hero .yx-wedding-eyebrow,
+.yx-wedding-vow .yx-wedding-eyebrow,
+.yx-wedding-custom .yx-wedding-eyebrow {
+    color: #f0d7aa;
+}
+
+.yx-wedding-vow__head {
+    display: grid;
+    grid-template-columns: minmax(420px, 0.86fr) minmax(420px, 0.72fr);
+    justify-content: space-between;
+    gap: 86px;
+    align-items: end;
+    margin-bottom: 68px;
+}
+
+.yx-wedding-vow__head h2,
+.yx-wedding-book__copy h2,
+.yx-wedding-craft__head h2,
+.yx-wedding-collection__head h2,
+.yx-wedding-custom__copy h2 {
+    margin: 22px 0 0;
+    font-family: "Noto Serif SC", serif;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.yx-wedding-vow__head h2 {
+    font-size: 62px;
+    line-height: 1.28;
+}
+
+.yx-wedding-vow__head > p {
+    margin: 0;
+    color: rgba(255, 250, 241, 0.72);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.yx-wedding-vow__gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.yx-wedding-vow__gallery figure,
+.yx-wedding-book__media,
+.yx-wedding-craft__image,
+.yx-wedding-piece {
+    position: relative;
+    margin: 0;
+}
+
+.yx-wedding-vow__gallery figure {
+    padding: 14px;
+    border: 1px solid rgba(255, 250, 241, 0.24);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.yx-wedding-vow__gallery img {
+    height: 760px;
+    object-fit: contain;
+    background: #4c1c19;
+}
+
+.yx-wedding-vow__gallery figure:last-child img {
+    height: 640px;
+}
+
+.yx-wedding-vow__gallery figcaption {
+    padding: 18px 2px 4px;
+}
+
+.yx-wedding-vow__gallery figcaption strong,
+.yx-wedding-vow__gallery figcaption span {
+    display: block;
+}
+
+.yx-wedding-vow__gallery figcaption strong {
+    font-family: "Noto Serif SC", serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.yx-wedding-vow__gallery figcaption span {
+    margin-top: 8px;
+    color: rgba(255, 250, 241, 0.65);
+    font-size: 13px;
+}
+
+.yx-wedding-book {
+    padding: 126px 0;
+    background: var(--wedding-paper);
+}
+
+.yx-wedding-book__grid {
+    display: grid;
+    grid-template-columns: minmax(500px, 1.12fr) minmax(360px, 0.88fr);
+    gap: clamp(64px, 8vw, 128px);
+    align-items: center;
+}
+
+.yx-wedding-book__media {
+    padding: 18px;
+    border: 1px solid var(--wedding-line);
+    background: var(--wedding-white);
+}
+
+.yx-wedding-book__media img {
+    max-height: 820px;
+    object-fit: contain;
+    background: #eee3d7;
+}
+
+.yx-wedding-book__copy h2 {
+    font-size: 58px;
+    line-height: 1.35;
+}
+
+.yx-wedding-book__copy > p:not(.yx-wedding-eyebrow) {
+    margin: 28px 0 0;
+    color: var(--wedding-muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.yx-wedding-book__copy blockquote {
+    margin: 38px 0 0;
+    padding: 0 0 0 20px;
+    border-left: 2px solid var(--wedding-red);
+    color: var(--wedding-red-dark);
+    font-family: "Noto Serif SC", serif;
+    font-size: 23px;
+    line-height: 1.7;
+}
+
+.yx-wedding-craft {
+    padding: 124px 0 134px;
+    background: var(--wedding-white);
+}
+
+.yx-wedding-craft__head {
+    display: grid;
+    grid-template-columns: minmax(400px, 0.9fr) minmax(420px, 0.72fr);
+    justify-content: space-between;
+    gap: 90px;
+    align-items: end;
+    margin-bottom: 64px;
+}
+
+.yx-wedding-craft__head h2 {
+    font-size: 60px;
+    line-height: 1.3;
+}
+
+.yx-wedding-craft__head > p {
+    margin: 0;
+    color: var(--wedding-muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.yx-wedding-craft__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+}
+
+.yx-wedding-craft__image {
+    padding: 16px;
+    border: 1px solid var(--wedding-line);
+    background: var(--wedding-paper);
+}
+
+.yx-wedding-craft__image img {
+    height: 680px;
+    object-fit: contain;
+    background: #eadfd4;
+}
+
+.yx-wedding-craft__image figcaption {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 18px;
+    align-items: baseline;
+    padding: 20px 3px 4px;
+}
+
+.yx-wedding-craft__image figcaption strong {
+    color: var(--wedding-red);
+    font-family: "Noto Serif SC", serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.yx-wedding-craft__image figcaption span {
+    color: var(--wedding-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.yx-wedding-symbols {
+    border-top: 1px solid var(--wedding-line);
+    border-bottom: 1px solid var(--wedding-line);
+    background: var(--wedding-paper-deep);
+}
+
+.yx-wedding-symbols__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.yx-wedding-symbols article {
+    min-height: 260px;
+    padding: 46px 34px;
+    border-right: 1px solid var(--wedding-line);
+}
+
+.yx-wedding-symbols article:first-child {
+    border-left: 1px solid var(--wedding-line);
+}
+
+.yx-wedding-symbols span {
+    color: var(--wedding-red);
+    font-family: "Noto Serif SC", serif;
+    font-size: 30px;
+}
+
+.yx-wedding-symbols h3 {
+    margin: 26px 0 0;
+    font-family: "Noto Serif SC", serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.yx-wedding-symbols p {
+    margin: 14px 0 0;
+    color: var(--wedding-muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.yx-wedding-collection {
+    padding: 126px 0 144px;
+    background: var(--wedding-paper);
+}
+
+.yx-wedding-collection__head {
+    display: grid;
+    grid-template-columns: minmax(420px, 0.9fr) minmax(420px, 0.72fr);
+    justify-content: space-between;
+    gap: 90px;
+    align-items: end;
+    margin-bottom: 70px;
+}
+
+.yx-wedding-collection__head h2 {
+    font-size: 64px;
+    line-height: 1.28;
+}
+
+.yx-wedding-collection__head > p {
+    margin: 0;
+    color: var(--wedding-muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.yx-wedding-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 44px 34px;
+}
+
+.yx-wedding-piece {
+    min-width: 0;
+}
+
+.yx-wedding-piece__media {
+    position: relative;
+    display: grid;
+    min-height: 580px;
+    place-items: center;
+    padding: 16px;
+    border: 1px solid var(--wedding-line);
+    background: var(--wedding-white);
+}
+
+.yx-wedding-piece__media img {
+    width: 100%;
+    height: 620px;
+    object-fit: contain;
+    background: #eee6db;
+}
+
+.yx-wedding-piece--landscape .yx-wedding-piece__media img {
+    height: 500px;
+}
+
+.yx-wedding-piece--wide {
+    grid-column: 1 / -1;
+}
+
+.yx-wedding-piece--wide .yx-wedding-piece__media img {
+    height: 720px;
+}
+
+.yx-wedding-piece figcaption {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 4px 0;
+}
+
+.yx-wedding-piece figcaption strong {
+    font-family: "Noto Serif SC", serif;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.yx-wedding-piece figcaption span {
+    max-width: 56%;
+    color: var(--wedding-muted);
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: right;
+}
+
+.yx-wedding-custom {
+    padding: 118px 0;
+    background: var(--wedding-jade);
+    color: #fffdf6;
+}
+
+.yx-wedding-custom__inner {
+    display: grid;
+    grid-template-columns: minmax(400px, 0.88fr) minmax(480px, 1.12fr);
+    gap: 100px;
+    align-items: center;
+}
+
+.yx-wedding-custom__copy h2 {
+    font-size: 58px;
+    line-height: 1.35;
+}
+
+.yx-wedding-custom__copy > p:not(.yx-wedding-eyebrow) {
+    margin: 28px 0 0;
+    color: rgba(255, 253, 246, 0.72);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.yx-wedding-custom__steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 42px;
+    border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.yx-wedding-custom__steps div {
+    min-width: 0;
+    padding: 22px 18px 0 0;
+}
+
+.yx-wedding-custom__steps strong,
+.yx-wedding-custom__steps span {
+    display: block;
+}
+
+.yx-wedding-custom__steps strong {
+    color: #d8bb89;
+    font-family: "Noto Serif SC", serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.yx-wedding-custom__steps span {
+    margin-top: 8px;
+    color: rgba(255, 253, 246, 0.7);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.yx-wedding-custom__copy .yx-wedding-button {
+    margin-top: 38px;
+    border-color: #fffdf6;
+    color: #fffdf6;
+}
+
+.yx-wedding-custom__copy .yx-wedding-button:hover {
+    background: #fffdf6;
+    color: var(--wedding-jade);
+}
+
+.yx-wedding-custom__verse {
+    margin: 0;
+    padding: 54px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.yx-wedding-custom__verse p {
+    margin: 0;
+    font-family: "Noto Serif SC", serif;
+    font-size: 42px;
+    line-height: 1.8;
+    letter-spacing: 0;
+}
+
+.yx-wedding-custom__verse cite {
+    display: block;
+    margin-top: 28px;
+    color: rgba(255, 253, 246, 0.66);
+    font-size: 13px;
+    font-style: normal;
+}
+
+@media (max-width: 1180px) {
+    .yx-wedding-hero__copy h1 {
+        font-size: 64px;
+    }
+
+    .yx-wedding-vow__head h2,
+    .yx-wedding-collection__head h2 {
+        font-size: 54px;
+    }
+
+    .yx-wedding-book__copy h2,
+    .yx-wedding-craft__head h2,
+    .yx-wedding-custom__copy h2 {
+        font-size: 48px;
+    }
+
+    .yx-wedding-piece__media img {
+        height: 520px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .yx-wedding-shell {
+        width: min(100% - 40px, 760px);
+    }
+
+    .yx-wedding-hero__inner,
+    .yx-wedding-vow__head,
+    .yx-wedding-vow__gallery,
+    .yx-wedding-book__grid,
+    .yx-wedding-craft__head,
+    .yx-wedding-collection__head,
+    .yx-wedding-custom__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .yx-wedding-hero__inner,
+    .yx-wedding-book__grid,
+    .yx-wedding-custom__inner {
+        gap: 58px;
+    }
+
+    .yx-wedding-hero__copy {
+        width: min(620px, 86%);
+    }
+
+    .yx-wedding-vow__head,
+    .yx-wedding-craft__head,
+    .yx-wedding-collection__head {
+        gap: 28px;
+    }
+
+    .yx-wedding-vow__gallery img,
+    .yx-wedding-vow__gallery figure:last-child img {
+        height: auto;
+        max-height: 780px;
+    }
+
+    .yx-wedding-symbols__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .yx-wedding-symbols article:nth-child(3) {
+        border-left: 1px solid var(--wedding-line);
+    }
+
+    .yx-wedding-symbols article:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--wedding-line);
+    }
+}
+
+@media (max-width: 700px) {
+    .yx-wedding-shell {
+        width: min(100% - 28px, 560px);
+    }
+
+    .yx-wedding-vow,
+    .yx-wedding-book,
+    .yx-wedding-craft,
+    .yx-wedding-collection,
+    .yx-wedding-custom {
+        padding-top: 92px;
+        padding-bottom: 92px;
+    }
+
+    .yx-wedding-hero {
+        min-height: calc(100svh - 16px);
+        padding: 80px 0 0;
+    }
+
+    .yx-wedding-hero__inner {
+        height: calc(100svh - 96px);
+        min-height: 650px;
+        max-height: none;
+        gap: 0;
+    }
+
+    .yx-wedding-hero__copy {
+        width: 100%;
+        padding: 34px 0 82px;
+    }
+
+    .yx-wedding-hero__copy h1 {
+        font-size: 48px;
+        line-height: 1.28;
+    }
+
+    .yx-wedding-vow__head h2,
+    .yx-wedding-collection__head h2,
+    .yx-wedding-book__copy h2,
+    .yx-wedding-craft__head h2,
+    .yx-wedding-custom__copy h2 {
+        font-size: 38px;
+        line-height: 1.38;
+    }
+
+    .yx-wedding-hero__media img {
+        height: 100%;
+        min-height: 0;
+        max-height: none;
+        object-position: center;
+    }
+
+    .yx-wedding-craft__grid,
+    .yx-wedding-gallery,
+    .yx-wedding-symbols__grid,
+    .yx-wedding-custom__steps {
+        grid-template-columns: 1fr;
+    }
+
+    .yx-wedding-hero__lead {
+        margin-top: 22px;
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .yx-wedding-hero__actions {
+        margin-top: 24px;
+    }
+
+    .yx-wedding-hero__notes {
+        gap: 10px;
+        margin-top: 30px;
+        padding-top: 16px;
+    }
+
+    .yx-wedding-hero__notes dt {
+        font-size: 18px;
+    }
+
+    .yx-wedding-hero__notes dd {
+        font-size: 10px;
+        line-height: 1.45;
+    }
+
+    .yx-wedding-hero__media figcaption {
+        display: none;
+    }
+
+    .yx-wedding-craft__image img,
+    .yx-wedding-piece__media img,
+    .yx-wedding-piece--landscape .yx-wedding-piece__media img,
+    .yx-wedding-piece--wide .yx-wedding-piece__media img {
+        height: auto;
+        max-height: 680px;
+    }
+
+    .yx-wedding-piece--wide {
+        grid-column: auto;
+    }
+
+    .yx-wedding-piece__media {
+        min-height: 0;
+    }
+
+    .yx-wedding-piece figcaption {
+        display: block;
+    }
+
+    .yx-wedding-piece figcaption span {
+        display: block;
+        max-width: none;
+        margin-top: 8px;
+        text-align: left;
+    }
+
+    .yx-wedding-symbols article,
+    .yx-wedding-symbols article:nth-child(3) {
+        min-height: 0;
+        border-right: 1px solid var(--wedding-line);
+        border-bottom: 1px solid var(--wedding-line);
+        border-left: 1px solid var(--wedding-line);
+    }
+
+    .yx-wedding-symbols article:last-child {
+        border-bottom: 0;
+    }
+
+    .yx-wedding-custom__verse {
+        padding: 34px 28px;
+    }
+
+    .yx-wedding-custom__verse p {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .yx-wedding-page #menuBtn {
+        display: inline-flex;
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .yx-wedding-footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .yx-wedding-page footer li,
+    .yx-wedding-page footer span {
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 700px) {
+    .yx-wedding-footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .yx-wedding-page .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
