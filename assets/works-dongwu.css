@@ -1,0 +1,1000 @@
+.yx-animal-page {
+    --animal-ink: #18211c;
+    --animal-muted: #667069;
+    --animal-paper: #f5f2ea;
+    --animal-canvas: #ebe7dc;
+    --animal-green: #193b32;
+    --animal-moss: #6f7d69;
+    --animal-gold: #b18a53;
+    --animal-wine: #6e2e2b;
+    --animal-line: rgba(24, 33, 28, 0.16);
+    color: var(--animal-ink);
+    background: var(--animal-paper);
+}
+
+.yx-animal-page main {
+    overflow: hidden;
+}
+
+.yx-animal-page img {
+    display: block;
+    width: 100%;
+}
+
+.yx-animal-shell {
+    width: min(100% - 64px, 1440px);
+    margin: 0 auto;
+}
+
+.yx-animal-eyebrow {
+    margin: 0;
+    color: var(--animal-gold);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.yx-animal-slot {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 4;
+    display: inline-grid;
+    min-width: 44px;
+    min-height: 30px;
+    place-items: center;
+    padding: 4px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    background: rgba(18, 24, 20, 0.76);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.yx-animal-button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 28px;
+    border: 1px solid var(--animal-ink);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.yx-animal-button--solid {
+    background: var(--animal-ink);
+    color: #fff;
+}
+
+.yx-animal-button--solid:hover {
+    background: var(--animal-wine);
+    border-color: var(--animal-wine);
+}
+
+.yx-animal-button--line {
+    background: transparent;
+    color: var(--animal-ink);
+}
+
+.yx-animal-button--line:hover {
+    background: var(--animal-ink);
+    color: #fff;
+}
+
+.yx-animal-hero {
+    padding: 132px 0 86px;
+    border-bottom: 1px solid var(--animal-line);
+    background: #f3efe5;
+}
+
+.yx-animal-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(360px, 0.86fr) minmax(480px, 1.14fr);
+    gap: clamp(54px, 7vw, 118px);
+    align-items: center;
+}
+
+.yx-animal-hero__copy h1 {
+    margin: 24px 0 0;
+    font-family: "Noto Serif SC", serif;
+    font-size: 88px;
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: 0;
+}
+
+.yx-animal-hero__lead {
+    max-width: 580px;
+    margin: 34px 0 0;
+    color: var(--animal-muted);
+    font-size: 16px;
+    line-height: 2;
+}
+
+.yx-animal-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 36px;
+}
+
+.yx-animal-hero__facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin: 64px 0 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--animal-line);
+}
+
+.yx-animal-hero__facts div {
+    min-width: 0;
+}
+
+.yx-animal-hero__facts dt {
+    color: var(--animal-gold);
+    font-family: "Noto Serif SC", serif;
+    font-size: 22px;
+}
+
+.yx-animal-hero__facts dd {
+    margin: 8px 0 0;
+    color: var(--animal-muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.yx-animal-hero__media {
+    position: relative;
+    margin: 0;
+    padding: 18px;
+    background: #ded8cb;
+}
+
+.yx-animal-hero__media img {
+    height: min(74vh, 820px);
+    min-height: 620px;
+    object-fit: contain;
+    background: #ded8cb;
+}
+
+.yx-animal-hero__media figcaption {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 4px 1px;
+    font-family: "Noto Serif SC", serif;
+    font-size: 17px;
+}
+
+.yx-animal-hero__media figcaption span {
+    color: var(--animal-gold);
+    font-family: "Noto Sans SC", sans-serif;
+    font-size: 11px;
+}
+
+.yx-animal-intro {
+    padding: 124px 0;
+    background: #fff;
+}
+
+.yx-animal-intro__grid {
+    display: grid;
+    grid-template-columns: minmax(340px, 0.86fr) minmax(520px, 1.14fr);
+    gap: clamp(70px, 9vw, 150px);
+    align-items: center;
+}
+
+.yx-animal-intro__copy h2,
+.yx-animal-section-head h2,
+.yx-animal-beasts__head h2,
+.yx-animal-custom__copy h2 {
+    margin: 22px 0 0;
+    font-family: "Noto Serif SC", serif;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.yx-animal-intro__copy h2 {
+    font-size: 60px;
+    line-height: 1.35;
+}
+
+.yx-animal-intro__copy > p:not(.yx-animal-eyebrow) {
+    margin: 28px 0 0;
+    color: var(--animal-muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.yx-animal-intro__copy blockquote {
+    margin: 38px 0 0;
+    padding: 0 0 0 20px;
+    border-left: 2px solid var(--animal-gold);
+    color: var(--animal-green);
+    font-family: "Noto Serif SC", serif;
+    font-size: 23px;
+}
+
+.yx-animal-process {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(180px, 0.75fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    align-items: end;
+}
+
+.yx-animal-process figure {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    background: var(--animal-canvas);
+}
+
+.yx-animal-process__main {
+    grid-row: 1 / 3;
+}
+
+.yx-animal-process__main img {
+    height: 690px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.yx-animal-process__detail img {
+    height: 360px;
+    object-fit: cover;
+    object-position: center 45%;
+}
+
+.yx-animal-process > p {
+    margin: 0;
+    padding: 24px 0 8px;
+    border-top: 1px solid var(--animal-line);
+}
+
+.yx-animal-process > p strong,
+.yx-animal-process > p span {
+    display: block;
+}
+
+.yx-animal-process > p strong {
+    font-family: "Noto Serif SC", serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.yx-animal-process > p span {
+    margin-top: 10px;
+    color: var(--animal-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.yx-animal-collection {
+    padding: 124px 0 140px;
+    background: var(--animal-paper);
+}
+
+.yx-animal-section-head {
+    display: grid;
+    grid-template-columns: minmax(400px, 0.9fr) minmax(420px, 0.72fr);
+    justify-content: space-between;
+    gap: 90px;
+    align-items: end;
+    margin-bottom: 70px;
+}
+
+.yx-animal-section-head h2 {
+    font-size: 64px;
+    line-height: 1.3;
+}
+
+.yx-animal-section-head > p {
+    margin: 0 0 8px;
+    color: var(--animal-muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.yx-animal-gallery--portraits {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 72px 34px;
+    align-items: start;
+}
+
+.yx-animal-work {
+    margin: 0;
+}
+
+.yx-animal-work--landscape {
+    grid-column: 1 / 8;
+}
+
+.yx-animal-work--portrait:nth-of-type(2) {
+    grid-column: 9 / 13;
+    margin-top: 112px;
+}
+
+.yx-animal-work--portrait:nth-of-type(3) {
+    grid-column: 2 / 6;
+}
+
+.yx-animal-work--portrait:nth-of-type(4) {
+    grid-column: 7 / 12;
+    margin-top: 78px;
+}
+
+.yx-animal-work--portrait:nth-of-type(5) {
+    grid-column: 1 / 6;
+}
+
+.yx-animal-work--portrait:nth-of-type(6) {
+    grid-column: 7 / 12;
+    margin-top: 96px;
+}
+
+.yx-animal-work__image {
+    position: relative;
+    padding: 14px;
+    background: #e5e0d5;
+}
+
+.yx-animal-work__image img {
+    height: auto;
+    max-height: 720px;
+    object-fit: contain;
+}
+
+.yx-animal-work figcaption {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    padding: 18px 0 0;
+    border-top: 1px solid var(--animal-line);
+}
+
+.yx-animal-work figcaption strong {
+    font-family: "Noto Serif SC", serif;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.yx-animal-work figcaption span {
+    justify-self: end;
+    color: var(--animal-muted);
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: right;
+}
+
+.yx-animal-beasts {
+    padding: 126px 0 140px;
+    background: #172a24;
+    color: #f8f4e9;
+}
+
+.yx-animal-beasts__head {
+    display: grid;
+    grid-template-columns: minmax(450px, 1fr) minmax(360px, 0.72fr);
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 70px;
+}
+
+.yx-animal-beasts__head .yx-animal-eyebrow {
+    grid-column: 1 / -1;
+}
+
+.yx-animal-beasts__head h2 {
+    margin-top: -42px;
+    font-size: 68px;
+    line-height: 1.25;
+}
+
+.yx-animal-beasts__head > p:last-child {
+    margin: 0;
+    color: rgba(248, 244, 233, 0.66);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.yx-animal-beasts__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 0.8fr));
+    gap: 28px;
+    align-items: start;
+}
+
+.yx-animal-beast {
+    position: relative;
+    margin: 118px 0 0;
+}
+
+.yx-animal-beast--hero {
+    margin-top: 0;
+}
+
+.yx-animal-beast img {
+    height: 640px;
+    object-fit: contain;
+    background: #0f1815;
+}
+
+.yx-animal-beast--hero img {
+    height: 770px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.yx-animal-beast figcaption {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 18px 0 0;
+    border-top: 1px solid rgba(248, 244, 233, 0.2);
+}
+
+.yx-animal-beast figcaption strong {
+    font-family: "Noto Serif SC", serif;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.yx-animal-beast figcaption span {
+    color: rgba(248, 244, 233, 0.58);
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: right;
+}
+
+.yx-animal-objects {
+    padding: 128px 0 142px;
+    background: #eef0ea;
+}
+
+.yx-animal-section-head--compact {
+    margin-bottom: 66px;
+}
+
+.yx-animal-object-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 64px 28px;
+    align-items: start;
+}
+
+.yx-animal-object {
+    grid-column: span 3;
+    margin: 0;
+}
+
+.yx-animal-object:nth-of-type(even) {
+    margin-top: 68px;
+}
+
+.yx-animal-object--wide {
+    grid-column: 3 / 11;
+    margin-top: 26px;
+}
+
+.yx-animal-object__image {
+    position: relative;
+    padding: 12px;
+    background: #dfe1da;
+}
+
+.yx-animal-object__image img {
+    height: 530px;
+    object-fit: contain;
+}
+
+.yx-animal-object--wide .yx-animal-object__image img {
+    height: 680px;
+}
+
+.yx-animal-object figcaption {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 0 0;
+}
+
+.yx-animal-object figcaption strong {
+    font-family: "Noto Serif SC", serif;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.yx-animal-object figcaption span {
+    color: var(--animal-muted);
+    font-size: 11px;
+    line-height: 1.7;
+    text-align: right;
+}
+
+.yx-animal-custom {
+    padding: 0;
+    background: var(--animal-wine);
+    color: #fff9ef;
+}
+
+.yx-animal-custom__inner {
+    display: grid;
+    grid-template-columns: minmax(430px, 0.88fr) minmax(500px, 1.12fr);
+    align-items: stretch;
+}
+
+.yx-animal-custom__copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 104px clamp(46px, 7vw, 116px) 104px 0;
+}
+
+.yx-animal-custom__copy .yx-animal-eyebrow {
+    color: #dfbd82;
+}
+
+.yx-animal-custom__copy h2 {
+    font-size: 62px;
+    line-height: 1.32;
+}
+
+.yx-animal-custom__copy > p:not(.yx-animal-eyebrow) {
+    margin: 30px 0 0;
+    color: rgba(255, 249, 239, 0.72);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.yx-animal-custom__copy ul {
+    display: grid;
+    gap: 0;
+    margin: 38px 0 40px;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgba(255, 249, 239, 0.22);
+}
+
+.yx-animal-custom__copy li {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 249, 239, 0.22);
+    color: rgba(255, 249, 239, 0.82);
+    font-size: 13px;
+}
+
+.yx-animal-custom__copy li span {
+    color: #dfbd82;
+}
+
+.yx-animal-button--light {
+    align-self: flex-start;
+    border-color: #fff9ef;
+    color: #fff9ef;
+}
+
+.yx-animal-button--light:hover {
+    background: #fff9ef;
+    color: var(--animal-wine);
+}
+
+.yx-animal-custom__media {
+    margin: 0;
+    padding: 28px 0 28px 28px;
+    background: #4f2422;
+}
+
+.yx-animal-custom__media img {
+    height: 100%;
+    min-height: 720px;
+    object-fit: cover;
+}
+
+@media (max-width: 1180px) {
+    .yx-animal-hero__inner,
+    .yx-animal-intro__grid,
+    .yx-animal-custom__inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 54px;
+    }
+
+    .yx-animal-hero__media img {
+        min-height: 540px;
+    }
+
+    .yx-animal-hero__copy h1 {
+        font-size: 68px;
+    }
+
+    .yx-animal-intro__copy h2,
+    .yx-animal-section-head h2,
+    .yx-animal-beasts__head h2,
+    .yx-animal-custom__copy h2 {
+        font-size: 52px;
+    }
+
+    .yx-animal-process {
+        grid-template-columns: 1fr;
+    }
+
+    .yx-animal-process__main {
+        grid-row: auto;
+    }
+
+    .yx-animal-process__main img,
+    .yx-animal-process__detail img {
+        height: auto;
+        max-height: 620px;
+        object-fit: contain;
+    }
+
+    .yx-animal-section-head,
+    .yx-animal-beasts__head {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 54px;
+    }
+
+    .yx-animal-beasts__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .yx-animal-beast img,
+    .yx-animal-beast--hero img {
+        height: 600px;
+    }
+
+    .yx-animal-beast--hero img {
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .yx-animal-object {
+        grid-column: span 6;
+    }
+
+    .yx-animal-object:nth-of-type(even) {
+        margin-top: 0;
+    }
+
+    .yx-animal-object--wide {
+        grid-column: 3 / 11;
+    }
+}
+
+@media (max-width: 900px) {
+    .yx-animal-shell {
+        width: min(100% - 40px, 760px);
+    }
+
+    .yx-animal-hero__inner,
+    .yx-animal-intro__grid,
+    .yx-animal-section-head,
+    .yx-animal-beasts__head,
+    .yx-animal-custom__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .yx-animal-hero__copy {
+        max-width: 680px;
+    }
+
+    .yx-animal-hero__copy h1 {
+        font-size: 58px;
+    }
+
+    .yx-animal-intro__copy h2,
+    .yx-animal-section-head h2,
+    .yx-animal-beasts__head h2,
+    .yx-animal-custom__copy h2 {
+        font-size: 46px;
+    }
+
+    .yx-animal-hero__media {
+        width: min(100%, 620px);
+        justify-self: center;
+    }
+
+    .yx-animal-hero__media img {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .yx-animal-intro__grid {
+        gap: 62px;
+    }
+
+    .yx-animal-process {
+        grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .yx-animal-process__main {
+        grid-row: 1 / 3;
+    }
+
+    .yx-animal-process__main img,
+    .yx-animal-process__detail img {
+        height: 560px;
+        object-fit: cover;
+    }
+
+    .yx-animal-process__detail img {
+        height: 290px;
+    }
+
+    .yx-animal-section-head,
+    .yx-animal-beasts__head {
+        gap: 26px;
+    }
+
+    .yx-animal-beasts__head .yx-animal-eyebrow {
+        grid-column: auto;
+    }
+
+    .yx-animal-beasts__head h2 {
+        margin-top: 0;
+    }
+
+    .yx-animal-gallery--portraits {
+        gap: 62px 28px;
+    }
+
+    .yx-animal-work--landscape {
+        grid-column: 1 / 9;
+    }
+
+    .yx-animal-work--portrait:nth-of-type(2) {
+        grid-column: 9 / 13;
+        margin-top: 82px;
+    }
+
+    .yx-animal-work--portrait:nth-of-type(3),
+    .yx-animal-work--portrait:nth-of-type(5) {
+        grid-column: 1 / 7;
+    }
+
+    .yx-animal-work--portrait:nth-of-type(4),
+    .yx-animal-work--portrait:nth-of-type(6) {
+        grid-column: 7 / 13;
+        margin-top: 60px;
+    }
+
+    .yx-animal-beasts__grid {
+        grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .yx-animal-beast:nth-of-type(3) {
+        grid-column: 2;
+    }
+
+    .yx-animal-beast,
+    .yx-animal-beast--hero {
+        margin-top: 0;
+    }
+
+    .yx-animal-beast img,
+    .yx-animal-beast--hero img {
+        height: auto;
+        max-height: 680px;
+    }
+
+    .yx-animal-beast--hero img {
+        aspect-ratio: 0.78;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .yx-animal-object__image img,
+    .yx-animal-object--wide .yx-animal-object__image img {
+        height: auto;
+        max-height: none;
+    }
+
+    .yx-animal-custom__copy {
+        padding: 86px 0 28px;
+    }
+
+    .yx-animal-custom__media {
+        padding: 20px 0 0;
+    }
+
+    .yx-animal-custom__media img {
+        min-height: 0;
+        max-height: 760px;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 640px) {
+    .yx-animal-shell {
+        width: min(100% - 28px, 560px);
+    }
+
+    .yx-animal-hero {
+        padding: 108px 0 66px;
+    }
+
+    .yx-animal-hero__inner {
+        gap: 44px;
+    }
+
+    .yx-animal-hero__copy h1 {
+        margin-top: 18px;
+        font-size: 46px;
+        line-height: 1.18;
+    }
+
+    .yx-animal-hero__lead {
+        margin-top: 24px;
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .yx-animal-hero__actions {
+        margin-top: 28px;
+    }
+
+    .yx-animal-button {
+        min-height: 46px;
+        padding: 0 22px;
+    }
+
+    .yx-animal-hero__facts {
+        gap: 12px;
+        margin-top: 42px;
+    }
+
+    .yx-animal-hero__facts dt {
+        font-size: 18px;
+    }
+
+    .yx-animal-hero__media {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .yx-animal-hero__media figcaption {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+        padding-top: 14px;
+        font-size: 15px;
+    }
+
+    .yx-animal-slot {
+        top: 10px;
+        right: 10px;
+        min-width: 40px;
+        min-height: 27px;
+    }
+
+    .yx-animal-intro,
+    .yx-animal-collection,
+    .yx-animal-beasts,
+    .yx-animal-objects {
+        padding: 78px 0;
+    }
+
+    .yx-animal-intro__copy h2,
+    .yx-animal-section-head h2,
+    .yx-animal-beasts__head h2,
+    .yx-animal-custom__copy h2 {
+        font-size: 36px;
+        line-height: 1.38;
+    }
+
+    .yx-animal-intro__copy > p:not(.yx-animal-eyebrow),
+    .yx-animal-section-head > p,
+    .yx-animal-beasts__head > p:last-child,
+    .yx-animal-custom__copy > p:not(.yx-animal-eyebrow) {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .yx-animal-process {
+        grid-template-columns: 1fr;
+    }
+
+    .yx-animal-process__main {
+        grid-row: auto;
+    }
+
+    .yx-animal-process__main img,
+    .yx-animal-process__detail img {
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+    }
+
+    .yx-animal-section-head,
+    .yx-animal-beasts__head {
+        margin-bottom: 42px;
+    }
+
+    .yx-animal-gallery--portraits,
+    .yx-animal-beasts__grid,
+    .yx-animal-object-grid {
+        grid-template-columns: 1fr;
+        gap: 52px;
+    }
+
+    .yx-animal-work--landscape,
+    .yx-animal-work--portrait:nth-of-type(n),
+    .yx-animal-beast:nth-of-type(n),
+    .yx-animal-object,
+    .yx-animal-object--wide {
+        grid-column: auto;
+        margin-top: 0;
+    }
+
+    .yx-animal-work__image,
+    .yx-animal-object__image {
+        padding: 9px;
+    }
+
+    .yx-animal-work figcaption,
+    .yx-animal-beast figcaption,
+    .yx-animal-object figcaption {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .yx-animal-work figcaption span,
+    .yx-animal-beast figcaption span,
+    .yx-animal-object figcaption span {
+        justify-self: start;
+        text-align: left;
+    }
+
+    .yx-animal-beast img,
+    .yx-animal-beast--hero img,
+    .yx-animal-object__image img,
+    .yx-animal-object--wide .yx-animal-object__image img {
+        height: auto;
+        max-height: none;
+    }
+
+    .yx-animal-beast--hero img {
+        aspect-ratio: 0.78;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .yx-animal-custom__copy {
+        padding: 74px 0 22px;
+    }
+
+    .yx-animal-custom__copy li {
+        grid-template-columns: 32px 1fr;
+    }
+
+    .yx-animal-custom__media {
+        padding: 12px 0 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .yx-animal-page *,
+    .yx-animal-page *::before,
+    .yx-animal-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

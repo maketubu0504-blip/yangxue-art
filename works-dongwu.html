@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>苏绣动物系列 | 杨雪刺绣工作室</title>
-    <meta name="description" content="杨雪刺绣动物系列，捕捉每个细微神态，将苏绣技艺发挥到极致">
+    <meta name="description" content="杨雪刺绣动物系列，以桑蚕丝线循毛运针，呈现萌宠、走兽与游鱼的神态肌理，让世间生灵跃然丝帛。">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,24 +22,25 @@
     </script>
     <style>
         .nav-item { position: relative; }
-        .dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 200px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-top: 3px solid #c9a87c; box-shadow: 0 10px 40px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 100; }
-        .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-item { display: block; padding: 14px 24px; color: #2c3e2d; font-size: 14px; letter-spacing: 1px; border-bottom: 1px solid rgba(0,0,0,0.05); transition: all 0.2s ease; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 200px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-top: 3px solid #c9a87c; box-shadow: 0 10px 40px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; z-index: 100; }
+        .nav-item:hover .dropdown-menu, .nav-item:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-item { display: block; padding: 14px 24px; color: #2c3e2d; font-size: 14px; letter-spacing: 1px; border-bottom: 1px solid rgba(0,0,0,0.05); transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease; }
         .dropdown-item:hover { background: #f5f2eb; color: #c9a87c; padding-left: 28px; }
         .dropdown-item:last-child { border-bottom: none; }
         .nav-link { position: relative; padding: 8px 0; }
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #c9a87c; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
         .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-        .mobile-menu.active { max-height: 600px; }
+        .mobile-menu.active { max-height: calc(100vh - 80px); overflow-y: auto; }
         .mobile-dropdown { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
         .mobile-dropdown.active { max-height: 300px; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
     <link rel="stylesheet" href="assets/site.css">
+    <link rel="stylesheet" href="assets/works-dongwu.css">
 </head>
-<body class="bg-cream text-primary font-sans">
+<body class="yx-animal-page bg-cream text-primary font-sans">
     <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md shadow-sm">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="flex justify-between items-center h-20">
@@ -86,14 +87,14 @@
                         </div>
                     </div>
                 </div>
-                <button id="menuBtn" class="lg:hidden text-2xl text-primary"><i class="fas fa-bars"></i></button>
+                <button id="menuBtn" type="button" class="lg:hidden text-2xl text-primary" aria-label="打开导航菜单" aria-controls="mobileMenu" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
             </div>
         </div>
         <div id="mobileMenu" class="mobile-menu lg:hidden bg-white/98 backdrop-blur-md">
             <div class="container mx-auto px-6 py-6">
                 <a href="index.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">首页</a>
                 <div class="border-b border-gray-100">
-                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center text-accent" data-target="mobile-works">作品展示<i class="fas fa-chevron-down text-sm transition-transform duration-300 rotate-180"></i></button>
+                    <button type="button" class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center text-accent" data-target="mobile-works" aria-controls="mobile-works" aria-expanded="true">作品展示<i class="fas fa-chevron-down text-sm transition-transform duration-300 rotate-180" aria-hidden="true"></i></button>
                     <div id="mobile-works" class="mobile-dropdown active pl-4">
                         <a href="works-guoli.html" class="block py-3 text-sm text-secondary">双面三异绣·国礼</a>
                         <a href="works-foxiang.html" class="block py-3 text-sm text-secondary">苏绣佛像系列</a>
@@ -104,7 +105,7 @@
                     </div>
                 </div>
                 <div class="border-b border-gray-100">
-                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-custom">定制服务<i class="fas fa-chevron-down text-sm transition-transform duration-300"></i></button>
+                    <button type="button" class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-custom" aria-controls="mobile-custom" aria-expanded="false">定制服务<i class="fas fa-chevron-down text-sm transition-transform duration-300" aria-hidden="true"></i></button>
                     <div id="mobile-custom" class="mobile-dropdown pl-4">
                         <a href="custom-process.html" class="block py-3 text-sm text-secondary">定制流程</a>
                         <a href="custom-price.html" class="block py-3 text-sm text-secondary">价格参考</a>
@@ -115,13 +116,13 @@
                 <a href="about.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">关于我</a>
                 <a href="partners.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">合作单位</a>
                 <div class="border-b border-gray-100">
-                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-news">最新消息<i class="fas fa-chevron-down text-sm transition-transform duration-300"></i></button>
+                    <button type="button" class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-news" aria-controls="mobile-news" aria-expanded="false">最新消息<i class="fas fa-chevron-down text-sm transition-transform duration-300" aria-hidden="true"></i></button>
                     <div id="mobile-news" class="mobile-dropdown pl-4">
                         <a href="news.html" class="block py-3 text-sm text-secondary">新闻报道</a>
                     </div>
                 </div>
                 <div class="border-b border-gray-100">
-                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-visit">参观资讯<i class="fas fa-chevron-down text-sm transition-transform duration-300"></i></button>
+                    <button type="button" class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-visit" aria-controls="mobile-visit" aria-expanded="false">参观资讯<i class="fas fa-chevron-down text-sm transition-transform duration-300" aria-hidden="true"></i></button>
                     <div id="mobile-visit" class="mobile-dropdown pl-4">
                         <a href="visit-info.html" class="block py-3 text-sm text-secondary">预约参观</a>
                         <a href="visit-guide.html" class="block py-3 text-sm text-secondary">导览服务</a>
@@ -132,64 +133,192 @@
             </div>
         </div>
     </nav>
-    <section class="pt-32 pb-12 bg-white">
-        <div class="container mx-auto px-6 lg:px-12 text-center">
-            <span class="text-accent text-sm tracking-widest fade-in">作品展示</span>
-            <h1 class="text-4xl md:text-5xl font-serif font-light tracking-wider mt-4 mb-6 fade-in">苏绣动物系列</h1>
-            <div class="w-24 h-px bg-accent mx-auto mb-8 fade-in"></div>
-            <p class="text-secondary max-w-2xl mx-auto leading-relaxed fade-in">捕捉每个细微神态，将苏绣技艺发挥到极致</p>
-        </div>
-    </section>
-    <section class="py-16 bg-cream">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                <div class="fade-in">
-                    <div class="yx-material-frame yx-material-frame--cover yx-material-frame--hero" data-material-slot="030">
-                        <!-- 素材位 030：后续替换为动物系列主视觉。原临时图 images/studio/animal-peacock.jpg 已隐藏。 -->
-                        <div class="yx-material-placeholder"><strong>图片位 030</strong><small>建议 4:3 系列封面</small></div>
+    <main>
+        <section class="yx-animal-hero">
+            <div class="yx-animal-shell yx-animal-hero__inner">
+                <div class="yx-animal-hero__copy fade-in">
+                    <p class="yx-animal-eyebrow">ANIMAL EMBROIDERY · 苏绣动物</p>
+                    <h1>丝映生灵<br>针下万物</h1>
+                    <p class="yx-animal-hero__lead">以桑蚕丝线摹写生灵百态，循毛而绣，逐层铺色。毛发的蓬松、眼眸的澄澈与万物的神采，都在方寸丝帛间被重新看见。</p>
+                    <div class="yx-animal-hero__actions">
+                        <a href="#animal-collection" class="yx-animal-button yx-animal-button--solid">浏览作品</a>
+                        <a href="#animal-craft" class="yx-animal-button yx-animal-button--line">了解工艺</a>
                     </div>
+                    <dl class="yx-animal-hero__facts">
+                        <div><dt>01</dt><dd>循毛理运针</dd></div>
+                        <div><dt>02</dt><dd>丝色层层过渡</dd></div>
+                        <div><dt>03</dt><dd>形神并重</dd></div>
+                    </dl>
                 </div>
-                <div class="fade-in">
-                    <h2 class="text-2xl font-serif tracking-wider mb-6">灵动生机的艺术呈现</h2>
-                    <div class="w-16 h-px bg-accent mb-6"></div>
-                    <p class="text-secondary leading-relaxed mb-6">动物刺绣是苏绣中最考验技艺的题材之一。通过丝线的疏密、方向、光泽变化，表现动物的毛发质感、眼神灵动，让绣品栩栩如生。</p>
-                    <p class="text-secondary leading-relaxed mb-6">杨雪老师的动物作品多次荣获金奖，2019年作品《动物》荣获第十一届「艺博杯」工艺美术精品大奖赛金奖，作品《金翅鸟》与云冈石窟合作项目广受好评。</p>
-                    <div class="flex gap-4">
-                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">栩栩如生</span>
-                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">金奖作品</span>
-                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">毛发质感</span>
-                    </div>
+                <figure class="yx-animal-hero__media fade-in" data-material-slot="030">
+                    <span class="yx-animal-slot">030</span>
+                    <img src="images/苏绣动物系列/i1770521798166_6989_0_1.jpg" alt="绣有两只猫与绣球花的苏绣插屏作品" width="1440" height="1920" fetchpriority="high">
+                    <figcaption><span>萌宠写实</span>一针摹百态，千丝赋生灵</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="yx-animal-intro" id="animal-craft">
+            <div class="yx-animal-shell yx-animal-intro__grid">
+                <div class="yx-animal-intro__copy fade-in">
+                    <p class="yx-animal-eyebrow">THE ART OF DETAIL · 针法与光泽</p>
+                    <h2>顺着毛发生长的方向，<br>把触感绣进画面。</h2>
+                    <p>动物是苏绣最富表现力的题材。绣师将丝线劈至极细，以施毛针、套针与乱针绣层层排布，依照皮毛生理走向控制疏密和光泽。近看是千万针脚，退后一步，便成为有温度、有呼吸的生命。</p>
+                    <p>眼眸是作品的神。数十种相近色线交织明暗，让瞳孔呈现通透光泽；耳缘、胡须与绒毛则用更轻、更细的线迹收束，使静态绣面拥有回望观者的力量。</p>
+                    <blockquote>循毛而绣，形神俱现。</blockquote>
+                </div>
+                <div class="yx-animal-process fade-in">
+                    <figure class="yx-animal-process__main" data-material-slot="031">
+                        <span class="yx-animal-slot">031</span>
+                        <img src="images/苏绣动物系列/i1784121514410_5197_0_0.jpg" alt="杨雪在绷架上绣制猫咪作品的创作现场" width="1440" height="1920" loading="lazy">
+                    </figure>
+                    <figure class="yx-animal-process__detail" data-material-slot="032">
+                        <span class="yx-animal-slot">032</span>
+                        <img src="images/苏绣动物系列/i1784121589159_5684_0_3.jpg" alt="绣师正在细绣猫咪耳部与毛发" width="1440" height="1920" loading="lazy">
+                    </figure>
+                    <p><strong>从眼神开始</strong><span>起稿、分色、劈丝、上绷，最后让细密针脚自然隐入毛发。</span></p>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="group relative overflow-hidden cursor-pointer fade-in">
-                    <div class="yx-material-frame yx-material-frame--cover" data-material-slot="031">
-                        <!-- 素材位 031：后续替换为金翅鸟封面。原临时图 images/studio/animal-peacock.jpg 已隐藏。 -->
-                        <div class="yx-material-placeholder"><strong>图片位 031</strong><small>建议 4:3 系列封面</small></div>
+        </section>
+
+        <section class="yx-animal-collection" id="animal-collection">
+            <div class="yx-animal-shell">
+                <header class="yx-animal-section-head fade-in">
+                    <div>
+                        <p class="yx-animal-eyebrow">PET PORTRAITS · 萌宠走兽</p>
+                        <h2>一双眼睛，<br>先让作品活起来。</h2>
                     </div>
-                </div>
-                <div class="group relative overflow-hidden cursor-pointer fade-in" style="transition-delay: 0.1s;">
-                    <div class="yx-material-frame yx-material-frame--cover" data-material-slot="032">
-                        <!-- 素材位 032：后续替换为灵猫封面。原临时图 images/studio/animal-cat.jpg 已隐藏。 -->
-                        <div class="yx-material-placeholder"><strong>图片位 032</strong><small>建议 4:3 系列封面</small></div>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden cursor-pointer fade-in" style="transition-delay: 0.2s;">
-                    <div class="yx-material-frame yx-material-frame--cover" data-material-slot="033">
-                        <!-- 素材位 033：后续替换为孔雀封面。原临时图 images/studio/animal-fox.jpg 已隐藏。 -->
-                        <div class="yx-material-placeholder"><strong>图片位 033</strong><small>建议 4:3 系列封面</small></div>
-                    </div>
+                    <p>以细丝循毛理运针，层层叠色还原皮毛的蓬松与柔软。我们不只描摹外形，更在神态、光影和熟悉的小动作里，保留每只动物独有的性格。</p>
+                </header>
+
+                <div class="yx-animal-gallery yx-animal-gallery--portraits">
+                    <figure class="yx-animal-work yx-animal-work--landscape fade-in" data-material-slot="033">
+                        <div class="yx-animal-work__image">
+                            <span class="yx-animal-slot">033</span>
+                            <img src="images/苏绣动物系列/i1765545130844_356_0_0.jpg" alt="绷架上的白色长毛猫苏绣作品" width="1920" height="1440" loading="lazy">
+                        </div>
+                        <figcaption><strong>雪团</strong><span>柔软绒毛以冷暖丝色渐次铺开</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-work yx-animal-work--portrait fade-in" data-material-slot="059">
+                        <div class="yx-animal-work__image">
+                            <span class="yx-animal-slot">059</span>
+                            <img src="images/苏绣动物系列/o_1jfaive861a0gfm81cf31bov1kg62.jpeg" alt="双色猫咪面部苏绣特写" width="1080" height="1923" loading="lazy">
+                        </div>
+                        <figcaption><strong>异色双眸</strong><span>丝线在瞳孔间折出细微光泽</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-work yx-animal-work--portrait fade-in" data-material-slot="060">
+                        <div class="yx-animal-work__image">
+                            <span class="yx-animal-slot">060</span>
+                            <img src="images/苏绣动物系列/i1775618712747_1303_0_1.jpg" alt="绿底猫咪苏绣作品的面部细节" width="1440" height="2560" loading="lazy">
+                        </div>
+                        <figcaption><strong>碧眸</strong><span>针脚沿面部结构自然转折</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-work yx-animal-work--portrait fade-in" data-material-slot="061">
+                        <div class="yx-animal-work__image">
+                            <span class="yx-animal-slot">061</span>
+                            <img src="images/苏绣动物系列/i1782545597392_8728_0_1.jpg" alt="绷架上的彩色猫咪苏绣作品" width="1440" height="1920" loading="lazy">
+                        </div>
+                        <figcaption><strong>暮光</strong><span>乱针与套针交织出丰富色层</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-work yx-animal-work--portrait fade-in" data-material-slot="062">
+                        <div class="yx-animal-work__image">
+                            <span class="yx-animal-slot">062</span>
+                            <img src="images/苏绣动物系列/o_1jfai6ijfofu195e1jgt1k7q1ka20.jpeg" alt="黑金画框中的双色猫咪苏绣空间陈设" width="1080" height="1764" loading="lazy">
+                        </div>
+                        <figcaption><strong>入室成景</strong><span>写实苏绣亦可成为当代空间主画</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-work yx-animal-work--portrait fade-in" data-material-slot="063">
+                        <div class="yx-animal-work__image">
+                            <span class="yx-animal-slot">063</span>
+                            <img src="images/苏绣动物系列/i1783997322812_1147_0_2.jpg" alt="深蓝底金色长毛猫苏绣作品" width="1440" height="1920" loading="lazy">
+                        </div>
+                        <figcaption><strong>金影</strong><span>深色底料衬出丝线温润亮度</span></figcaption>
+                    </figure>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-6 lg:px-12 text-center">
-            <h2 class="text-3xl font-serif font-light tracking-wider mb-6 fade-in">定制专属动物绣品</h2>
-            <p class="text-white/70 mb-8 max-w-xl mx-auto fade-in">为您心爱的宠物定制独一无二的刺绣艺术品</p>
-            <a href="custom-consult.html" class="inline-block px-10 py-4 border border-accent bg-accent text-primary text-sm tracking-widest hover:bg-transparent hover:text-white transition-all duration-500 fade-in">预约咨询</a>
-        </div>
-    </section>
+        </section>
+
+        <section class="yx-animal-beasts">
+            <div class="yx-animal-shell">
+                <header class="yx-animal-beasts__head fade-in">
+                    <p class="yx-animal-eyebrow">WILD SPIRIT · 猛兽神采</p>
+                    <h2>丝帛藏生灵，<br>针底见山河。</h2>
+                    <p>写实猛兽考验绣师对筋骨、斑纹和视线方向的整体把握。针脚既要顺应皮毛，又要在收放之间留住力量感。</p>
+                </header>
+                <div class="yx-animal-beasts__grid">
+                    <figure class="yx-animal-beast yx-animal-beast--hero fade-in" data-material-slot="064">
+                        <span class="yx-animal-slot">064</span>
+                        <img src="images/苏绣动物系列/a1700104665800_1355.jpg" alt="金色豹头苏绣作品" width="1080" height="1523" loading="lazy">
+                        <figcaption><strong>豹 · 凝视</strong><span>斑纹、毛锋与蓝灰瞳色层层分明</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-beast fade-in" data-material-slot="065">
+                        <span class="yx-animal-slot">065</span>
+                        <img src="images/苏绣动物系列/wechat_2026-08-20_104738_026.png" alt="昂首雄狮苏绣作品" width="1078" height="1440" loading="lazy">
+                        <figcaption><strong>狮 · 昂首</strong><span>以长短丝路塑出鬃毛的重量</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-beast fade-in" data-material-slot="066">
+                        <span class="yx-animal-slot">066</span>
+                        <img src="images/苏绣动物系列/i1712663991_878_0.jpg" alt="圆形插屏中的虎头苏绣作品" width="1440" height="1920" loading="lazy">
+                        <figcaption><strong>虎 · 威仪</strong><span>圆光器型收住沉稳气势</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-animal-objects">
+            <div class="yx-animal-shell">
+                <header class="yx-animal-section-head yx-animal-section-head--compact fade-in">
+                    <div>
+                        <p class="yx-animal-eyebrow">OBJECTS &amp; AUSPICIOUS MEANING · 器物与吉意</p>
+                        <h2>生灵入绣，<br>瑞意成章。</h2>
+                    </div>
+                    <p>从案头插屏到空间挂画，动物题材既能记录熟悉的陪伴，也承载鱼跃有余、骏马奋进等东方祝愿。传统木作与写实绣面相遇，让作品更自然地进入当代生活。</p>
+                </header>
+
+                <div class="yx-animal-object-grid">
+                    <figure class="yx-animal-object fade-in" data-material-slot="067">
+                        <div class="yx-animal-object__image"><span class="yx-animal-slot">067</span><img src="images/苏绣动物系列/o_1jg6ba5fnm4g6n517jv1nsr1s8c0.jpeg" alt="圆形木架中的金色猫咪苏绣摆件" width="1284" height="1714" loading="lazy"></div>
+                        <figcaption><strong>圆光猫影</strong><span>萌宠走兽 · 私人定制</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-object fade-in" data-material-slot="068">
+                        <div class="yx-animal-object__image"><span class="yx-animal-slot">068</span><img src="images/苏绣动物系列/wechat_2026-08-20_104303_240.png" alt="木架圆形白猫双面绣摆件" width="1246" height="1536" loading="lazy"></div>
+                        <figcaption><strong>探趣</strong><span>轻盈神态 · 案头陈设</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-object fade-in" data-material-slot="069">
+                        <div class="yx-animal-object__image"><span class="yx-animal-slot">069</span><img src="images/苏绣动物系列/wechat_2026-08-20_104638_624.png" alt="木架圆形奔马苏绣摆件" width="1230" height="1472" loading="lazy"></div>
+                        <figcaption><strong>奔马</strong><span>奋进之意 · 墨色写形</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-object fade-in" data-material-slot="070">
+                        <div class="yx-animal-object__image"><span class="yx-animal-slot">070</span><img src="images/苏绣动物系列/i1712663991_919_0.jpg" alt="圆形插屏中的白马苏绣作品" width="1440" height="1920" loading="lazy"></div>
+                        <figcaption><strong>白驹</strong><span>丝光流转 · 形神兼备</span></figcaption>
+                    </figure>
+                    <figure class="yx-animal-object yx-animal-object--wide fade-in" data-material-slot="071">
+                        <div class="yx-animal-object__image"><span class="yx-animal-slot">071</span><img src="images/苏绣动物系列/wechat_2026-08-20_104721_714.png" alt="红木圆形插屏中的双金鱼苏绣作品" width="1462" height="1528" loading="lazy"></div>
+                        <figcaption><strong>游鱼有余</strong><span>灵鳍在丝光中舒展，寄寓和美丰足</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-animal-custom">
+            <div class="yx-animal-shell yx-animal-custom__inner">
+                <div class="yx-animal-custom__copy fade-in">
+                    <p class="yx-animal-eyebrow">BESPOKE PORTRAIT · 宠物肖像定制</p>
+                    <h2>把朝夕相伴的神态，<br>留在一方绢帛。</h2>
+                    <p>从照片筛选、眼神校准到丝线配色，工作室根据宠物的毛色、体态与性格进行一对一创作。作品可选择挂画、圆光插屏等形制，用于居家陈设、纪念收藏与专属礼赠。</p>
+                    <ul>
+                        <li><span>01</span>提供清晰正面与侧面照片</li>
+                        <li><span>02</span>确认构图、尺寸与装裱形制</li>
+                        <li><span>03</span>手工绣制并完成装裱交付</li>
+                    </ul>
+                    <a href="custom-consult.html" class="yx-animal-button yx-animal-button--light">咨询动物肖像定制</a>
+                </div>
+                <figure class="yx-animal-custom__media fade-in">
+                    <img src="images/苏绣动物系列/o_1jg6ba5fnm4g6n517jv1nsr1s8c0.jpeg" alt="可定制的圆光猫咪苏绣摆件" width="1284" height="1714" loading="lazy">
+                </figure>
+            </div>
+        </section>
+    </main>
     <footer class="py-16 bg-cream border-t border-gray-200">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -220,8 +349,8 @@
             <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-xs text-secondary">© 2026 杨雪刺绣工作室. All rights reserved.</p>
                 <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="text-secondary hover:text-accent transition-colors"><i class="fab fa-weixin text-lg"></i></a>
-                    <a href="#" class="text-secondary hover:text-accent transition-colors"><i class="fab fa-weibo text-lg"></i></a>
+                    <span class="text-secondary" title="微信"><i class="fab fa-weixin text-lg" aria-hidden="true"></i><span class="sr-only">微信</span></span>
+                    <span class="text-secondary" title="微博"><i class="fab fa-weibo text-lg" aria-hidden="true"></i><span class="sr-only">微博</span></span>
                 </div>
             </div>
         </div>
@@ -231,13 +360,17 @@
         const mobileMenu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
-            menuBtn.innerHTML = mobileMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            const isOpen = mobileMenu.classList.contains('active');
+            menuBtn.setAttribute('aria-expanded', String(isOpen));
+            menuBtn.setAttribute('aria-label', isOpen ? '关闭导航菜单' : '打开导航菜单');
+            menuBtn.innerHTML = isOpen ? '<i class="fas fa-times" aria-hidden="true"></i>' : '<i class="fas fa-bars" aria-hidden="true"></i>';
         });
         document.querySelectorAll('.mobile-toggle').forEach(toggle => {
             toggle.addEventListener('click', () => {
                 const target = document.getElementById(toggle.dataset.target);
                 const icon = toggle.querySelector('i');
                 target.classList.toggle('active');
+                toggle.setAttribute('aria-expanded', String(target.classList.contains('active')));
                 icon.style.transform = target.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
             });
         });
