@@ -1,0 +1,814 @@
+.yx-villa-page {
+    --villa-ink: #17231f;
+    --villa-jade: #31584e;
+    --villa-mist: #e8eeea;
+    --villa-paper: #f7f5ef;
+    --villa-clay: #a95f43;
+    --villa-gold: #b78b50;
+    background: var(--villa-paper);
+    color: var(--villa-ink);
+}
+
+.yx-villa-page *,
+.yx-villa-page *::before,
+.yx-villa-page *::after {
+    letter-spacing: 0;
+}
+
+.yx-villa-skip {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 200;
+    padding: 10px 16px;
+    background: #fff;
+    color: var(--villa-ink);
+    transform: translateY(-150%);
+    transition: transform 0.2s ease;
+}
+
+.yx-villa-skip:focus {
+    transform: translateY(0);
+}
+
+.yx-villa-shell {
+    width: min(100% - 96px, 1440px);
+    margin: 0 auto;
+}
+
+.yx-villa-eyebrow {
+    margin: 0 0 18px;
+    color: var(--villa-clay);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.yx-villa-slot {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 54px;
+    min-height: 36px;
+    padding: 6px 11px;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    background: rgba(23, 35, 31, 0.76);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.yx-villa-hero {
+    position: relative;
+    height: min(780px, calc(100vh - 80px));
+    min-height: 620px;
+    margin-top: 80px;
+    overflow: hidden;
+    background: #17231f;
+}
+
+.yx-villa-hero__media,
+.yx-villa-hero__media img {
+    width: 100%;
+    height: 100%;
+}
+
+.yx-villa-hero__media {
+    position: relative;
+    margin: 0;
+}
+
+.yx-villa-hero__media img {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+.yx-villa-hero__veil {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 48%;
+    background: rgba(18, 30, 26, 0.78);
+}
+
+.yx-villa-hero__copy {
+    position: absolute;
+    inset: 0 auto 0 max(48px, calc((100% - 1440px) / 2));
+    z-index: 2;
+    display: flex;
+    width: min(620px, 42%);
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.yx-villa-hero__copy .yx-villa-eyebrow {
+    color: #d6ad76;
+}
+
+.yx-villa-hero h1 {
+    margin: 0;
+    font-family: "Noto Serif SC", serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.22;
+}
+
+.yx-villa-hero__lead {
+    max-width: 540px;
+    margin: 28px 0 34px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 18px;
+    line-height: 1.95;
+}
+
+.yx-villa-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.yx-villa-button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border: 1px solid var(--villa-jade);
+    background: var(--villa-jade);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.yx-villa-button:hover,
+.yx-villa-button:focus-visible {
+    border-color: var(--villa-clay);
+    background: var(--villa-clay);
+}
+
+.yx-villa-button--light {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.yx-villa-button--light:hover,
+.yx-villa-button--light:focus-visible {
+    border-color: #fff;
+    background: #fff;
+    color: var(--villa-ink);
+}
+
+.yx-villa-intro {
+    padding: 112px 0 104px;
+    background: #fff;
+}
+
+.yx-villa-intro__head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+    gap: 100px;
+    align-items: end;
+}
+
+.yx-villa-intro h2,
+.yx-villa-section-head h2,
+.yx-villa-vertical__copy h2,
+.yx-villa-craft__copy h2,
+.yx-villa-process h2,
+.yx-villa-cta h2 {
+    margin: 0;
+    font-family: "Noto Serif SC", serif;
+    font-weight: 400;
+    line-height: 1.35;
+}
+
+.yx-villa-intro h2,
+.yx-villa-section-head h2,
+.yx-villa-vertical__copy h2,
+.yx-villa-craft__copy h2,
+.yx-villa-process h2 {
+    font-size: 46px;
+}
+
+.yx-villa-intro__head > p,
+.yx-villa-section-head > p,
+.yx-villa-vertical__copy > p,
+.yx-villa-craft__copy > p,
+.yx-villa-process__intro {
+    margin: 0;
+    color: #5e6b66;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.yx-villa-principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 72px;
+    border-top: 1px solid #dce2de;
+    border-bottom: 1px solid #dce2de;
+}
+
+.yx-villa-principles article {
+    padding: 34px 36px 36px;
+    border-right: 1px solid #dce2de;
+}
+
+.yx-villa-principles article:last-child {
+    border-right: 0;
+}
+
+.yx-villa-principles span {
+    color: var(--villa-clay);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.yx-villa-principles h3 {
+    margin: 16px 0 10px;
+    font-family: "Noto Serif SC", serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.yx-villa-principles p {
+    margin: 0;
+    color: #65716d;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.yx-villa-landscape {
+    padding: 112px 0 128px;
+    background: var(--villa-mist);
+}
+
+.yx-villa-section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.75fr);
+    gap: 96px;
+    align-items: end;
+    margin-bottom: 64px;
+}
+
+.yx-villa-landscape__list {
+    display: grid;
+    gap: 72px;
+}
+
+.yx-villa-landscape__item {
+    position: relative;
+    margin: 0;
+}
+
+.yx-villa-landscape__media {
+    padding: 18px;
+    background: #fff;
+    box-shadow: 0 24px 60px rgba(23, 35, 31, 0.1);
+}
+
+.yx-villa-landscape__media img {
+    display: block;
+    width: 100%;
+    max-height: 760px;
+    object-fit: contain;
+    background: #f2f0e9;
+}
+
+.yx-villa-landscape__item figcaption {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 48px;
+    padding: 28px 18px 0;
+}
+
+.yx-villa-landscape__item strong {
+    font-family: "Noto Serif SC", serif;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.yx-villa-landscape__item figcaption span {
+    color: #65716d;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.yx-villa-vertical {
+    padding: 128px 0;
+    background: var(--villa-paper);
+}
+
+.yx-villa-vertical__layout {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 88px;
+    align-items: start;
+}
+
+.yx-villa-vertical__copy {
+    position: sticky;
+    top: 128px;
+}
+
+.yx-villa-vertical__copy > p {
+    margin-top: 28px;
+}
+
+.yx-villa-vertical__note {
+    margin-top: 36px;
+    padding: 24px 0 0;
+    border-top: 1px solid #d7d8d2;
+    color: var(--villa-jade);
+    font-family: "Noto Serif SC", serif;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.yx-villa-vertical__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 56px 28px;
+}
+
+.yx-villa-vertical__piece {
+    position: relative;
+    margin: 0;
+}
+
+.yx-villa-vertical__piece:nth-child(2) {
+    margin-top: 100px;
+}
+
+.yx-villa-vertical__piece:nth-child(4) {
+    margin-top: 40px;
+}
+
+.yx-villa-vertical__piece img {
+    display: block;
+    width: 100%;
+    height: 630px;
+    object-fit: contain;
+    background: #e2e4de;
+}
+
+.yx-villa-vertical__piece figcaption {
+    padding: 20px 4px 0;
+}
+
+.yx-villa-vertical__piece strong,
+.yx-villa-gallery__piece strong {
+    display: block;
+    font-family: "Noto Serif SC", serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.yx-villa-vertical__piece figcaption span,
+.yx-villa-gallery__piece figcaption span {
+    display: block;
+    margin-top: 8px;
+    color: #6c746f;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.yx-villa-craft {
+    padding: 128px 0;
+    background: var(--villa-ink);
+    color: #fff;
+}
+
+.yx-villa-craft__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(380px, 0.85fr);
+    gap: 84px;
+    align-items: center;
+}
+
+.yx-villa-craft__media {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 18px;
+}
+
+.yx-villa-craft__media figure {
+    position: relative;
+    margin: 0;
+    background: #283833;
+}
+
+.yx-villa-craft__media img {
+    display: block;
+    width: 100%;
+    height: 640px;
+    object-fit: contain;
+}
+
+.yx-villa-craft__media figure:last-child {
+    margin-top: 96px;
+}
+
+.yx-villa-craft__media figure:last-child img {
+    height: 500px;
+}
+
+.yx-villa-craft__copy .yx-villa-eyebrow {
+    color: #d6ad76;
+}
+
+.yx-villa-craft__copy > p {
+    margin-top: 28px;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.yx-villa-craft__list {
+    display: grid;
+    gap: 22px;
+    margin: 40px 0 0;
+}
+
+.yx-villa-craft__list div {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 18px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.yx-villa-craft__list dt {
+    color: #d6ad76;
+    font-size: 13px;
+}
+
+.yx-villa-craft__list dd {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.yx-villa-gallery {
+    padding: 128px 0;
+    background: #fff;
+}
+
+.yx-villa-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 72px 34px;
+}
+
+.yx-villa-gallery__piece {
+    position: relative;
+    margin: 0;
+}
+
+.yx-villa-gallery__piece img {
+    display: block;
+    width: 100%;
+    height: 680px;
+    object-fit: contain;
+    background: #eef0ec;
+}
+
+.yx-villa-gallery__piece:nth-child(3) img,
+.yx-villa-gallery__piece:nth-child(4) img {
+    height: 560px;
+}
+
+.yx-villa-gallery__piece figcaption {
+    padding: 22px 4px 0;
+}
+
+.yx-villa-process {
+    padding: 118px 0;
+    background: #e9dfd1;
+}
+
+.yx-villa-process__head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+    gap: 96px;
+    align-items: end;
+    margin-bottom: 64px;
+}
+
+.yx-villa-process__steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid rgba(23, 35, 31, 0.28);
+    border-bottom: 1px solid rgba(23, 35, 31, 0.28);
+}
+
+.yx-villa-process__steps article {
+    min-height: 250px;
+    padding: 30px;
+    border-right: 1px solid rgba(23, 35, 31, 0.2);
+}
+
+.yx-villa-process__steps article:last-child {
+    border-right: 0;
+}
+
+.yx-villa-process__steps span {
+    color: var(--villa-clay);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.yx-villa-process__steps h3 {
+    margin: 42px 0 14px;
+    font-family: "Noto Serif SC", serif;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.yx-villa-process__steps p {
+    margin: 0;
+    color: #5d6762;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.yx-villa-cta {
+    padding: 104px 0;
+    background: var(--villa-jade);
+    color: #fff;
+}
+
+.yx-villa-cta__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 64px;
+    align-items: center;
+}
+
+.yx-villa-cta h2 {
+    font-size: 42px;
+}
+
+.yx-villa-cta p {
+    max-width: 760px;
+    margin: 18px 0 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.yx-villa-page footer .fa-envelope + span {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 1180px) {
+    .yx-villa-shell {
+        width: min(100% - 64px, 1160px);
+    }
+
+    .yx-villa-hero__copy {
+        left: 32px;
+        width: 44%;
+    }
+
+    .yx-villa-hero h1 {
+        font-size: 52px;
+    }
+
+    .yx-villa-intro__head,
+    .yx-villa-section-head,
+    .yx-villa-process__head {
+        gap: 56px;
+    }
+
+    .yx-villa-vertical__layout,
+    .yx-villa-craft__layout {
+        gap: 52px;
+    }
+}
+
+@media (max-width: 1023px) {
+    #menuBtn {
+        display: inline-flex;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .yx-villa-hero {
+        height: auto;
+        min-height: 0;
+    }
+
+    .yx-villa-hero__media img {
+        height: min(680px, calc(100vh - 80px));
+        min-height: 560px;
+        object-fit: contain;
+    }
+
+    .yx-villa-hero__veil {
+        width: 58%;
+    }
+
+    .yx-villa-hero__copy {
+        width: 52%;
+    }
+
+    .yx-villa-intro__head,
+    .yx-villa-section-head,
+    .yx-villa-process__head {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .yx-villa-vertical__layout,
+    .yx-villa-craft__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .yx-villa-vertical__copy {
+        position: static;
+    }
+
+    .yx-villa-craft__copy {
+        order: -1;
+    }
+
+    .yx-villa-process__steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .yx-villa-process__steps article:nth-child(2) {
+        border-right: 0;
+    }
+
+    .yx-villa-process__steps article:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(23, 35, 31, 0.2);
+    }
+
+    .yx-villa-cta__inner {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+}
+
+@media (max-width: 767px) {
+    .yx-villa-shell {
+        width: min(100% - 36px, 620px);
+    }
+
+    .yx-villa-hero {
+        margin-top: 80px;
+        background: #17231f;
+    }
+
+    .yx-villa-hero__media {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .yx-villa-hero__media img {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 3 / 2;
+        object-fit: contain;
+    }
+
+    .yx-villa-hero__veil {
+        display: none;
+    }
+
+    .yx-villa-hero__copy {
+        position: static;
+        width: 100%;
+        padding: 44px 22px 52px;
+    }
+
+    .yx-villa-hero h1 {
+        font-size: 39px;
+        line-height: 1.3;
+    }
+
+    .yx-villa-hero__lead {
+        margin: 22px 0 28px;
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    .yx-villa-intro,
+    .yx-villa-landscape,
+    .yx-villa-vertical,
+    .yx-villa-craft,
+    .yx-villa-gallery,
+    .yx-villa-process {
+        padding: 82px 0;
+    }
+
+    .yx-villa-intro h2,
+    .yx-villa-section-head h2,
+    .yx-villa-vertical__copy h2,
+    .yx-villa-craft__copy h2,
+    .yx-villa-process h2,
+    .yx-villa-cta h2 {
+        font-size: 34px;
+    }
+
+    .yx-villa-principles,
+    .yx-villa-process__steps {
+        grid-template-columns: 1fr;
+    }
+
+    .yx-villa-principles article,
+    .yx-villa-process__steps article {
+        min-height: 0;
+        border-right: 0;
+        border-bottom: 1px solid #dce2de;
+    }
+
+    .yx-villa-principles article:last-child,
+    .yx-villa-process__steps article:last-child {
+        border-bottom: 0;
+    }
+
+    .yx-villa-landscape__list {
+        gap: 54px;
+    }
+
+    .yx-villa-landscape__media {
+        padding: 8px;
+    }
+
+    .yx-villa-landscape__item figcaption {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 20px 4px 0;
+    }
+
+    .yx-villa-vertical__grid,
+    .yx-villa-gallery__grid,
+    .yx-villa-craft__media {
+        grid-template-columns: 1fr;
+    }
+
+    .yx-villa-vertical__piece:nth-child(2),
+    .yx-villa-vertical__piece:nth-child(4),
+    .yx-villa-craft__media figure:last-child {
+        margin-top: 0;
+    }
+
+    .yx-villa-vertical__piece img,
+    .yx-villa-gallery__piece img,
+    .yx-villa-gallery__piece:nth-child(3) img,
+    .yx-villa-gallery__piece:nth-child(4) img,
+    .yx-villa-craft__media img,
+    .yx-villa-craft__media figure:last-child img {
+        height: auto;
+        max-height: 720px;
+    }
+
+    .yx-villa-craft__media {
+        gap: 34px;
+    }
+
+    .yx-villa-process__steps article:nth-child(2) {
+        border-bottom: 1px solid rgba(23, 35, 31, 0.2);
+    }
+
+    .yx-villa-process__steps h3 {
+        margin-top: 22px;
+    }
+
+    .yx-villa-cta {
+        padding: 76px 0;
+    }
+
+    .yx-villa-slot {
+        top: 10px;
+        left: 10px;
+        min-width: 48px;
+        min-height: 32px;
+    }
+
+    .yx-villa-page footer .yx-villa-footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .yx-villa-page *,
+    .yx-villa-page *::before,
+    .yx-villa-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

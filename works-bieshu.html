@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>别墅挂画私人订制 | 杨雪刺绣工作室</title>
-    <meta name="description" content="杨雪刺绣别墅挂画私人订制，回归古传之美，为高端空间定制专属艺术藏品">
+    <title>别墅刺绣挂画定制 | 杨雪刺绣工作室</title>
+    <meta name="description" content="杨雪刺绣工作室提供别墅、会所与高端住宅刺绣挂画定制，从空间尺度、题材配色到手工绣制与装裱完成一体化设计。">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,94 +22,27 @@
     </script>
     <style>
         .nav-item { position: relative; }
-        .dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 200px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-top: 3px solid #c9a87c; box-shadow: 0 10px 40px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 100; }
-        .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-item { display: block; padding: 14px 24px; color: #2c3e2d; font-size: 14px; letter-spacing: 1px; border-bottom: 1px solid rgba(0,0,0,0.05); transition: all 0.2s ease; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 200px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-top: 3px solid #c9a87c; box-shadow: 0 10px 40px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; z-index: 100; }
+        .nav-item:hover .dropdown-menu, .nav-item:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .nav-item:last-child .dropdown-menu { right: 0; left: auto; }
+        .dropdown-item { display: block; padding: 14px 24px; color: #2c3e2d; font-size: 14px; border-bottom: 1px solid rgba(0,0,0,0.05); transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease; }
         .dropdown-item:hover { background: #f5f2eb; color: #c9a87c; padding-left: 28px; }
         .dropdown-item:last-child { border-bottom: none; }
         .nav-link { position: relative; padding: 8px 0; }
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #c9a87c; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
         .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-        .mobile-menu.active { max-height: 600px; }
+        .mobile-menu.active { max-height: calc(100vh - 80px); overflow-y: auto; }
         .mobile-dropdown { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
         .mobile-dropdown.active { max-height: 300px; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
-        .villa-gallery {
-            display: grid;
-            grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-            gap: 28px;
-            align-items: start;
-        }
-        .villa-gallery-card {
-            margin: 0;
-            padding: 14px;
-            background: rgba(255, 255, 255, 0.64);
-            border: 1px solid rgba(44, 62, 45, 0.1);
-            overflow: hidden;
-        }
-        .villa-gallery-card img {
-            display: block;
-            width: 100%;
-            height: auto;
-            background: #fff;
-        }
-        .villa-gallery-card--feature {
-            grid-row: span 2;
-        }
-        .villa-gallery-card--feature img {
-            max-height: 680px;
-            object-fit: contain;
-        }
-        .villa-gallery-card--detail img {
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-        }
-        .villa-gallery-card--wide img {
-            aspect-ratio: 16 / 5.2;
-            object-fit: contain;
-        }
-        .villa-gallery-card figcaption {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 14px 2px 2px;
-            color: #2c3e2d;
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        .villa-gallery-card figcaption strong {
-            min-width: max-content;
-            font-family: "Noto Serif SC", serif;
-            font-size: 17px;
-            font-weight: 500;
-        }
-        .villa-gallery-card figcaption span {
-            color: rgba(44, 62, 45, 0.66);
-            text-align: right;
-        }
-        @media (max-width: 768px) {
-            .villa-gallery {
-                grid-template-columns: 1fr;
-                gap: 22px;
-            }
-            .villa-gallery-card--feature {
-                grid-row: auto;
-            }
-            .villa-gallery-card figcaption {
-                display: block;
-            }
-            .villa-gallery-card figcaption span {
-                display: block;
-                margin-top: 4px;
-                text-align: left;
-            }
-        }
     </style>
     <link rel="stylesheet" href="assets/site.css">
+    <link rel="stylesheet" href="assets/works-bieshu.css">
 </head>
-<body class="bg-cream text-primary font-sans">
+<body class="yx-villa-page bg-cream text-primary font-sans">
+    <a href="#main-content" class="yx-villa-skip">跳到主要内容</a>
     <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md shadow-sm">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="flex justify-between items-center h-20">
@@ -117,7 +50,7 @@
                 <div class="hidden lg:flex items-center space-x-10">
                     <a href="index.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">首页</a>
                     <div class="nav-item">
-                        <a href="works.html" class="nav-link text-accent text-sm tracking-widest font-light flex items-center gap-2">作品展示<i class="fas fa-chevron-down text-xs"></i></a>
+                        <a href="works.html" class="nav-link text-accent text-sm tracking-widest font-light flex items-center gap-2">作品展示<i class="fas fa-chevron-down text-xs" aria-hidden="true"></i></a>
                         <div class="dropdown-menu">
                             <a href="works-guoli.html" class="dropdown-item">双面三异绣·国礼</a>
                             <a href="works-foxiang.html" class="dropdown-item">苏绣佛像系列</a>
@@ -128,7 +61,7 @@
                         </div>
                     </div>
                     <div class="nav-item">
-                        <a href="custom.html" class="nav-link text-primary text-sm tracking-widest font-light flex items-center gap-2">定制服务<i class="fas fa-chevron-down text-xs"></i></a>
+                        <a href="custom.html" class="nav-link text-primary text-sm tracking-widest font-light flex items-center gap-2">定制服务<i class="fas fa-chevron-down text-xs" aria-hidden="true"></i></a>
                         <div class="dropdown-menu">
                             <a href="custom-process.html" class="dropdown-item">定制流程</a>
                             <a href="custom-price.html" class="dropdown-item">价格参考</a>
@@ -138,9 +71,12 @@
                     </div>
                     <a href="about.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">关于我</a>
                     <a href="partners.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">合作单位</a>
-                    <a href="news.html" class="nav-link text-primary text-sm tracking-widest font-light hover:text-accent">最新消息</a>
                     <div class="nav-item">
-                        <a href="visit.html" class="nav-link text-primary text-sm tracking-widest font-light flex items-center gap-2">参观资讯<i class="fas fa-chevron-down text-xs"></i></a>
+                        <a href="news.html" class="nav-link text-primary text-sm tracking-widest font-light flex items-center gap-2">最新消息<i class="fas fa-chevron-down text-xs" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu"><a href="news.html" class="dropdown-item">新闻报道</a></div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="visit.html" class="nav-link text-primary text-sm tracking-widest font-light flex items-center gap-2">参观资讯<i class="fas fa-chevron-down text-xs" aria-hidden="true"></i></a>
                         <div class="dropdown-menu">
                             <a href="visit-info.html" class="dropdown-item">预约参观</a>
                             <a href="visit-guide.html" class="dropdown-item">导览服务</a>
@@ -149,15 +85,15 @@
                         </div>
                     </div>
                 </div>
-                <button id="menuBtn" class="lg:hidden text-2xl text-primary"><i class="fas fa-bars"></i></button>
+                <button id="menuBtn" type="button" class="lg:hidden text-2xl text-primary" aria-label="打开导航菜单" aria-controls="mobileMenu" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
             </div>
         </div>
-        <div id="mobileMenu" class="mobile-menu lg:hidden bg-white/98 backdrop-blur-md">
+        <div id="mobileMenu" class="mobile-menu lg:hidden bg-white/98 backdrop-blur-md" aria-hidden="true" inert>
             <div class="container mx-auto px-6 py-6">
                 <a href="index.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">首页</a>
                 <div class="border-b border-gray-100">
-                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center text-accent" data-target="mobile-works">作品展示<i class="fas fa-chevron-down text-sm transition-transform duration-300 rotate-180"></i></button>
-                    <div id="mobile-works" class="mobile-dropdown active pl-4">
+                    <button type="button" class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center text-accent" data-target="mobile-works" aria-controls="mobile-works" aria-expanded="true">作品展示<i class="fas fa-chevron-down text-sm transition-transform duration-300 rotate-180" aria-hidden="true"></i></button>
+                    <div id="mobile-works" class="mobile-dropdown active pl-4" aria-hidden="false">
                         <a href="works-guoli.html" class="block py-3 text-sm text-secondary">双面三异绣·国礼</a>
                         <a href="works-foxiang.html" class="block py-3 text-sm text-secondary">苏绣佛像系列</a>
                         <a href="works-bieshu.html" class="block py-3 text-sm text-accent">别墅挂画私人订制</a>
@@ -167,8 +103,8 @@
                     </div>
                 </div>
                 <div class="border-b border-gray-100">
-                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-custom">定制服务<i class="fas fa-chevron-down text-sm transition-transform duration-300"></i></button>
-                    <div id="mobile-custom" class="mobile-dropdown pl-4">
+                    <button type="button" class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-custom" aria-controls="mobile-custom" aria-expanded="false">定制服务<i class="fas fa-chevron-down text-sm transition-transform duration-300" aria-hidden="true"></i></button>
+                    <div id="mobile-custom" class="mobile-dropdown pl-4" aria-hidden="true" inert>
                         <a href="custom-process.html" class="block py-3 text-sm text-secondary">定制流程</a>
                         <a href="custom-price.html" class="block py-3 text-sm text-secondary">价格参考</a>
                         <a href="custom-case.html" class="block py-3 text-sm text-secondary">案例展示</a>
@@ -177,9 +113,10 @@
                 </div>
                 <a href="about.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">关于我</a>
                 <a href="partners.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">合作单位</a>
+                <a href="news.html" class="block py-4 text-lg tracking-wide border-b border-gray-100 text-primary">最新消息</a>
                 <div class="border-b border-gray-100">
-                    <button class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-visit">参观资讯<i class="fas fa-chevron-down text-sm transition-transform duration-300"></i></button>
-                    <div id="mobile-visit" class="mobile-dropdown pl-4">
+                    <button type="button" class="mobile-toggle w-full py-4 text-lg tracking-wide text-primary flex justify-between items-center" data-target="mobile-visit" aria-controls="mobile-visit" aria-expanded="false">参观资讯<i class="fas fa-chevron-down text-sm transition-transform duration-300" aria-hidden="true"></i></button>
+                    <div id="mobile-visit" class="mobile-dropdown pl-4" aria-hidden="true" inert>
                         <a href="visit-info.html" class="block py-3 text-sm text-secondary">预约参观</a>
                         <a href="visit-guide.html" class="block py-3 text-sm text-secondary">导览服务</a>
                         <a href="visit-diy.html" class="block py-3 text-sm text-secondary">刺绣体验</a>
@@ -189,129 +126,180 @@
             </div>
         </div>
     </nav>
-    <section class="pt-32 pb-12 bg-white">
-        <div class="container mx-auto px-6 lg:px-12 text-center">
-            <span class="text-accent text-sm tracking-widest fade-in">作品展示</span>
-            <h1 class="text-4xl md:text-5xl font-serif font-light tracking-wider mt-4 mb-6 fade-in">别墅挂画私人订制</h1>
-            <div class="w-24 h-px bg-accent mx-auto mb-8 fade-in"></div>
-            <p class="text-secondary max-w-2xl mx-auto leading-relaxed fade-in">回归古传之美，为高端空间定制专属艺术藏品</p>
-        </div>
-    </section>
-    <section class="py-16 bg-cream">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                <div class="fade-in">
-                    <div class="yx-material-frame yx-material-frame--portrait yx-material-frame--hero" data-material-slot="022">
-                        <!-- 素材位 022：后续替换为别墅挂画主视觉竖版空间图。原临时图 images/studio/atelier-positioning.jpg 已隐藏。 -->
-                        <div class="yx-material-placeholder"><strong>图片位 022</strong><small>建议 3:4 竖版挂画</small></div>
-                    </div>
-                </div>
-                <div class="fade-in">
-                    <h2 class="text-2xl font-serif tracking-wider mb-6">高端空间艺术定制</h2>
-                    <div class="w-16 h-px bg-accent mb-6"></div>
-                    <p class="text-secondary leading-relaxed mb-6">为别墅、豪宅、酒店等高端空间量身定制的刺绣挂画艺术品。每一幅作品都根据空间风格、色调、氛围进行精心设计，让传统刺绣艺术与现代空间完美融合。</p>
-                    <p class="text-secondary leading-relaxed mb-6">从山水意境到花鸟灵动，从古典诗词到现代抽象，我们提供全方位的定制服务，为您的空间增添独特的艺术气息。</p>
-                    <div class="flex gap-4">
-                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">空间定制</span>
-                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">高端收藏</span>
-                        <span class="px-4 py-2 bg-accent/10 text-accent text-sm">一对一设计</span>
-                    </div>
+
+    <main id="main-content">
+        <section class="yx-villa-hero">
+            <figure class="yx-villa-hero__media" data-material-slot="022">
+                <span class="yx-villa-slot">022</span>
+                <img src="images/别墅挂画私人定制/i1787031437198_5933_0_0.jpg" alt="现代大宅客厅墙面的横幅青绿山水刺绣挂画" width="2160" height="1440" fetchpriority="high">
+            </figure>
+            <div class="yx-villa-hero__veil" aria-hidden="true"></div>
+            <div class="yx-villa-hero__copy fade-in">
+                <p class="yx-villa-eyebrow">BESPOKE EMBROIDERY FOR INTERIORS · 空间艺术定制</p>
+                <h1>别墅刺绣<br>挂画定制</h1>
+                <p class="yx-villa-hero__lead">不是为墙面补一件装饰，而是从尺度、光线与空间气质出发，让一幅苏绣成为整座居所的精神落点。</p>
+                <div class="yx-villa-actions">
+                    <a href="#villa-cases" class="yx-villa-button">查看空间案例</a>
+                    <a href="#villa-process" class="yx-villa-button yx-villa-button--light">了解定制流程</a>
                 </div>
             </div>
-            <div class="villa-gallery" id="villa-gallery">
-                <figure class="villa-gallery-card villa-gallery-card--feature fade-in">
-                    <div class="yx-material-frame yx-material-frame--portrait" data-material-slot="023">
-                        <!-- 素材位 023：后续替换为别墅挂画完整空间竖版图。原临时图 images/别墅挂画-2.png 已隐藏。 -->
-                        <div class="yx-material-placeholder"><strong>图片位 023</strong><small>建议 3:4 竖版挂画</small></div>
-                    </div>
-                    <figcaption>
-                        <strong>整幅挂画</strong>
-                        <span>保留装裱、墙面与陈设关系，看清作品在空间中的完整比例。</span>
-                    </figcaption>
-                </figure>
-                <figure class="villa-gallery-card villa-gallery-card--detail fade-in" style="transition-delay: 0.1s;">
-                    <div class="yx-material-frame yx-material-frame--portrait" data-material-slot="024">
-                        <!-- 素材位 024：后续替换为别墅花鸟挂画竖版图。原临时图 images/studio/villa-bird-blossom-clean.jpg 已隐藏。 -->
-                        <div class="yx-material-placeholder"><strong>图片位 024</strong><small>建议 3:4 竖版挂画</small></div>
-                    </div>
-                    <figcaption>
-                        <strong>花鸟挂画</strong>
-                        <span>以后续竖版成品图呈现针脚、色阶和空间比例。</span>
-                    </figcaption>
-                </figure>
-                <figure class="villa-gallery-card villa-gallery-card--detail fade-in" style="transition-delay: 0.2s;">
-                    <div class="yx-material-frame yx-material-frame--portrait" data-material-slot="025">
-                        <!-- 素材位 025：后续替换为别墅山水挂画竖版图。原临时图 images/studio/villa-landscape-clean.jpg 已隐藏。 -->
-                        <div class="yx-material-placeholder"><strong>图片位 025</strong><small>建议 3:4 竖版挂画</small></div>
-                    </div>
-                    <figcaption>
-                        <strong>山水挂画</strong>
-                        <span>统一按竖版挂画预留，后续直接替换对应编号素材。</span>
-                    </figcaption>
-                </figure>
+        </section>
+
+        <section class="yx-villa-intro">
+            <div class="yx-villa-shell">
+                <div class="yx-villa-intro__head fade-in">
+                    <div><p class="yx-villa-eyebrow">ART IN PLACE · 作品进入空间</p><h2>先看一面墙，<br>再决定绣什么。</h2></div>
+                    <p>别墅挂画的价值，不只在作品本身，更在它与墙面比例、家具尺度、动线视角及自然光之间形成的关系。杨雪刺绣工作室以真实空间为起点，重新组织题材、色彩、构图与装裱，让苏绣既保留丝线的细腻，又能承接大尺度建筑空间。</p>
+                </div>
+                <div class="yx-villa-principles fade-in" aria-label="空间定制三项原则">
+                    <article><span>01 / SCALE</span><h3>尺度先行</h3><p>依据墙面宽高、观看距离与家具比例，确定横幅、竖幅或圆形装裱。</p></article>
+                    <article><span>02 / LIGHT</span><h3>光线入画</h3><p>结合朝向、重点照明与丝线反光，调整色阶与画面明暗关系。</p></article>
+                    <article><span>03 / ATMOSPHERE</span><h3>气韵相合</h3><p>从居所材质与生活方式提炼题材，让东方意境自然进入日常。</p></article>
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-6 lg:px-12 text-center">
-            <h2 class="text-3xl font-serif font-light tracking-wider mb-6 fade-in">为您的空间定制专属艺术品</h2>
-            <p class="text-white/70 mb-8 max-w-xl mx-auto fade-in">专业设计团队一对一服务，打造独一无二的空间艺术品</p>
-            <a href="custom-consult.html" class="inline-block px-10 py-4 border border-accent bg-accent text-primary text-sm tracking-widest hover:bg-transparent hover:text-white transition-all duration-500 fade-in">预约咨询</a>
-        </div>
-    </section>
+        </section>
+
+        <section class="yx-villa-landscape" id="villa-cases">
+            <div class="yx-villa-shell">
+                <div class="yx-villa-section-head fade-in">
+                    <div><p class="yx-villa-eyebrow">PANORAMIC LANDSCAPE · 横幅山水</p><h2>让长卷展开，<br>为空间定下远近。</h2></div>
+                    <p>横幅作品适合客厅主墙、书房长案与会客空间。山水、牡丹与花鸟长卷沿视线舒展，在保持场面开阔的同时，为大体量墙面建立安静而稳定的视觉重心。</p>
+                </div>
+                <div class="yx-villa-landscape__list">
+                    <figure class="yx-villa-landscape__item fade-in" data-material-slot="023">
+                        <span class="yx-villa-slot">023</span>
+                        <div class="yx-villa-landscape__media"><img src="images/别墅挂画私人定制/i1777767604530_2726_0_0.jpg" alt="中式书房长案上方的横幅青绿山水刺绣" width="1762" height="1440" loading="lazy"></div>
+                        <figcaption><strong>书房长卷</strong><span>低饱和青绿与木作空间彼此呼应，长幅构图顺着案几展开，让书房有纵深，也有停驻视线的远景。</span></figcaption>
+                    </figure>
+                    <figure class="yx-villa-landscape__item fade-in" data-material-slot="024">
+                        <span class="yx-villa-slot">024</span>
+                        <div class="yx-villa-landscape__media"><img src="images/别墅挂画私人定制/o_1jphb0l0p1ndfona16qh136sicp5.jpeg" alt="中式客厅沙发上方的横幅牡丹刺绣挂画" width="1920" height="1280" loading="lazy"></div>
+                        <figcaption><strong>厅堂花开</strong><span>横幅牡丹承接沙发与墙面的宽度，花色丰盛却保留留白，适合家族会客空间，也寓意富贵和美、家宅长兴。</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-villa-vertical">
+            <div class="yx-villa-shell yx-villa-vertical__layout">
+                <div class="yx-villa-vertical__copy fade-in">
+                    <p class="yx-villa-eyebrow">VERTICAL & ROUND · 竖幅与圆景</p>
+                    <h2>玄关有迎面之礼，<br>转身亦有一景。</h2>
+                    <p>竖幅适合玄关、挑高墙面与楼梯转角，圆形装裱则更适合餐厅、茶室与过渡空间。不同形制不是简单更换外框，而是依据建筑开口与观看方式重新安排画面重心。</p>
+                    <div class="yx-villa-vertical__note">一墙一景，一室一气。让挂画与建筑共同完成空间叙事。</div>
+                </div>
+                <div class="yx-villa-vertical__grid">
+                    <figure class="yx-villa-vertical__piece fade-in" data-material-slot="025"><span class="yx-villa-slot">025</span><img src="images/别墅挂画私人定制/a1765614395184_7582.jpg" alt="玄关墙面的粉色花鸟刺绣竖幅挂画" width="1080" height="1440" loading="lazy"><figcaption><strong>玄关迎春</strong><span>粉地花鸟与庭院松景相映，入门即见轻盈生机。</span></figcaption></figure>
+                    <figure class="yx-villa-vertical__piece fade-in" data-material-slot="089"><span class="yx-villa-slot">089</span><img src="images/别墅挂画私人定制/o_1jujm79g6aav13ls8rg14k215f63.jpeg" alt="挑高客厅墙面的千里江山刺绣竖幅挂画" width="1280" height="1920" loading="lazy"><figcaption><strong>挑高山河</strong><span>以竖向山势回应挑高尺度，青绿设色成为深色墙面的明亮核心。</span></figcaption></figure>
+                    <figure class="yx-villa-vertical__piece fade-in" data-material-slot="090"><span class="yx-villa-slot">090</span><img src="images/别墅挂画私人定制/i1778124129426_2033_0_3.jpg" alt="会客空间墙面的圆形牡丹刺绣装裱" width="1440" height="1920" loading="lazy"><figcaption><strong>圆景牡丹</strong><span>圆形作品收束视觉，适合餐叙、会谈与端景墙面。</span></figcaption></figure>
+                    <figure class="yx-villa-vertical__piece fade-in" data-material-slot="091"><span class="yx-villa-slot">091</span><img src="images/别墅挂画私人定制/o_1j9civge61bgofqq167jgf010p11.jpeg" alt="现代客厅墙面的方形花鸟刺绣挂画" width="1280" height="1541" loading="lazy"><figcaption><strong>方屏百鸟</strong><span>浅色花鸟与深木墙面形成克制对比，适合现代东方客厅。</span></figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-villa-craft">
+            <div class="yx-villa-shell yx-villa-craft__layout">
+                <div class="yx-villa-craft__media">
+                    <figure class="fade-in" data-material-slot="092"><span class="yx-villa-slot">092</span><img src="images/别墅挂画私人定制/i1780072932196_3982_0_0.jpg" alt="杨雪在绷架上绣制大型牡丹作品" width="1920" height="1440" loading="lazy"></figure>
+                    <figure class="fade-in" data-material-slot="093"><span class="yx-villa-slot">093</span><img src="images/别墅挂画私人定制/i1780072931070_563_0_6.jpg" alt="牡丹刺绣花瓣与丝线肌理细节" width="1440" height="1920" loading="lazy"></figure>
+                </div>
+                <div class="yx-villa-craft__copy fade-in">
+                    <p class="yx-villa-eyebrow">MADE BY HAND · 从线到墙</p><h2>远看成境，<br>近看见针。</h2>
+                    <p>大幅挂画需要同时兼顾远距离的整体气势与近距离的丝线质感。工作室从画稿、配色到上绷绣制全程推进，并根据最终空间校准细节密度与观看效果。</p>
+                    <dl class="yx-villa-craft__list">
+                        <div><dt>01</dt><dd>以建筑图、墙面照片和家具尺寸确定作品比例。</dd></div>
+                        <div><dt>02</dt><dd>拆解空间主色与材质，建立专属丝线色谱。</dd></div>
+                        <div><dt>03</dt><dd>分层绣制花瓣、羽毛与山石，让丝光随角度变化。</dd></div>
+                        <div><dt>04</dt><dd>装裱完成后复核灯光、悬挂高度与最终视线关系。</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-villa-gallery">
+            <div class="yx-villa-shell">
+                <div class="yx-villa-section-head fade-in">
+                    <div><p class="yx-villa-eyebrow">SELECTED INTERIORS · 空间选例</p><h2>题材不同，<br>都要与生活相合。</h2></div>
+                    <p>从牡丹、荷花到山水花鸟，题材选择既回应审美偏好，也结合空间用途与家庭寓意。作品可以端庄，也可以轻盈，但都应给家具与人的活动留下余地。</p>
+                </div>
+                <div class="yx-villa-gallery__grid">
+                    <figure class="yx-villa-gallery__piece fade-in" data-material-slot="094"><span class="yx-villa-slot">094</span><img src="images/别墅挂画私人定制/i1778669585681_4792_0_0.jpg" alt="展厅中的大型竖幅牡丹刺绣作品" width="1440" height="1920" loading="lazy"><figcaption><strong>满庭芳华</strong><span>高挑花树自下而上生长，适合楼梯厅、玄关与挑高端景。</span></figcaption></figure>
+                    <figure class="yx-villa-gallery__piece fade-in" data-material-slot="095"><span class="yx-villa-slot">095</span><img src="images/别墅挂画私人定制/i1783494330537_9097_0_0.jpg" alt="中式庭院端景中的荷花蜻蜓刺绣挂画" width="1440" height="2160" loading="lazy"><figcaption><strong>清荷入院</strong><span>素雅荷花与苔石、灯笼相接，把自然气息引入半室内庭院。</span></figcaption></figure>
+                    <figure class="yx-villa-gallery__piece fade-in" data-material-slot="096"><span class="yx-villa-slot">096</span><img src="images/别墅挂画私人定制/a1777001239913_0340.jpg" alt="客厅沙发上方的横幅牡丹刺绣挂画" width="1080" height="1080" loading="lazy"><figcaption><strong>花开正厅</strong><span>以沙发为尺度基准，横幅花卉稳定客厅主墙的视觉秩序。</span></figcaption></figure>
+                    <figure class="yx-villa-gallery__piece fade-in" data-material-slot="097"><span class="yx-villa-slot">097</span><img src="images/别墅挂画私人定制/o_1j9chum73139k11ithtv2mg1770j.jpeg" alt="现代灰色墙面上的圆形牡丹刺绣挂画" width="1280" height="1413" loading="lazy"><figcaption><strong>一轮花影</strong><span>圆形牡丹以深绿收边，在素灰墙面上形成安静而鲜明的端景。</span></figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-villa-process" id="villa-process">
+            <div class="yx-villa-shell">
+                <div class="yx-villa-process__head fade-in">
+                    <div><p class="yx-villa-eyebrow">BESPOKE PROCESS · 私人定制</p><h2>从空间资料，<br>走到最终落墙。</h2></div>
+                    <p class="yx-villa-process__intro">定制不是在现成图库中选一张图，而是让题材、尺度、绣法与装裱共同回应真实居所。前期资料越完整，成品与空间的关系越准确。</p>
+                </div>
+                <div class="yx-villa-process__steps fade-in">
+                    <article><span>STEP 01</span><h3>空间采集</h3><p>提供墙面正视照片、宽高尺寸、家具位置与环境光信息。</p></article>
+                    <article><span>STEP 02</span><h3>方案设计</h3><p>确定题材、构图、画幅、丝线色谱与装裱方向，并完成效果预演。</p></article>
+                    <article><span>STEP 03</span><h3>手工绣制</h3><p>校稿后上绷落针，按作品体量与复杂度分阶段沟通制作进度。</p></article>
+                    <article><span>STEP 04</span><h3>装裱落位</h3><p>完成装裱与成品复核，并给出悬挂高度、灯光与日常养护建议。</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="yx-villa-cta">
+            <div class="yx-villa-shell yx-villa-cta__inner">
+                <div class="fade-in"><h2>为一面墙，定一方东方气韵。</h2><p>欢迎携带空间照片与尺寸咨询。工作室将从使用场景、题材寓意与整体风格出发，为您的居所提供一对一刺绣挂画方案。</p></div>
+                <a href="custom-consult.html" class="yx-villa-button yx-villa-button--light fade-in">预约空间定制</a>
+            </div>
+        </section>
+    </main>
+
     <footer class="py-16 bg-cream border-t border-gray-200">
         <div class="container mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-2">
-                    <a href="index.html" class="text-2xl font-serif tracking-wider text-primary mb-6 block">杨雪刺绣</a>
-                    <p class="text-secondary text-sm leading-relaxed max-w-md">以东方美学为根基，将传统刺绣技艺与现代设计理念相结合，绣出具有当代审美又不失古典韵味的艺术作品。</p>
-                </div>
+            <div class="yx-villa-footer-grid grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2"><a href="index.html" class="text-2xl font-serif tracking-wider text-primary mb-6 block">杨雪刺绣</a><p class="text-secondary text-sm leading-relaxed max-w-md">以东方美学为根基，将传统刺绣技艺与现代设计理念相结合，绣出具有当代审美又不失古典韵味的艺术作品。</p></div>
                 <div>
                     <h4 class="text-primary font-medium tracking-wider mb-6 text-sm">快速链接</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="works.html" class="text-secondary hover:text-accent transition-colors">作品展示</a></li>
-                        <li><a href="custom.html" class="text-secondary hover:text-accent transition-colors">定制服务</a></li>
-                        <li><a href="about.html" class="text-secondary hover:text-accent transition-colors">关于我</a></li>
-                        <li><a href="partners.html" class="text-secondary hover:text-accent transition-colors">合作单位</a></li>
-                        <li><a href="visit.html" class="text-secondary hover:text-accent transition-colors">参观资讯</a></li>
-                    </ul>
+                    <ul class="space-y-3 text-sm"><li><a href="works.html" class="text-secondary hover:text-accent transition-colors">作品展示</a></li><li><a href="custom.html" class="text-secondary hover:text-accent transition-colors">定制服务</a></li><li><a href="about.html" class="text-secondary hover:text-accent transition-colors">关于我</a></li><li><a href="partners.html" class="text-secondary hover:text-accent transition-colors">合作单位</a></li><li><a href="visit.html" class="text-secondary hover:text-accent transition-colors">参观资讯</a></li></ul>
                 </div>
                 <div>
                     <h4 class="text-primary font-medium tracking-wider mb-6 text-sm">联系方式</h4>
-                    <ul class="space-y-3 text-sm text-secondary">
-                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent mt-1"></i><span>苏州总部地址：江苏省苏州市高新区绣品街155号</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent mt-1"></i><span>杭州分公司地址：浙江省杭州市拱墅区祥园路33号众创大厦1楼奇人匠心</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-phone text-accent"></i><span>17376565154</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-accent"></i><span>xiaoyu@byteinfinite.com</span></li>
-                    </ul>
+                    <ul class="space-y-3 text-sm text-secondary"><li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent mt-1" aria-hidden="true"></i><span>苏州总部地址：江苏省苏州市高新区绣品街155号</span></li><li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent mt-1" aria-hidden="true"></i><span>杭州分公司地址：浙江省杭州市拱墅区祥园路33号众创大厦1楼奇人匠心</span></li><li class="flex items-center gap-3"><i class="fas fa-phone text-accent" aria-hidden="true"></i><span>17376565154</span></li><li class="flex items-center gap-3"><i class="fas fa-envelope text-accent" aria-hidden="true"></i><span>xiaoyu@byteinfinite.com</span></li></ul>
                 </div>
             </div>
             <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-xs text-secondary">© 2026 杨雪刺绣工作室. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="text-secondary hover:text-accent transition-colors"><i class="fab fa-weixin text-lg"></i></a>
-                    <a href="#" class="text-secondary hover:text-accent transition-colors"><i class="fab fa-weibo text-lg"></i></a>
-                </div>
+                <div class="flex gap-6 mt-4 md:mt-0"><span class="text-secondary" title="微信"><i class="fab fa-weixin text-lg" aria-hidden="true"></i><span class="sr-only">微信</span></span><span class="text-secondary" title="微博"><i class="fab fa-weibo text-lg" aria-hidden="true"></i><span class="sr-only">微博</span></span></div>
             </div>
         </div>
     </footer>
+
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
-            menuBtn.innerHTML = mobileMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            const isOpen = mobileMenu.classList.contains('active');
+            menuBtn.setAttribute('aria-expanded', String(isOpen));
+            menuBtn.setAttribute('aria-label', isOpen ? '关闭导航菜单' : '打开导航菜单');
+            mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+            mobileMenu.inert = !isOpen;
+            menuBtn.innerHTML = isOpen ? '<i class="fas fa-times" aria-hidden="true"></i>' : '<i class="fas fa-bars" aria-hidden="true"></i>';
         });
         document.querySelectorAll('.mobile-toggle').forEach(toggle => {
             toggle.addEventListener('click', () => {
                 const target = document.getElementById(toggle.dataset.target);
                 const icon = toggle.querySelector('i');
                 target.classList.toggle('active');
-                icon.style.transform = target.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+                const isExpanded = target.classList.contains('active');
+                toggle.setAttribute('aria-expanded', String(isExpanded));
+                target.setAttribute('aria-hidden', String(!isExpanded));
+                target.inert = !isExpanded;
+                icon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
             });
         });
         const fadeElements = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.08 });
         fadeElements.forEach(el => observer.observe(el));
     </script>
 </body>
